@@ -14,6 +14,44 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Data Sources
 
 ## Data Transformation
+```{r}
+library(readxl)
+library(tidyverse)
+
+
+data_clean_Arrival <- function(file) {
+  dat <- read_excel(file, sheet='Detailed')
+  dat1 <- subset(dat, select = c(...6, ...8,...9))
+  dat2 <-subset(dat, select = c(...15,...18,...19)) 
+  dat3 <-subset(dat, select = c(...23,...25,...27))
+
+  dat1<-dat1 %>% drop_na()
+  dat2<-dat2 %>% drop_na()
+  dat3<-dat3 %>% drop_na()
+
+  # set first row (State, Cases, Inds) as column name
+  colnames(dat1) <- as.character(unlist(dat1[1,]))
+  dat1 = dat1[-1, ]
+  colnames(dat2) <- as.character(unlist(dat2[1,]))
+  dat2 = dat2[-1, ]
+  colnames(dat3) <- as.character(unlist(dat3[1,]))
+  dat3 = dat3[-1, ]
+
+  # Grouping columns together
+  combined <- rbind(dat1,dat2)
+  combined <- rbind(combined,dat3)
+
+  # State,Cases,Inds
+
+  combined$Cases <-as.numeric(as.character(combined$Cases))
+  combined$Inds <-as.numeric(as.character(combined$Inds))
+  
+  return (combined)
+}
+
+#EXAMPLE 
+data_clean_Arrival("Arrivals_2010.xlsx")
+```
 
 ## Missing Values
 
