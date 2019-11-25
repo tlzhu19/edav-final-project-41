@@ -50,8 +50,38 @@ data_clean_Arrival <- function(file) {
 }
 
 #EXAMPLE 
-data_clean_Arrival("Arrivals_2010.xlsx")
+# data_clean_Arrival("Arrivals_2010.xlsx")
 ```
+
+```{r}
+clean_demographics <- function(file, sheet_name) {
+  df <- read_excel(file, sheet=sheet_name)
+  
+  if (sheet_name == 'Age Group') {
+    column_names = c('Department of State','...2', '...3', '...4')
+  }
+  else if (sheet_name == 'Religion') {
+    column_names = c('Department of State','...2', '...4', '...6')
+  }
+  else if (sheet_name == 'Ethnicity' | sheet_name == 'Education' | sheet_name == 'Native Language') {
+    column_names = c('Department of State','...2', '...3', '...5')
+  }
+  
+  df2 <- subset(df, select = column_names)
+  df3 <- df2[complete.cases(df2), ]
+  df4 = df3[-nrow(df3), ]
+
+  colnames(df4) = c(sheet_name, 'Male', 'Female', 'Total')
+  
+  return(df4)
+}
+
+path = '~/Desktop/CU/F19/STATW5702_EDAV/final_project/data/raw/demographics/'
+file = paste(path, 'Somalia_Demographics_2012.xlsx', sep='')
+sheet_name = 'Ethnicity'
+demographic_df = clean_demographics(file, sheet_name)
+```
+
 
 ## Missing Values
 
