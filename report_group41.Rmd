@@ -19,8 +19,8 @@ library(readxl)
 library(tidyverse)
 
 
-data_clean_Arrival <- function(file) {
-  dat <- read_excel(file, sheet='Detailed')
+clean_arrival <- function(file, sheet_name) {
+  dat <- read_excel(file, sheet = sheet_name)
   dat1 <- subset(dat, select = c(...6, ...8,...9))
   dat2 <-subset(dat, select = c(...15,...18,...19)) 
   dat3 <-subset(dat, select = c(...23,...25,...27))
@@ -49,13 +49,12 @@ data_clean_Arrival <- function(file) {
   return (combined)
 }
 
-#EXAMPLE 
-# data_clean_Arrival("Arrivals_2010.xlsx")
+
 ```
 
 ```{r}
 clean_demographics <- function(file, sheet_name) {
-  df <- read_excel(file, sheet=sheet_name)
+  df <- read_excel(file, sheet = sheet_name)
   
   if (sheet_name == 'Age Group') {
     column_names = c('Department of State','...2', '...3', '...4')
@@ -76,10 +75,39 @@ clean_demographics <- function(file, sheet_name) {
   return(df4)
 }
 
-path = '~/Desktop/CU/F19/STATW5702_EDAV/final_project/data/raw/demographics/'
-file = paste(path, 'Somalia_Demographics_2012.xlsx', sep='')
-sheet_name = 'Ethnicity'
-demographic_df = clean_demographics(file, sheet_name)
+```
+
+```{r}
+
+combine_files <- function(path, data_cleaner, sheet_name, title) {
+  df = data.frame()
+  files <- list.files(path=path, pattern="*.xlsx", full.names=TRUE, recursive=FALSE)
+  for (file in files){
+    cleaned_data = data_cleaner(file, sheet_name)
+    year_extract <- unlist(strsplit(file, title))
+    cleaned_data$Year <- as.numeric(gsub(".xlsx", "", year_extract[2]))
+    df <- rbind(df, cleaned_data)}
+  return (df)
+}
+#Examples
+
+# path = "~/Desktop/Projects/EDAV/edav-final-project-41/data/raw/demographics"
+# title = 'Demographics_'
+# function
+# sheet_name = 'Ethnicity'
+# sheet_name = 'Age Group'
+# sheet_name = 'Religion'
+# sheet_name = 'Education'
+# sheet_name = 'Native Language'
+# data_cleaner = clean_demographics
+
+# path = "~/Desktop/Projects/EDAV/edav-final-project-41/data/raw/all_arrivals"
+# title = 'Arrivals_'
+# sheet_name = 'Detailed'
+# data_cleaner = clean_arrival
+
+
+# df_test3 <- combine_files(path, clean_demographics, sheet_name, title)
 ```
 
 
