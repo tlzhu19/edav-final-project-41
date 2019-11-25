@@ -69,8 +69,18 @@ clean_demographics <- function(file, sheet_name) {
   df2 <- subset(df, select = column_names)
   df3 <- df2[complete.cases(df2), ]
   df4 = df3[-nrow(df3), ]
+  
+  #print(file)
+  #file_replaced <- gsub(pattern="demographics/", replacement=".", file, fixed = TRUE)
+  
+  # file_unpacked <- unlist(strsplit(file_replaced, split='.', fixed=TRUE))
+  file_unpacked <- unlist(strsplit(file, 'demographics/'))
+  file_unpacked2 <- unlist(strsplit(file_unpacked[2], '_Demographics'))
+  country_name = file_unpacked2[1]
 
   colnames(df4) = c(sheet_name, 'Male', 'Female', 'Total')
+  
+  df4$country <- rep(country_name, nrow(df4))
   
   return(df4)
 }
@@ -105,7 +115,6 @@ combine_files <- function(path, data_cleaner, sheet_name, title) {
 # title = 'Arrivals_'
 # sheet_name = 'Detailed'
 # data_cleaner = clean_arrival
-
 
 # df_test3 <- combine_files(path, clean_demographics, sheet_name, title)
 ```
