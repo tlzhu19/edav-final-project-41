@@ -1,21 +1,25 @@
 ---
 title: "Refugee Resettlements in the USA"
 author: "Ji In Choi (jic2124), Jung Ah Shin (js5569), Olivia Wang (yw3324), Tiffany Zhu (tz2196)"
-date: "December 5, 2019"
-output: html_document
+date: "December 12, 2019"
+output:
+  html_document:
+    toc: true
+    theme: united
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 library(readxl)
 library(tidyverse)
 ```
 
-## Introduction
+# Introduction
 
-## Data Sources
+# Data Sources
 
-## Data Transformation
+# Data Transformation
 ```{r}
 # Used to clean the Arrivals data
 clean_arrival <- function(file, sheet_name) {
@@ -149,9 +153,9 @@ save_cleaned_all_demographics <- function(path) {
 ```
 
 
-## Missing Values
+# Missing Values
 
-## Results
+# Results
 ```{r}
 # Read cleaned data from github
 arrival_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/all_arrivals.csv')
@@ -163,6 +167,6 @@ native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-fi
 ```
 
 
-## Interactive Component
+# Interactive Component
 
-## Conclusion
+# Conclusion
