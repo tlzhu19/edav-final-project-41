@@ -5,7 +5,8 @@ date: "December 12, 2019"
 output:
   html_document:
     toc: true
-    theme: united
+    toc_float: true
+    theme: journal
     number_sections: true
 ---
 
@@ -16,8 +17,23 @@ library(tidyverse)
 ```
 
 # Introduction
+According to the UNHCR, refugees are those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
+Furthermore, there are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
+
+The United States is one of the nations that have one of the largest resettlement of refugees. However, in 2017, the US resettled the fewest number of refugees compared to the rest of the world.We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
+
+i. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the US? Have there been increases/decreases in refugee settlements from 2009 - 2018?
+ii. What insights can we gain from geographical visualization of refugee settlement patterns in the US? Why might some states have larger refugee settlements than others?
+iii. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
+
 
 # Data Sources
+
+We first collected data from RPC (Refugee Processing Center), that provides refugee arrival information by state and nationality, by destination and nationality, by nationality and religion, and by demographic profile. 
+
+We can select the time frame, nationality. 
+Since the RPC website does not allow for faceting by year, we had to download the files year by year, and clean the data into the format we want for data analysis.
+
 
 # Data Transformation
 ```{r}
