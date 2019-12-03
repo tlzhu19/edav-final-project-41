@@ -1,0 +1,818 @@
+"Ethnicity","Male","Female","Total","country","Year"
+"Lhotsampa","7373","7677","15050","Bhutan",2009
+"Other","12","15","27","Bhutan",2009
+"Lhotsampa","5842","5881","11723","Bhutan",2010
+"Other","3","3","6","Bhutan",2010
+"Lhotsampa","7314","7410","14724","Bhutan",2011
+"Other","4","7","11","Bhutan",2011
+"Lhotsampa","7143","7315","14458","Bhutan",2012
+"Unknown","0","1","1","Bhutan",2012
+"Lhotsampa","4420","4624","9044","Bhutan",2013
+"Other","3","3","6","Bhutan",2013
+"Unknown","1","0","1","Bhutan",2013
+"Lhotsampa","3755","3718","7473","Bhutan",2014
+"Other","1","2","3","Bhutan",2014
+"Hutu","2","1","3","Bhutan",2015
+"Lhotsampa","2892","2847","5739","Bhutan",2015
+"Other","10","12","22","Bhutan",2015
+"Lhotsampa","3080","2872","5952","Bhutan",2016
+"Other","7","15","22","Bhutan",2016
+"Lhotsampa","1952","1677","3629","Bhutan",2017
+"Other","6","5","11","Bhutan",2017
+"Lhotsampa","347","360","707","Bhutan",2018
+"Arkanese","69","181","250","Burma",2009
+"Burmese","277","351","628","Burma",2009
+"Chin","2670","3430","6100","Burma",2009
+"Ethnic Chinese","4","6","10","Burma",2009
+"Kachin","177","155","332","Burma",2009
+"Karen","2846","3141","5987","Burma",2009
+"Karen NI (kayar)","2932","3180","6112","Burma",2009
+"Lahu","2","1","3","Burma",2009
+"Mixed","0","1","1","Burma",2009
+"Mon","73","125","198","Burma",2009
+"Other","38","44","82","Burma",2009
+"Pa-Oh","6","5","11","Burma",2009
+"Rohingya","23","25","48","Burma",2009
+"Shan","73","75","148","Burma",2009
+"Tamil","1","7","8","Burma",2009
+"Unknown","0","2","2","Burma",2009
+"Arkanese","51","167","218","Burma",2010
+"Bajuni, Banjuni","1","1","2","Burma",2010
+"Bamileke","1","0","1","Burma",2010
+"Burmese","173","211","384","Burma",2010
+"Chin","2998","3455","6453","Burma",2010
+"Ethnic Chinese","1","2","3","Burma",2010
+"Kachin","125","140","265","Burma",2010
+"Karen","3449","3968","7417","Burma",2010
+"Karen NI (kayar)","913","990","1903","Burma",2010
+"Lai","3","7","10","Burma",2010
+"Mixed","0","3","3","Burma",2010
+"Mon","55","110","165","Burma",2010
+"Other","37","38","75","Burma",2010
+"Pa-Oh","2","3","5","Burma",2010
+"Rohingya","42","54","96","Burma",2010
+"Shan","74","93","167","Burma",2010
+"Tamil","4","5","9","Burma",2010
+"Arkanese","74","191","265","Burma",2011
+"Burmese","148","172","320","Burma",2011
+"Chin","2810","3396","6206","Burma",2011
+"Ethnic Chinese","4","0","4","Burma",2011
+"Kachin","226","237","463","Burma",2011
+"Karen","3347","3747","7094","Burma",2011
+"Karen NI (kayar)","399","489","888","Burma",2011
+"Korean","2","2","4","Burma",2011
+"Lai","1","0","1","Burma",2011
+"Lao","1","0","1","Burma",2011
+"Mixed","18","27","45","Burma",2011
+"Mizo","0","1","1","Burma",2011
+"Mon","62","101","163","Burma",2011
+"Other","18","11","29","Burma",2011
+"Pa-Oh","2","4","6","Burma",2011
+"Rohingya","36","48","84","Burma",2011
+"Shan","53","71","124","Burma",2011
+"Tamil","1","4","5","Burma",2011
+"Unknown","1","1","2","Burma",2011
+"Wa","4","4","8","Burma",2011
+"Arkanese","98","239","337","Burma",2012
+"Burmese","163","194","357","Burma",2012
+"Chin","2654","3852","6506","Burma",2012
+"Ethnic Chinese","0","1","1","Burma",2012
+"Kachin","292","315","607","Burma",2012
+"Karen","2513","2942","5455","Burma",2012
+"Karen NI (kayar)","365","429","794","Burma",2012
+"Lahu","1","1","2","Burma",2012
+"Lai","7","9","16","Burma",2012
+"Mixed","44","66","110","Burma",2012
+"Mizo","0","3","3","Burma",2012
+"Mon","82","194","276","Burma",2012
+"Other","28","36","64","Burma",2012
+"Pa-Oh","6","6","12","Burma",2012
+"Rohingya","134","212","346","Burma",2012
+"Shan","87","124","211","Burma",2012
+"Tamil","2","11","13","Burma",2012
+"Unknown","2","0","2","Burma",2012
+"Arkanese","64","238","302","Burma",2013
+"Burmese","187","210","397","Burma",2013
+"Chin","2372","3136","5508","Burma",2013
+"Ethnic Chinese","5","5","10","Burma",2013
+"Gujarati","0","1","1","Burma",2013
+"Kachin","177","220","397","Burma",2013
+"Karen","2863","3210","6073","Burma",2013
+"Karen NI (kayar)","435","449","884","Burma",2013
+"Lahu","0","1","1","Burma",2013
+"Lai","0","1","1","Burma",2013
+"Mixed","56","65","121","Burma",2013
+"Mizo","0","1","1","Burma",2013
+"Mon","87","145","232","Burma",2013
+"Other","48","43","91","Burma",2013
+"Pa-Oh","6","2","8","Burma",2013
+"Rohingya","183","217","400","Burma",2013
+"Shan","54","84","138","Burma",2013
+"Tamil","3","11","14","Burma",2013
+"Wa","0","1","1","Burma",2013
+"Arkanese","116","370","486","Burma",2014
+"Bamileke","0","1","1","Burma",2014
+"Burmese","105","115","220","Burma",2014
+"Chin","3290","4027","7317","Burma",2014
+"Ethnic Chinese","6","4","10","Burma",2014
+"Gujarati","3","2","5","Burma",2014
+"Kachin","391","442","833","Burma",2014
+"Karen","2379","2513","4892","Burma",2014
+"Karen NI (kayar)","331","355","686","Burma",2014
+"Lahu","3","3","6","Burma",2014
+"Lai","1","2","3","Burma",2014
+"Mixed","69","90","159","Burma",2014
+"Mizo","11","1","12","Burma",2014
+"Mon","50","97","147","Burma",2014
+"Other","76","89","165","Burma",2014
+"Pa-Oh","10","7","17","Burma",2014
+"Rohingya","368","511","879","Burma",2014
+"Shan","52","75","127","Burma",2014
+"Tamil","1","4","5","Burma",2014
+"Unknown","0","1","1","Burma",2014
+"Arkanese","95","230","325","Burma",2015
+"Bamileke","1","0","1","Burma",2015
+"Burmese","295","385","680","Burma",2015
+"Chin","3267","3992","7259","Burma",2015
+"Ethnic Chinese","7","7","14","Burma",2015
+"Kachin","264","261","525","Burma",2015
+"Karen","2146","2261","4407","Burma",2015
+"Karen NI (kayar)","359","402","761","Burma",2015
+"Lai","2","0","2","Burma",2015
+"Mixed","133","147","280","Burma",2015
+"Mizo","1","0","1","Burma",2015
+"Mon","60","84","144","Burma",2015
+"Other","130","142","272","Burma",2015
+"Pa-Oh","4","4","8","Burma",2015
+"Rohingya","1059","1656","2715","Burma",2015
+"Shan","34","38","72","Burma",2015
+"Tamil","9","8","17","Burma",2015
+"Arkanese","19","46","65","Burma",2016
+"Bamileke","1","1","2","Burma",2016
+"Burmese","152","179","331","Burma",2016
+"Chin","2120","2351","4471","Burma",2016
+"Kachin","133","131","264","Burma",2016
+"Karen","1710","1630","3340","Burma",2016
+"Karen NI (kayar)","161","164","325","Burma",2016
+"Lahu","1","3","4","Burma",2016
+"Mixed","76","88","164","Burma",2016
+"Mizo","0","1","1","Burma",2016
+"Mon","71","85","156","Burma",2016
+"Other","66","65","131","Burma",2016
+"Pa-Oh","7","3","10","Burma",2016
+"Rohingya","948","1290","2238","Burma",2016
+"Shan","34","24","58","Burma",2016
+"Tamil","2","7","9","Burma",2016
+"Wa","2","1","3","Burma",2016
+"Arkanese","14","22","36","Burma",2017
+"Bamileke","1","0","1","Burma",2017
+"Burmese","38","34","72","Burma",2017
+"Chin","637","659","1296","Burma",2017
+"Kachin","61","52","113","Burma",2017
+"Karen","537","522","1059","Burma",2017
+"Karen NI (kayar)","54","43","97","Burma",2017
+"Lai","1","0","1","Burma",2017
+"Mixed","30","31","61","Burma",2017
+"Mizo","3","0","3","Burma",2017
+"Mon","15","17","32","Burma",2017
+"Other","49","39","88","Burma",2017
+"Pa-Oh","4","2","6","Burma",2017
+"Rohingya","319","517","836","Burma",2017
+"Shan","5","11","16","Burma",2017
+"Tamil","0","3","3","Burma",2017
+"Thai","1","1","2","Burma",2017
+"Arkanese","11","18","29","Burma",2018
+"Bengali","1","6","7","Burma",2018
+"Burmese","47","45","92","Burma",2018
+"Chin","476","514","990","Burma",2018
+"Ethnic Chinese","1","0","1","Burma",2018
+"Kachin","51","46","97","Burma",2018
+"Karen","557","508","1065","Burma",2018
+"Karen NI (kayar)","206","192","398","Burma",2018
+"Mixed","29","38","67","Burma",2018
+"Mizo","1","0","1","Burma",2018
+"Mon","21","29","50","Burma",2018
+"Other","22","22","44","Burma",2018
+"Pa-Oh","4","4","8","Burma",2018
+"Rohingya","349","563","912","Burma",2018
+"Shan","6","3","9","Burma",2018
+"Tamil","1","0","1","Burma",2018
+"Bakongo","0","9","9","DRC",2009
+"Baluba","0","1","1","DRC",2009
+"Gbandi","2","0","2","DRC",2009
+"Hutu","6","5","11","DRC",2009
+"Mixed","6","11","17","DRC",2009
+"Other","509","508","1017","DRC",2009
+"Tutsi","41","18","59","DRC",2009
+"Unknown","7","11","18","DRC",2009
+"Bakongo","6","5","11","DRC",2010
+"Baluba","2","1","3","DRC",2010
+"Banyamulenge, Banyamulengue","203","199","402","DRC",2010
+"Bembe, Bemba, Mbembe","200","210","410","DRC",2010
+"Congo/Kongo","0","1","1","DRC",2010
+"Fulero, Bafulero, Fuliiru","34","51","85","DRC",2010
+"Hema","31","41","72","DRC",2010
+"Hutu","18","18","36","DRC",2010
+"Luba, Lulua, Baluba, Maluba","9","17","26","DRC",2010
+"Mixed","28","38","66","DRC",2010
+"Mongo","7","2","9","DRC",2010
+"Mushi","58","45","103","DRC",2010
+"Other","826","891","1717","DRC",2010
+"Tutsi","117","92","209","DRC",2010
+"Twa  (Pygmy)","0","2","2","DRC",2010
+"Unknown","4","4","8","DRC",2010
+"Bakongo","7","7","14","DRC",2011
+"Baluba","3","3","6","DRC",2011
+"Banyamulenge, Banyamulengue","76","60","136","DRC",2011
+"Bembe, Bemba, Mbembe","52","65","117","DRC",2011
+"Congo/Kongo","6","4","10","DRC",2011
+"Fulero, Bafulero, Fuliiru","24","21","45","DRC",2011
+"Hema","2","4","6","DRC",2011
+"Hutu","3","2","5","DRC",2011
+"Luba, Lulua, Baluba, Maluba","52","58","110","DRC",2011
+"Mixed","11","10","21","DRC",2011
+"Mongo","2","1","3","DRC",2011
+"Mushi","24","21","45","DRC",2011
+"Other","127","127","254","DRC",2011
+"Tutsi","231","197","428","DRC",2011
+"Unknown","3","3","6","DRC",2011
+"Bakongo","11","10","21","DRC",2012
+"Banyamulenge, Banyamulengue","141","132","273","DRC",2012
+"Bembe, Bemba, Mbembe","230","189","419","DRC",2012
+"Congo/Kongo","13","5","18","DRC",2012
+"Fulero, Bafulero, Fuliiru","38","48","86","DRC",2012
+"Hema","5","6","11","DRC",2012
+"Hutu","17","16","33","DRC",2012
+"Luba, Lulua, Baluba, Maluba","70","57","127","DRC",2012
+"Mixed","2","6","8","DRC",2012
+"Mongo","5","4","9","DRC",2012
+"Mushi","66","60","126","DRC",2012
+"Other","294","252","546","DRC",2012
+"Rahanweyn, Rahweyn","1","0","1","DRC",2012
+"Tutsi","223","214","437","DRC",2012
+"Unknown","9","3","12","DRC",2012
+"Yakoma","2","3","5","DRC",2012
+"Bakongo","2","5","7","DRC",2013
+"Banyamulenge, Banyamulengue","166","190","356","DRC",2013
+"Bembe, Bemba, Mbembe","178","177","355","DRC",2013
+"Congo/Kongo","2","6","8","DRC",2013
+"Fulero, Bafulero, Fuliiru","79","67","146","DRC",2013
+"Hema","10","7","17","DRC",2013
+"Hutu","53","53","106","DRC",2013
+"Luba, Lulua, Baluba, Maluba","89","82","171","DRC",2013
+"Mixed","2","3","5","DRC",2013
+"Mongo","0","2","2","DRC",2013
+"Mushi","58","51","109","DRC",2013
+"Other","337","291","628","DRC",2013
+"Tutsi","333","344","677","DRC",2013
+"Unknown","3","2","5","DRC",2013
+"Bakongo","9","6","15","DRC",2014
+"Banyamulenge, Banyamulengue","303","307","610","DRC",2014
+"Bembe, Bemba, Mbembe","169","146","315","DRC",2014
+"Congo/Kongo","20","23","43","DRC",2014
+"Fulero, Bafulero, Fuliiru","71","68","139","DRC",2014
+"Hema","24","28","52","DRC",2014
+"Hutu","144","142","286","DRC",2014
+"Luba, Lulua, Baluba, Maluba","75","65","140","DRC",2014
+"Mixed","21","30","51","DRC",2014
+"Mongo","3","2","5","DRC",2014
+"Mushi","88","84","172","DRC",2014
+"Other","410","375","785","DRC",2014
+"Tutsi","1292","1216","2508","DRC",2014
+"Twa  (Pygmy)","2","1","3","DRC",2014
+"Unknown","2","2","4","DRC",2014
+"Bakongo","20","13","33","DRC",2015
+"Banyamulenge, Banyamulengue","742","797","1539","DRC",2015
+"Bembe, Bemba, Mbembe","491","496","987","DRC",2015
+"Congo/Kongo","6","6","12","DRC",2015
+"Fulero, Bafulero, Fuliiru","272","301","573","DRC",2015
+"Hema","124","132","256","DRC",2015
+"Hutu","478","429","907","DRC",2015
+"Luba, Lulua, Baluba, Maluba","240","235","475","DRC",2015
+"Mixed","9","6","15","DRC",2015
+"Mongo","17","15","32","DRC",2015
+"Mossi","1","2","3","DRC",2015
+"Mushi","146","126","272","DRC",2015
+"Other","801","815","1616","DRC",2015
+"Tutsi","752","716","1468","DRC",2015
+"Twa  (Pygmy)","4","10","14","DRC",2015
+"Unknown","1","3","4","DRC",2015
+"Bakongo","44","57","101","DRC",2016
+"Baluba","7","7","14","DRC",2016
+"Bantu","1","1","2","DRC",2016
+"Banyamulenge, Banyamulengue","679","733","1412","DRC",2016
+"Bembe, Bemba, Mbembe","3704","3666","7370","DRC",2016
+"Congo/Kongo","40","32","72","DRC",2016
+"Ethnic Chinese","3","3","6","DRC",2016
+"Fulero, Bafulero, Fuliiru","284","316","600","DRC",2016
+"Hema","147","163","310","DRC",2016
+"Hutu","1247","1262","2509","DRC",2016
+"Loko","1","0","1","DRC",2016
+"Luba, Lulua, Baluba, Maluba","182","218","400","DRC",2016
+"Mixed","7","5","12","DRC",2016
+"Mongo","14","23","37","DRC",2016
+"Mushi","275","293","568","DRC",2016
+"Other","1456","1548","3004","DRC",2016
+"Tutsi","1755","1640","3395","DRC",2016
+"Twa  (Pygmy)","9","4","13","DRC",2016
+"Unknown","0","3","3","DRC",2016
+"Bakongo","8","10","18","DRC",2017
+"Baluba","0","1","1","DRC",2017
+"Bantu","1","0","1","DRC",2017
+"Banyamulenge, Banyamulengue","378","405","783","DRC",2017
+"Bembe, Bemba, Mbembe","563","596","1159","DRC",2017
+"Congo/Kongo","14","14","28","DRC",2017
+"Fulero, Bafulero, Fuliiru","163","176","339","DRC",2017
+"Hema","25","17","42","DRC",2017
+"Hutu","323","322","645","DRC",2017
+"Luba, Lulua, Baluba, Maluba","98","106","204","DRC",2017
+"Mixed","2","1","3","DRC",2017
+"Mongo","1","1","2","DRC",2017
+"Mushi","55","54","109","DRC",2017
+"Other","457","428","885","DRC",2017
+"Tutsi","593","535","1128","DRC",2017
+"Unknown","3","2","5","DRC",2017
+"Bakongo","17","23","40","DRC",2018
+"Baluba","0","1","1","DRC",2018
+"Bantu","1","0","1","DRC",2018
+"Banyamulenge, Banyamulengue","593","584","1177","DRC",2018
+"Bembe, Bemba, Mbembe","1421","1399","2820","DRC",2018
+"Benadir","2","2","4","DRC",2018
+"Congo/Kongo","3","15","18","DRC",2018
+"Fulero, Bafulero, Fuliiru","339","335","674","DRC",2018
+"Hema","92","92","184","DRC",2018
+"Hutu","404","412","816","DRC",2018
+"Luba, Lulua, Baluba, Maluba","142","149","291","DRC",2018
+"Mixed","8","9","17","DRC",2018
+"Mongo","2","4","6","DRC",2018
+"Mushi","158","121","279","DRC",2018
+"Other","859","876","1735","DRC",2018
+"Pogule","0","1","1","DRC",2018
+"Tutsi","585","627","1212","DRC",2018
+"Twa  (Pygmy)","9","7","16","DRC",2018
+"Wanande","8","5","13","DRC",2018
+"Arab","4860","5383","10243","Iraq",2009
+"Armenian","166","151","317","Iraq",2009
+"Assyrian","605","555","1160","Iraq",2009
+"Chaldean","3004","2936","5940","Iraq",2009
+"Gypsy/Romany","4","6","10","Iraq",2009
+"Hazara","3","2","5","Iraq",2009
+"Iranian Other","1","1","2","Iraq",2009
+"Iraqi","6","6","12","Iraq",2009
+"Kurd","233","283","516","Iraq",2009
+"Other","50","50","100","Iraq",2009
+"Persian","2","0","2","Iraq",2009
+"Sabeans-Mandean","66","51","117","Iraq",2009
+"Siryac","448","500","948","Iraq",2009
+"Turkish","6","2","8","Iraq",2009
+"Turkmen","41","51","92","Iraq",2009
+"Unknown","0","5","5","Iraq",2009
+"Arab","5103","6008","11111","Iraq",2010
+"Armenian","160","167","327","Iraq",2010
+"Assyrian","429","480","909","Iraq",2010
+"Chaldean","2039","2051","4090","Iraq",2010
+"Chechen","1","1","2","Iraq",2010
+"Gypsy/Romany","1","1","2","Iraq",2010
+"Iraqi","9","13","22","Iraq",2010
+"Jaffery","0","1","1","Iraq",2010
+"Kurd","345","430","775","Iraq",2010
+"Mixed","1","0","1","Iraq",2010
+"Other","12","17","29","Iraq",2010
+"Sabeans-Mandean","19","25","44","Iraq",2010
+"Siryac","408","433","841","Iraq",2010
+"Somali","0","1","1","Iraq",2010
+"Turkish","2","3","5","Iraq",2010
+"Turkmen","35","45","80","Iraq",2010
+"Unknown","3","8","11","Iraq",2010
+"Arab","1475","1660","3135","Iraq",2011
+"Armenian","111","105","216","Iraq",2011
+"Assyrian","188","196","384","Iraq",2011
+"Chaldean","937","870","1807","Iraq",2011
+"Chechen","0","1","1","Iraq",2011
+"Gypsy/Romany","3","3","6","Iraq",2011
+"Iraqi","2","4","6","Iraq",2011
+"Kurd","118","144","262","Iraq",2011
+"Other","17","13","30","Iraq",2011
+"Sabeans-Mandean","9","8","17","Iraq",2011
+"Siryac","211","207","418","Iraq",2011
+"Turkmen","28","27","55","Iraq",2011
+"Unknown","0","2","2","Iraq",2011
+"Arab","4117","4810","8927","Iraq",2012
+"Armenian","199","190","389","Iraq",2012
+"Asante","2","3","5","Iraq",2012
+"Assyrian","311","353","664","Iraq",2012
+"Chaldean","2096","2162","4258","Iraq",2012
+"Chechen","0","1","1","Iraq",2012
+"Gypsy/Romany","7","3","10","Iraq",2012
+"Iraqi","7","14","21","Iraq",2012
+"Kurd","309","378","687","Iraq",2012
+"Other","4","6","10","Iraq",2012
+"Sabeans-Mandean","9","16","25","Iraq",2012
+"Siryac","640","683","1323","Iraq",2012
+"Turkmen","23","19","42","Iraq",2012
+"Unknown","1","6","7","Iraq",2012
+"Arab","5781","6780","12561","Iraq",2013
+"Armenian","177","153","330","Iraq",2013
+"Assyrian","328","305","633","Iraq",2013
+"Chaldean","1526","1470","2996","Iraq",2013
+"Chechen","2","2","4","Iraq",2013
+"Fars","1","1","2","Iraq",2013
+"Iraqi","28","39","67","Iraq",2013
+"Kurd","371","461","832","Iraq",2013
+"Latino","0","1","1","Iraq",2013
+"Mixed","1","0","1","Iraq",2013
+"Other","9","9","18","Iraq",2013
+"Sabeans-Mandean","7","9","16","Iraq",2013
+"Siryac","459","543","1002","Iraq",2013
+"Turkish","3","6","9","Iraq",2013
+"Turkmen","37","49","86","Iraq",2013
+"Unknown","2","7","9","Iraq",2013
+"Arab","6804","7917","14721","Iraq",2014
+"Armenian","161","168","329","Iraq",2014
+"Assyrian","313","300","613","Iraq",2014
+"Chaldean","1203","1235","2438","Iraq",2014
+"Chechen","2","3","5","Iraq",2014
+"Iraqi","11","15","26","Iraq",2014
+"Kurd","592","681","1273","Iraq",2014
+"Latino","3","4","7","Iraq",2014
+"Other","10","12","22","Iraq",2014
+"Sabeans-Mandean","6","13","19","Iraq",2014
+"Siryac","379","402","781","Iraq",2014
+"Turkmen","41","58","99","Iraq",2014
+"Unknown","3","1","4","Iraq",2014
+"Arab","3599","4091","7690","Iraq",2015
+"Armenian","31","27","58","Iraq",2015
+"Assyrian","138","150","288","Iraq",2015
+"Chaldean","388","393","781","Iraq",2015
+"Gypsy/Romany","3","3","6","Iraq",2015
+"Iraqi","4","5","9","Iraq",2015
+"Jewish","1","0","1","Iraq",2015
+"Kurd","378","457","835","Iraq",2015
+"Mixed","0","2","2","Iraq",2015
+"Other","3","3","6","Iraq",2015
+"Persian","1","2","3","Iraq",2015
+"Sabeans-Mandean","7","4","11","Iraq",2015
+"Siryac","180","197","377","Iraq",2015
+"Turkmen","45","57","102","Iraq",2015
+"Arab","3901","4070","7971","Iraq",2016
+"Armenian","60","48","108","Iraq",2016
+"Assyrian","140","125","265","Iraq",2016
+"Chaldean","523","504","1027","Iraq",2016
+"Hawiye","0","1","1","Iraq",2016
+"Iraqi","1","5","6","Iraq",2016
+"Kurd","691","726","1417","Iraq",2016
+"Other","5","3","8","Iraq",2016
+"Sabeans-Mandean","4","6","10","Iraq",2016
+"Siryac","230","232","462","Iraq",2016
+"Turkmen","34","23","57","Iraq",2016
+"Arab","1151","1059","2210","Iraq",2017
+"Armenian","9","5","14","Iraq",2017
+"Assyrian","67","62","129","Iraq",2017
+"Chaldean","172","138","310","Iraq",2017
+"Gypsy/Romany","4","3","7","Iraq",2017
+"Iraqi","1","3","4","Iraq",2017
+"Kurd","224","208","432","Iraq",2017
+"Other","6","5","11","Iraq",2017
+"Siryac","114","91","205","Iraq",2017
+"Turkmen","10","6","16","Iraq",2017
+"Unknown","1","0","1","Iraq",2017
+"Arab","33","27","60","Iraq",2018
+"Armenian","2","1","3","Iraq",2018
+"Assyrian","3","1","4","Iraq",2018
+"Chaldean","4","5","9","Iraq",2018
+"Kurd","5","4","9","Iraq",2018
+"Siryac","4","2","6","Iraq",2018
+"Arab","3","6","9","Somalia",2009
+"Asharaf","176","174","350","Somalia",2009
+"Bajuni, Banjuni","94","111","205","Somalia",2009
+"Bantu","49","22","71","Somalia",2009
+"Barawan","30","33","63","Somalia",2009
+"Benadir","59","44","103","Somalia",2009
+"Darod","1045","1006","2051","Somalia",2009
+"Dir","52","63","115","Somalia",2009
+"Hawiye","226","220","446","Somalia",2009
+"Issak","6","7","13","Somalia",2009
+"Majindo","18","13","31","Somalia",2009
+"Midgan","11","7","18","Somalia",2009
+"Mixed","6","5","11","Somalia",2009
+"Oromo","7","7","14","Somalia",2009
+"Other","397","483","880","Somalia",2009
+"Rahanweyn, Rahweyn","42","24","66","Somalia",2009
+"Somali","8","11","19","Somalia",2009
+"Tumale, Tumal, Tumaal","31","22","53","Somalia",2009
+"Tuni","51","38","89","Somalia",2009
+"Unknown","5","8","13","Somalia",2009
+"Ajuran, Ajuuran","22","18","40","Somalia",2010
+"Arab","3","5","8","Somalia",2010
+"Asharaf","112","99","211","Somalia",2010
+"Bajuni, Banjuni","67","72","139","Somalia",2010
+"Bantu","49","82","131","Somalia",2010
+"Barawan","21","23","44","Somalia",2010
+"Begedi","4","3","7","Somalia",2010
+"Benadir","73","81","154","Somalia",2010
+"Darod","877","921","1798","Somalia",2010
+"Digil-Mirifle","10","15","25","Somalia",2010
+"Dir","68","73","141","Somalia",2010
+"Duduble","1","0","1","Somalia",2010
+"Eritrean","0","1","1","Somalia",2010
+"Gaali/Gali","1","1","2","Somalia",2010
+"Gaboye, Gabooye","14","10","24","Somalia",2010
+"Galgalo, Galgala, Galagle","10","14","24","Somalia",2010
+"Geledi","9","11","20","Somalia",2010
+"Hawiye","271","265","536","Somalia",2010
+"Issak","12","11","23","Somalia",2010
+"Maalia","1","1","2","Somalia",2010
+"Madiban, Madhiban","30","38","68","Somalia",2010
+"Marehan","0","1","1","Somalia",2010
+"Midgan","51","49","100","Somalia",2010
+"Mixed","3","4","7","Somalia",2010
+"Ogaden","3","8","11","Somalia",2010
+"Oromo","4","5","9","Somalia",2010
+"Other","214","200","414","Somalia",2010
+"Rahanweyn, Rahweyn","38","46","84","Somalia",2010
+"Rer Hamar, Reer Hamar","21","15","36","Somalia",2010
+"Shabo","0","3","3","Somalia",2010
+"Shanshi, Shanshiye","10","8","18","Somalia",2010
+"Sharif","0","1","1","Somalia",2010
+"Sheikhal, Shekhal","39","38","77","Somalia",2010
+"Somali","33","17","50","Somalia",2010
+"Tumale, Tumal, Tumaal","48","26","74","Somalia",2010
+"Tuni","40","47","87","Somalia",2010
+"Unknown","15","14","29","Somalia",2010
+"Yibir","1","0","1","Somalia",2010
+"Ajuran, Ajuuran","2","4","6","Somalia",2011
+"Arab","6","3","9","Somalia",2011
+"Asharaf","75","60","135","Somalia",2011
+"Bajuni, Banjuni","55","38","93","Somalia",2011
+"Bantu","33","35","68","Somalia",2011
+"Barawan","29","20","49","Somalia",2011
+"Bederia","1","0","1","Somalia",2011
+"Begedi","2","1","3","Somalia",2011
+"Benadir","38","28","66","Somalia",2011
+"Darod","817","774","1591","Somalia",2011
+"Digil-Mirifle","44","43","87","Somalia",2011
+"Dir","78","67","145","Somalia",2011
+"Gaboye, Gabooye","36","27","63","Somalia",2011
+"Galgalo, Galgala, Galagle","1","2","3","Somalia",2011
+"Geledi","3","3","6","Somalia",2011
+"Hawiye","217","204","421","Somalia",2011
+"Issak","11","7","18","Somalia",2011
+"Jaali/Jali","6","0","6","Somalia",2011
+"Madiban, Madhiban","59","33","92","Somalia",2011
+"Majindo","5","4","9","Somalia",2011
+"Marehan","1","1","2","Somalia",2011
+"Midgan","31","23","54","Somalia",2011
+"Ogaden","4","8","12","Somalia",2011
+"Oromo","1","0","1","Somalia",2011
+"Other","65","74","139","Somalia",2011
+"Rahanweyn, Rahweyn","25","23","48","Somalia",2011
+"Rer Hamar, Reer Hamar","34","30","64","Somalia",2011
+"Shanshi, Shanshiye","3","4","7","Somalia",2011
+"Sheikhal, Shekhal","49","51","100","Somalia",2011
+"Somali","25","17","42","Somalia",2011
+"Tumale, Tumal, Tumaal","5","7","12","Somalia",2011
+"Tuni","45","44","89","Somalia",2011
+"Unknown","6","4","10","Somalia",2011
+"Yibir","1","1","2","Somalia",2011
+"Ajuran, Ajuuran","6","18","24","Somalia",2012
+"Arab","7","4","11","Somalia",2012
+"Asharaf","180","197","377","Somalia",2012
+"Bajuni, Banjuni","42","57","99","Somalia",2012
+"Bantu","70","85","155","Somalia",2012
+"Barawan","20","20","40","Somalia",2012
+"Begedi","5","11","16","Somalia",2012
+"Benadir","75","79","154","Somalia",2012
+"Darod","911","1026","1937","Somalia",2012
+"Digil-Mirifle","52","71","123","Somalia",2012
+"Dir","109","124","233","Somalia",2012
+"Gaali/Gali","0","1","1","Somalia",2012
+"Gaboye, Gabooye","58","45","103","Somalia",2012
+"Galgalo, Galgala, Galagle","7","10","17","Somalia",2012
+"Geledi","6","4","10","Somalia",2012
+"Hawiye","363","509","872","Somalia",2012
+"Issak","19","16","35","Somalia",2012
+"Jarai","1","0","1","Somalia",2012
+"Kurd","0","1","1","Somalia",2012
+"Madiban, Madhiban","96","132","228","Somalia",2012
+"Manyasa","2","2","4","Somalia",2012
+"Marehan","8","8","16","Somalia",2012
+"Midgan","68","80","148","Somalia",2012
+"Mixed","1","5","6","Somalia",2012
+"Mushanguli","1","4","5","Somalia",2012
+"Ogaden","18","17","35","Somalia",2012
+"Other","91","161","252","Somalia",2012
+"Rahanweyn, Rahweyn","92","101","193","Somalia",2012
+"Rer Hamar, Reer Hamar","72","65","137","Somalia",2012
+"Shabo","2","2","4","Somalia",2012
+"Shanshi, Shanshiye","14","8","22","Somalia",2012
+"Sharif","1","1","2","Somalia",2012
+"Sheikhal, Shekhal","153","209","362","Somalia",2012
+"Somali","43","49","92","Somalia",2012
+"Tumale, Tumal, Tumaal","21","32","53","Somalia",2012
+"Tuni","54","56","110","Somalia",2012
+"Unknown","5","6","11","Somalia",2012
+"Yibir","1","3","4","Somalia",2012
+"Ajuran, Ajuuran","8","15","23","Somalia",2013
+"Amharic/Amhara","0","1","1","Somalia",2013
+"Arab","2","5","7","Somalia",2013
+"Asharaf","233","262","495","Somalia",2013
+"Bajuni, Banjuni","64","82","146","Somalia",2013
+"Bantu","136","136","272","Somalia",2013
+"Barawan","49","60","109","Somalia",2013
+"Begedi","8","9","17","Somalia",2013
+"Benadir","64","62","126","Somalia",2013
+"Darod","1059","1097","2156","Somalia",2013
+"Digil-Mirifle","80","115","195","Somalia",2013
+"Dir","134","134","268","Somalia",2013
+"Fulero, Bafulero, Fuliiru","2","0","2","Somalia",2013
+"Gaali/Gali","1","2","3","Somalia",2013
+"Gaboye, Gabooye","65","85","150","Somalia",2013
+"Galgalo, Galgala, Galagle","18","16","34","Somalia",2013
+"Geledi","12","18","30","Somalia",2013
+"Hawiye","369","593","962","Somalia",2013
+"Issak","25","14","39","Somalia",2013
+"Jaali/Jali","4","4","8","Somalia",2013
+"Kurd","4","3","7","Somalia",2013
+"Madiban, Madhiban","174","221","395","Somalia",2013
+"Majindo","2","0","2","Somalia",2013
+"Manyasa","7","5","12","Somalia",2013
+"Marehan","5","13","18","Somalia",2013
+"Midgan","132","140","272","Somalia",2013
+"Mixed","3","2","5","Somalia",2013
+"Mushanguli","3","1","4","Somalia",2013
+"Ogaden","27","38","65","Somalia",2013
+"Oromo","5","2","7","Somalia",2013
+"Other","161","241","402","Somalia",2013
+"Rahanweyn, Rahweyn","55","85","140","Somalia",2013
+"Rer Hamar, Reer Hamar","102","108","210","Somalia",2013
+"Shabo","0","2","2","Somalia",2013
+"Shanshi, Shanshiye","9","14","23","Somalia",2013
+"Sharif","4","7","11","Somalia",2013
+"Sheikhal, Shekhal","160","229","389","Somalia",2013
+"Somali","53","59","112","Somalia",2013
+"Tumale, Tumal, Tumaal","59","59","118","Somalia",2013
+"Tuni","84","94","178","Somalia",2013
+"Unknown","8","16","24","Somalia",2013
+"Yibir","5","6","11","Somalia",2013
+"Afghan","1","0","1","Somalia",2014
+"Ajuran, Ajuuran","12","10","22","Somalia",2014
+"Arab","4","5","9","Somalia",2014
+"Asharaf","260","270","530","Somalia",2014
+"Bajuni, Banjuni","93","124","217","Somalia",2014
+"Bantu","266","290","556","Somalia",2014
+"Barawan","49","64","113","Somalia",2014
+"Begedi","3","8","11","Somalia",2014
+"Benadir","77","76","153","Somalia",2014
+"Darod","1786","1914","3700","Somalia",2014
+"Digil-Mirifle","69","82","151","Somalia",2014
+"Dir","193","164","357","Somalia",2014
+"Duduble","1","3","4","Somalia",2014
+"Gaali/Gali","0","1","1","Somalia",2014
+"Gaboye, Gabooye","94","84","178","Somalia",2014
+"Galgalo, Galgala, Galagle","18","22","40","Somalia",2014
+"Geledi","5","8","13","Somalia",2014
+"Hawiye","679","749","1428","Somalia",2014
+"Issak","43","27","70","Somalia",2014
+"Kurd","8","2","10","Somalia",2014
+"Madiban, Madhiban","150","150","300","Somalia",2014
+"Majindo","21","21","42","Somalia",2014
+"Manyasa","5","5","10","Somalia",2014
+"Marehan","23","21","44","Somalia",2014
+"Midgan","78","97","175","Somalia",2014
+"Mixed","7","6","13","Somalia",2014
+"Mushanguli","8","10","18","Somalia",2014
+"Ogaden","68","69","137","Somalia",2014
+"Other","237","274","511","Somalia",2014
+"Rahanweyn, Rahweyn","100","129","229","Somalia",2014
+"Rer Hamar, Reer Hamar","59","57","116","Somalia",2014
+"Shanshi, Shanshiye","7","11","18","Somalia",2014
+"Sharif","1","1","2","Somalia",2014
+"Sheikhal, Shekhal","183","213","396","Somalia",2014
+"Somali","77","106","183","Somalia",2014
+"Tumale, Tumal, Tumaal","43","55","98","Somalia",2014
+"Tuni","78","91","169","Somalia",2014
+"Unknown","2","7","9","Somalia",2014
+"Yibir","12","11","23","Somalia",2014
+"Ajuran, Ajuuran","9","18","27","Somalia",2015
+"Arab","12","11","23","Somalia",2015
+"Asharaf","223","210","433","Somalia",2015
+"Bajuni, Banjuni","48","57","105","Somalia",2015
+"Bantu","295","311","606","Somalia",2015
+"Barawan","43","35","78","Somalia",2015
+"Bederia","1","0","1","Somalia",2015
+"Begedi","12","9","21","Somalia",2015
+"Benadir","64","57","121","Somalia",2015
+"Darod","1186","1224","2410","Somalia",2015
+"Digil-Mirifle","50","43","93","Somalia",2015
+"Dir","150","142","292","Somalia",2015
+"Duduble","0","4","4","Somalia",2015
+"Gaali/Gali","0","1","1","Somalia",2015
+"Gaboye, Gabooye","109","88","197","Somalia",2015
+"Galgalo, Galgala, Galagle","6","11","17","Somalia",2015
+"Geledi","5","6","11","Somalia",2015
+"Hawiye","536","601","1137","Somalia",2015
+"Issak","35","37","72","Somalia",2015
+"Madiban, Madhiban","180","144","324","Somalia",2015
+"Majindo","6","2","8","Somalia",2015
+"Manyasa","4","5","9","Somalia",2015
+"Marehan","24","22","46","Somalia",2015
+"Midgan","74","45","119","Somalia",2015
+"Mixed","1","1","2","Somalia",2015
+"Moldavian","0","1","1","Somalia",2015
+"Ogaden","48","33","81","Somalia",2015
+"Oromo","1","2","3","Somalia",2015
+"Other","123","173","296","Somalia",2015
+"Rahanweyn, Rahweyn","65","87","152","Somalia",2015
+"Rer Hamar, Reer Hamar","87","49","136","Somalia",2015
+"Shanshi, Shanshiye","29","15","44","Somalia",2015
+"Sharif","10","2","12","Somalia",2015
+"Sheikhal, Shekhal","186","179","365","Somalia",2015
+"Sino-Lao","0","1","1","Somalia",2015
+"Somali","156","156","312","Somalia",2015
+"Tumale, Tumal, Tumaal","42","41","83","Somalia",2015
+"Tuni","59","63","122","Somalia",2015
+"Unknown","2","4","6","Somalia",2015
+"Yibir","4","4","8","Somalia",2015
+"Ajuran, Ajuuran","6","10","16","Somalia",2016
+"Arab","9","13","22","Somalia",2016
+"Asharaf","284","258","542","Somalia",2016
+"Bajuni, Banjuni","70","83","153","Somalia",2016
+"Bantu","738","727","1465","Somalia",2016
+"Barawan","60","64","124","Somalia",2016
+"Basengele","3","3","6","Somalia",2016
+"Begedi","5","11","16","Somalia",2016
+"Benadir","108","67","175","Somalia",2016
+"Darod","1661","1717","3378","Somalia",2016
+"Digil-Mirifle","55","58","113","Somalia",2016
+"Dir","230","202","432","Somalia",2016
+"Gaboye, Gabooye","64","71","135","Somalia",2016
+"Galgalo, Galgala, Galagle","53","49","102","Somalia",2016
+"Geledi","10","5","15","Somalia",2016
+"Hawiye","689","772","1461","Somalia",2016
+"Issak","20","17","37","Somalia",2016
+"Jarai","2","2","4","Somalia",2016
+"Madiban, Madhiban","251","205","456","Somalia",2016
+"Majindo","7","12","19","Somalia",2016
+"Marehan","40","45","85","Somalia",2016
+"Midgan","62","45","107","Somalia",2016
+"Mixed","3","2","5","Somalia",2016
+"Mushanguli","3","3","6","Somalia",2016
+"Ogaden","140","149","289","Somalia",2016
+"Oromo","2","1","3","Somalia",2016
+"Other","170","190","360","Somalia",2016
+"Rahanweyn, Rahweyn","127","109","236","Somalia",2016
+"Rer Hamar, Reer Hamar","73","48","121","Somalia",2016
+"Shabo","0","1","1","Somalia",2016
+"Shan","1","1","2","Somalia",2016
+"Shanshi, Shanshiye","9","11","20","Somalia",2016
+"Sharif","1","3","4","Somalia",2016
+"Sheikhal, Shekhal","221","226","447","Somalia",2016
+"Somali","137","110","247","Somalia",2016
+"Tumale, Tumal, Tumaal","44","28","72","Somalia",2016
+"Tuni","50","49","99","Somalia",2016
+"Unknown","5","4","9","Somalia",2016
+"Yibir","2","0","2","Somalia",2016
+"Ajuran, Ajuuran","8","6","14","Somalia",2017
+"Arab","5","5","10","Somalia",2017
+"Asharaf","67","49","116","Somalia",2017
+"Bajuni, Banjuni","12","15","27","Somalia",2017
+"Bantu","113","113","226","Somalia",2017
+"Barawan","16","13","29","Somalia",2017
+"Begedi","1","0","1","Somalia",2017
+"Benadir","22","16","38","Somalia",2017
+"Darod","433","328","761","Somalia",2017
+"Digil-Mirifle","26","23","49","Somalia",2017
+"Dir","61","54","115","Somalia",2017
+"Gaboye, Gabooye","8","9","17","Somalia",2017
+"Galgalo, Galgala, Galagle","0","1","1","Somalia",2017
+"Geledi","2","3","5","Somalia",2017
+"Hawiye","190","191","381","Somalia",2017
+"Issak","15","12","27","Somalia",2017
+"Madiban, Madhiban","43","29","72","Somalia",2017
+"Marehan","6","10","16","Somalia",2017
+"Midgan","22","19","41","Somalia",2017
+"Mixed","5","3","8","Somalia",2017
+"Ogaden","87","90","177","Somalia",2017
+"Oromo","2","4","6","Somalia",2017
+"Other","96","74","170","Somalia",2017
+"Rahanweyn, Rahweyn","16","13","29","Somalia",2017
+"Rer Hamar, Reer Hamar","22","4","26","Somalia",2017
+"Shabo","1","0","1","Somalia",2017
+"Shanshi, Shanshiye","0","2","2","Somalia",2017
+"Sheikhal, Shekhal","70","59","129","Somalia",2017
+"Somali","136","93","229","Somalia",2017
+"Tumale, Tumal, Tumaal","16","3","19","Somalia",2017
+"Tuni","14","12","26","Somalia",2017
+"Unknown","1","1","2","Somalia",2017
+"Asharaf","0","2","2","Somalia",2018
+"Bajuni, Banjuni","1","2","3","Somalia",2018
+"Benadir","2","4","6","Somalia",2018
+"Darod","0","1","1","Somalia",2018
+"Gaboye, Gabooye","0","1","1","Somalia",2018
+"Hawiye","2","1","3","Somalia",2018
+"Madiban, Madhiban","1","0","1","Somalia",2018
+"Rer Hamar, Reer Hamar","0","1","1","Somalia",2018
+"Sheikhal, Shekhal","1","0","1","Somalia",2018
+"Somali","77","41","118","Somalia",2018
+"Tumale, Tumal, Tumaal","0","1","1","Somalia",2018
+"Unknown","0","1","1","Somalia",2018

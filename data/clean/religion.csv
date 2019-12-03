@@ -1,0 +1,549 @@
+"Religion","Male","Female","Total","country","Year"
+"Buddhist","748","853","1601","Bhutan",2009
+"Christian","534","518","1052","Bhutan",2009
+"Hindu","5798","5993","11791","Bhutan",2009
+"Kirat","305","328","633","Bhutan",2009
+"Buddhist","925","910","1835","Bhutan",2010
+"Christian","468","453","921","Bhutan",2010
+"Hindu","4167","4234","8401","Bhutan",2010
+"Kirat","285","287","572","Bhutan",2010
+"Buddhist","1578","1617","3195","Bhutan",2011
+"Christian","662","630","1292","Bhutan",2011
+"Hindu","4540","4598","9138","Bhutan",2011
+"Kirat","538","572","1110","Bhutan",2011
+"Buddhist","2033","2128","4161","Bhutan",2012
+"Christian","767","731","1498","Bhutan",2012
+"Hindu","3604","3673","7277","Bhutan",2012
+"Kirat","739","784","1523","Bhutan",2012
+"Buddhist","1351","1456","2807","Bhutan",2013
+"Christian","554","559","1113","Bhutan",2013
+"Hindu","1876","1920","3796","Bhutan",2013
+"Kirat","642","691","1333","Bhutan",2013
+"Unknown","1","1","2","Bhutan",2013
+"Buddhist","1155","1205","2360","Bhutan",2014
+"Christian","504","465","969","Bhutan",2014
+"Hindu","1475","1459","2934","Bhutan",2014
+"Kirat","622","591","1213","Bhutan",2014
+"Buddhist","827","827","1654","Bhutan",2015
+"Christian","530","497","1027","Bhutan",2015
+"Hindu","1129","1096","2225","Bhutan",2015
+"Kirat","415","434","849","Bhutan",2015
+"Other Religion","3","5","8","Bhutan",2015
+"Unknown","0","1","1","Bhutan",2015
+"Buddhist","841","832","1673","Bhutan",2016
+"Christian","701","621","1322","Bhutan",2016
+"Hindu","1057","927","1984","Bhutan",2016
+"Kirat","485","504","989","Bhutan",2016
+"Other Religion","3","2","5","Bhutan",2016
+"Unknown","0","1","1","Bhutan",2016
+"Buddhist","605","524","1129","Bhutan",2017
+"Christian","386","340","726","Bhutan",2017
+"Hindu","636","501","1137","Bhutan",2017
+"Kirat","329","315","644","Bhutan",2017
+"Moslem","1","1","2","Bhutan",2017
+"No Religion","1","1","2","Bhutan",2017
+"Buddhist","108","110","218","Bhutan",2018
+"Christian","66","67","133","Bhutan",2018
+"Hindu","103","111","214","Bhutan",2018
+"Kirat","70","72","142","Bhutan",2018
+"Animist","1094","1240","2334","Burma",2009
+"Baptist","82","87","169","Burma",2009
+"Buddhist","1169","1525","2694","Burma",2009
+"Catholic","738","816","1554","Burma",2009
+"Christian","5419","6376","11795","Burma",2009
+"Evangelical Christian","0","1","1","Burma",2009
+"Hindu","4","5","9","Burma",2009
+"Methodist","3","1","4","Burma",2009
+"Moslem","662","652","1314","Burma",2009
+"Moslem Suni","4","2","6","Burma",2009
+"No Religion","0","2","2","Burma",2009
+"Other Religion","0","2","2","Burma",2009
+"Protestant","12","18","30","Burma",2009
+"Seventh Day Adventist","3","2","5","Burma",2009
+"Unknown","1","0","1","Burma",2009
+"Animist","295","324","619","Burma",2010
+"Baptist","367","417","784","Burma",2010
+"Buddhist","1039","1382","2421","Burma",2010
+"Catholic","437","488","925","Burma",2010
+"Christian","5380","6164","11544","Burma",2010
+"Hindu","1","1","2","Burma",2010
+"Lutheran","0","1","1","Burma",2010
+"Methodist","3","5","8","Burma",2010
+"Moslem","373","430","803","Burma",2010
+"No Religion","0","2","2","Burma",2010
+"Other Religion","7","6","13","Burma",2010
+"Pentecostalist","1","6","7","Burma",2010
+"Protestant","9","6","15","Burma",2010
+"Seventh Day Adventist","9","13","22","Burma",2010
+"Unknown","8","2","10","Burma",2010
+"Animist","155","204","359","Burma",2011
+"Baptist","404","513","917","Burma",2011
+"Buddhist","1027","1457","2484","Burma",2011
+"Catholic","278","355","633","Burma",2011
+"Christian","4974","5560","10534","Burma",2011
+"Hindu","3","5","8","Burma",2011
+"Methodist","9","18","27","Burma",2011
+"Moslem","336","366","702","Burma",2011
+"No Religion","0","1","1","Burma",2011
+"Other Religion","5","5","10","Burma",2011
+"Pentecostalist","6","10","16","Burma",2011
+"Protestant","0","1","1","Burma",2011
+"Seventh Day Adventist","7","9","16","Burma",2011
+"Unknown","3","2","5","Burma",2011
+"Animist","129","147","276","Burma",2012
+"Atheist","1","0","1","Burma",2012
+"Baptist","536","729","1265","Burma",2012
+"Buddhist","1107","1615","2722","Burma",2012
+"Catholic","211","270","481","Burma",2012
+"Christian","4028","5279","9307","Burma",2012
+"Evangelical Christian","5","3","8","Burma",2012
+"Hindu","6","13","19","Burma",2012
+"Jehovah Witness","2","2","4","Burma",2012
+"Methodist","9","26","35","Burma",2012
+"Moslem","418","516","934","Burma",2012
+"No Religion","0","1","1","Burma",2012
+"Other Religion","1","0","1","Burma",2012
+"Pentecostalist","6","7","13","Burma",2012
+"Protestant","2","4","6","Burma",2012
+"Seventh Day Adventist","15","21","36","Burma",2012
+"Unknown","2","1","3","Burma",2012
+"Ancestral Worship","0","1","1","Burma",2013
+"Animist","197","216","413","Burma",2013
+"Baptist","387","481","868","Burma",2013
+"Buddhist","1199","1624","2823","Burma",2013
+"Catholic","228","236","464","Burma",2013
+"Christian","4018","4868","8886","Burma",2013
+"Evangelical Christian","11","16","27","Burma",2013
+"Hindu","2","5","7","Burma",2013
+"Methodist","13","26","39","Burma",2013
+"Moslem","457","526","983","Burma",2013
+"Moslem Suni","7","3","10","Burma",2013
+"No Religion","0","1","1","Burma",2013
+"Other Religion","3","5","8","Burma",2013
+"Pentecostalist","6","8","14","Burma",2013
+"Protestant","1","3","4","Burma",2013
+"Seventh Day Adventist","9","20","29","Burma",2013
+"Unknown","2","1","3","Burma",2013
+"Animist","168","165","333","Burma",2014
+"Baptist","464","511","975","Burma",2014
+"Buddhist","977","1360","2337","Burma",2014
+"Catholic","153","189","342","Burma",2014
+"Christian","4789","5590","10379","Burma",2014
+"Evangelical Christian","12","18","30","Burma",2014
+"Hindu","6","3","9","Burma",2014
+"Jehovah Witness","6","5","11","Burma",2014
+"Methodist","14","15","29","Burma",2014
+"Moslem","637","802","1439","Burma",2014
+"Moslem Suni","0","1","1","Burma",2014
+"Other Religion","5","10","15","Burma",2014
+"Pentecostalist","9","13","22","Burma",2014
+"Protestant","2","2","4","Burma",2014
+"Seventh Day Adventist","17","20","37","Burma",2014
+"Unknown","3","5","8","Burma",2014
+"Animist","171","181","352","Burma",2015
+"Baptist","396","410","806","Burma",2015
+"Buddhist","875","1070","1945","Burma",2015
+"Catholic","220","262","482","Burma",2015
+"Christian","4485","5220","9705","Burma",2015
+"Evangelical Christian","6","6","12","Burma",2015
+"Hindu","2","7","9","Burma",2015
+"Jehovah Witness","2","5","7","Burma",2015
+"Methodist","11","13","24","Burma",2015
+"Moslem","1656","2404","4060","Burma",2015
+"Moslem Suni","8","3","11","Burma",2015
+"No Religion","2","3","5","Burma",2015
+"Other Religion","10","3","13","Burma",2015
+"Pentecostalist","15","17","32","Burma",2015
+"Protestant","1","3","4","Burma",2015
+"Seventh Day Adventist","6","10","16","Burma",2015
+"Animist","78","78","156","Burma",2016
+"Atheist","0","1","1","Burma",2016
+"Baptist","213","218","431","Burma",2016
+"Buddhist","647","700","1347","Burma",2016
+"Catholic","134","144","278","Burma",2016
+"Christian","3099","3214","6313","Burma",2016
+"Evangelical Christian","13","11","24","Burma",2016
+"Hindu","2","4","6","Burma",2016
+"Methodist","3","3","6","Burma",2016
+"Moslem","1302","1687","2989","Burma",2016
+"Moslem Suni","4","3","7","Burma",2016
+"No Religion","3","2","5","Burma",2016
+"Other Religion","2","2","4","Burma",2016
+"Pentecostalist","3","2","5","Burma",2016
+"Animist","31","26","57","Burma",2017
+"Atheist","0","1","1","Burma",2017
+"Baptist","22","18","40","Burma",2017
+"Buddhist","231","268","499","Burma",2017
+"Catholic","41","33","74","Burma",2017
+"Christian","1027","988","2015","Burma",2017
+"Evangelical Christian","2","2","4","Burma",2017
+"Hindu","0","4","4","Burma",2017
+"Moslem","410","599","1009","Burma",2017
+"Moslem Suni","0","8","8","Burma",2017
+"No Religion","1","0","1","Burma",2017
+"Other Religion","1","3","4","Burma",2017
+"Seventh Day Adventist","3","3","6","Burma",2017
+"Animist","156","143","299","Burma",2018
+"Baptist","38","40","78","Burma",2018
+"Buddhist","216","221","437","Burma",2018
+"Catholic","37","38","75","Burma",2018
+"Christian","882","869","1751","Burma",2018
+"Hindu","2","1","3","Burma",2018
+"Moslem","430","576","1006","Burma",2018
+"Moslem Suni","16","95","111","Burma",2018
+"Other Religion","4","2","6","Burma",2018
+"Protestant","0","1","1","Burma",2018
+"Seventh Day Adventist","2","2","4","Burma",2018
+"Baptist","0","1","1","DRC",2009
+"Catholic","118","109","227","DRC",2009
+"Christian","62","74","136","DRC",2009
+"Jehovah Witness","32","23","55","DRC",2009
+"Methodist","41","36","77","DRC",2009
+"Moslem","25","19","44","DRC",2009
+"No Religion","1","2","3","DRC",2009
+"Other Religion","0","1","1","DRC",2009
+"Pentecostalist","153","138","291","DRC",2009
+"Protestant","120","142","262","DRC",2009
+"Seventh Day Adventist","18","12","30","DRC",2009
+"Unknown","1","6","7","DRC",2009
+"Baptist","15","20","35","DRC",2010
+"Catholic","329","336","665","DRC",2010
+"Christian","157","159","316","DRC",2010
+"Evangelical Christian","2","5","7","DRC",2010
+"Jehovah Witness","103","111","214","DRC",2010
+"Lutheran","55","46","101","DRC",2010
+"Methodist","127","145","272","DRC",2010
+"Moslem","71","87","158","DRC",2010
+"Moslem Suni","0","2","2","DRC",2010
+"No Religion","0","1","1","DRC",2010
+"Other Religion","9","4","13","DRC",2010
+"Pentecostalist","403","435","838","DRC",2010
+"Protestant","185","201","386","DRC",2010
+"Seventh Day Adventist","86","64","150","DRC",2010
+"Unknown","1","1","2","DRC",2010
+"Bahai","0","1","1","DRC",2011
+"Catholic","126","106","232","DRC",2011
+"Christian","60","51","111","DRC",2011
+"Jehovah Witness","17","16","33","DRC",2011
+"Lutheran","4","4","8","DRC",2011
+"Methodist","13","10","23","DRC",2011
+"Moslem","12","8","20","DRC",2011
+"Other Religion","6","14","20","DRC",2011
+"Pentecostalist","169","157","326","DRC",2011
+"Protestant","122","138","260","DRC",2011
+"Seventh Day Adventist","92","77","169","DRC",2011
+"Unknown","2","1","3","DRC",2011
+"Bahai","1","4","5","DRC",2012
+"Baptist","7","11","18","DRC",2012
+"Catholic","225","201","426","DRC",2012
+"Christian","141","116","257","DRC",2012
+"Jehovah Witness","36","27","63","DRC",2012
+"Methodist","43","37","80","DRC",2012
+"Moslem","40","45","85","DRC",2012
+"Other Religion","11","6","17","DRC",2012
+"Pentecostalist","237","205","442","DRC",2012
+"Protestant","248","229","477","DRC",2012
+"Seventh Day Adventist","128","123","251","DRC",2012
+"Unknown","10","1","11","DRC",2012
+"Baptist","14","9","23","DRC",2013
+"Catholic","209","223","432","DRC",2013
+"Christian","162","164","326","DRC",2013
+"Jehovah Witness","50","54","104","DRC",2013
+"Lutheran","6","11","17","DRC",2013
+"Methodist","42","50","92","DRC",2013
+"Moslem","46","61","107","DRC",2013
+"Other Religion","5","3","8","DRC",2013
+"Pentecostalist","343","295","638","DRC",2013
+"Protestant","265","255","520","DRC",2013
+"Seventh Day Adventist","170","151","321","DRC",2013
+"Unknown","0","4","4","DRC",2013
+"Bahai","2","6","8","DRC",2014
+"Baptist","30","45","75","DRC",2014
+"Catholic","486","404","890","DRC",2014
+"Christian","155","175","330","DRC",2014
+"Jehovah Witness","49","55","104","DRC",2014
+"Methodist","74","58","132","DRC",2014
+"Moslem","90","90","180","DRC",2014
+"No Religion","1","5","6","DRC",2014
+"Other Religion","9","6","15","DRC",2014
+"Pentecostalist","530","487","1017","DRC",2014
+"Protestant","386","375","761","DRC",2014
+"Seventh Day Adventist","807","776","1583","DRC",2014
+"Unknown","14","13","27","DRC",2014
+"Bahai","2","2","4","DRC",2015
+"Baptist","82","82","164","DRC",2015
+"Catholic","508","560","1068","DRC",2015
+"Christian","336","375","711","DRC",2015
+"Evangelical Christian","0","1","1","DRC",2015
+"Jehovah Witness","162","140","302","DRC",2015
+"Methodist","120","104","224","DRC",2015
+"Moslem","199","194","393","DRC",2015
+"No Religion","0","1","1","DRC",2015
+"Other Religion","4","7","11","DRC",2015
+"Pentecostalist","1154","1168","2322","DRC",2015
+"Protestant","987","967","1954","DRC",2015
+"Seventh Day Adventist","550","500","1050","DRC",2015
+"Unknown","0","1","1","DRC",2015
+"Bahai","21","18","39","DRC",2016
+"Baptist","307","292","599","DRC",2016
+"Catholic","1291","1381","2672","DRC",2016
+"Christian","2575","2598","5173","DRC",2016
+"Jehovah Witness","294","296","590","DRC",2016
+"Mennonite","3","2","5","DRC",2016
+"Methodist","681","625","1306","DRC",2016
+"Moslem","350","345","695","DRC",2016
+"No Religion","2","4","6","DRC",2016
+"Other Religion","29","42","71","DRC",2016
+"Pentecostalist","1925","1986","3911","DRC",2016
+"Protestant","1092","1179","2271","DRC",2016
+"Seventh Day Adventist","1285","1206","2491","DRC",2016
+"Bahai","3","5","8","DRC",2017
+"Baptist","58","53","111","DRC",2017
+"Catholic","399","389","788","DRC",2017
+"Christian","512","552","1064","DRC",2017
+"Jehovah Witness","89","77","166","DRC",2017
+"Methodist","71","56","127","DRC",2017
+"Moslem","86","92","178","DRC",2017
+"No Religion","0","3","3","DRC",2017
+"Other Religion","3","4","7","DRC",2017
+"Pentecostalist","631","612","1243","DRC",2017
+"Protestant","436","451","887","DRC",2017
+"Seventh Day Adventist","394","371","765","DRC",2017
+"Unknown","2","3","5","DRC",2017
+"Ancestral Worship","0","1","1","DRC",2018
+"Bahai","14","11","25","DRC",2018
+"Baptist","146","152","298","DRC",2018
+"Catholic","754","738","1492","DRC",2018
+"Christian","801","810","1611","DRC",2018
+"Evangelical Christian","6","2","8","DRC",2018
+"Jehovah Witness","132","133","265","DRC",2018
+"Methodist","286","280","566","DRC",2018
+"Moslem","218","204","422","DRC",2018
+"No Religion","2","2","4","DRC",2018
+"Other Religion","14","18","32","DRC",2018
+"Pentecostalist","995","986","1981","DRC",2018
+"Protestant","873","891","1764","DRC",2018
+"Seventh Day Adventist","402","425","827","DRC",2018
+"Unknown","0","9","9","DRC",2018
+"Atheist","2","8","10","Iraq",2009
+"Bahai","10","4","14","Iraq",2009
+"Catholic","1152","1104","2256","Iraq",2009
+"Chaldean","41","39","80","Iraq",2009
+"Christian","2897","2919","5816","Iraq",2009
+"Evangelical Christian","11","11","22","Iraq",2009
+"Kaaka'i","5","4","9","Iraq",2009
+"Lutheran","0","1","1","Iraq",2009
+"Moslem","110","147","257","Iraq",2009
+"Moslem Shiite","1615","1953","3568","Iraq",2009
+"Moslem Suni","2870","3093","5963","Iraq",2009
+"No Religion","2","2","4","Iraq",2009
+"Orthodox","342","296","638","Iraq",2009
+"Other Religion","1","0","1","Iraq",2009
+"Protestant","17","14","31","Iraq",2009
+"Sabeans-Mandean","388","350","738","Iraq",2009
+"Unknown","0","1","1","Iraq",2009
+"Yezidi","32","36","68","Iraq",2009
+"Atheist","2","6","8","Iraq",2010
+"Bahai","1","0","1","Iraq",2010
+"Baptist","0","1","1","Iraq",2010
+"Catholic","892","898","1790","Iraq",2010
+"Chaldean","24","22","46","Iraq",2010
+"Christian","2050","2095","4145","Iraq",2010
+"Evangelical Christian","0","1","1","Iraq",2010
+"Jehovah Witness","0","1","1","Iraq",2010
+"Kaaka'i","3","2","5","Iraq",2010
+"Moslem","111","161","272","Iraq",2010
+"Moslem Shiite","2075","2627","4702","Iraq",2010
+"Moslem Suni","2850","3267","6117","Iraq",2010
+"No Religion","2","4","6","Iraq",2010
+"Orthodox","288","331","619","Iraq",2010
+"Other Religion","7","11","18","Iraq",2010
+"Protestant","8","8","16","Iraq",2010
+"Sabeans-Mandean","230","225","455","Iraq",2010
+"Yezidi","24","24","48","Iraq",2010
+"Atheist","2","5","7","Iraq",2011
+"Catholic","460","459","919","Iraq",2011
+"Chaldean","3","2","5","Iraq",2011
+"Christian","901","848","1749","Iraq",2011
+"Kaaka'i","6","8","14","Iraq",2011
+"Moslem","36","45","81","Iraq",2011
+"Moslem Shiite","551","587","1138","Iraq",2011
+"Moslem Suni","863","990","1853","Iraq",2011
+"No Religion","3","3","6","Iraq",2011
+"Orthodox","118","123","241","Iraq",2011
+"Protestant","5","7","12","Iraq",2011
+"Sabeans-Mandean","139","144","283","Iraq",2011
+"Unknown","0","1","1","Iraq",2011
+"Yezidi","12","17","29","Iraq",2011
+"Zoroastrian","0","1","1","Iraq",2011
+"Atheist","0","2","2","Iraq",2012
+"Bahai","8","7","15","Iraq",2012
+"Catholic","1251","1271","2522","Iraq",2012
+"Chaldean","15","25","40","Iraq",2012
+"Christian","1711","1826","3537","Iraq",2012
+"Evangelical Christian","1","0","1","Iraq",2012
+"Greek Orthodox","2","2","4","Iraq",2012
+"Jewish","0","1","1","Iraq",2012
+"Kaaka'i","1","4","5","Iraq",2012
+"Moslem","89","105","194","Iraq",2012
+"Moslem Shiite","1705","2054","3759","Iraq",2012
+"Moslem Suni","2354","2707","5061","Iraq",2012
+"No Religion","6","6","12","Iraq",2012
+"Orthodox","391","398","789","Iraq",2012
+"Protestant","13","9","22","Iraq",2012
+"Sabeans-Mandean","143","174","317","Iraq",2012
+"Yezidi","35","53","88","Iraq",2012
+"Atheist","0","2","2","Iraq",2013
+"Catholic","1040","999","2039","Iraq",2013
+"Chaldean","18","25","43","Iraq",2013
+"Christian","1207","1265","2472","Iraq",2013
+"Evangelical Christian","3","2","5","Iraq",2013
+"Jewish","0","2","2","Iraq",2013
+"Kaaka'i","4","5","9","Iraq",2013
+"Moslem","139","157","296","Iraq",2013
+"Moslem Shiite","2469","3009","5478","Iraq",2013
+"Moslem Suni","3327","3827","7154","Iraq",2013
+"No Religion","4","6","10","Iraq",2013
+"Orthodox","345","332","677","Iraq",2013
+"Other Religion","3","7","10","Iraq",2013
+"Protestant","5","6","11","Iraq",2013
+"Sabeans-Mandean","132","156","288","Iraq",2013
+"Seventh Day Adventist","1","1","2","Iraq",2013
+"Yezidi","35","34","69","Iraq",2013
+"Atheist","2","2","4","Iraq",2014
+"Bahai","3","2","5","Iraq",2014
+"Baptist","0","1","1","Iraq",2014
+"Buddhist","1","2","3","Iraq",2014
+"Catholic","1040","991","2031","Iraq",2014
+"Chaldean","20","24","44","Iraq",2014
+"Christian","759","843","1602","Iraq",2014
+"Evangelical Christian","0","1","1","Iraq",2014
+"Jewish","1","0","1","Iraq",2014
+"Kaaka'i","4","11","15","Iraq",2014
+"Moslem","140","157","297","Iraq",2014
+"Moslem Shiite","3215","3806","7021","Iraq",2014
+"Moslem Suni","3823","4410","8233","Iraq",2014
+"No Religion","0","1","1","Iraq",2014
+"Orthodox","354","367","721","Iraq",2014
+"Other Religion","1","6","7","Iraq",2014
+"Protestant","5","7","12","Iraq",2014
+"Sabeans-Mandean","66","80","146","Iraq",2014
+"Unknown","0","1","1","Iraq",2014
+"Yezidi","94","97","191","Iraq",2014
+"Atheist","6","7","13","Iraq",2015
+"Catholic","393","418","811","Iraq",2015
+"Chaldean","41","53","94","Iraq",2015
+"Christian","173","171","344","Iraq",2015
+"Evangelical Christian","2","3","5","Iraq",2015
+"Jewish","1","0","1","Iraq",2015
+"Kaaka'i","3","2","5","Iraq",2015
+"Moslem","105","105","210","Iraq",2015
+"Moslem Shiite","1608","1876","3484","Iraq",2015
+"Moslem Suni","2133","2449","4582","Iraq",2015
+"No Religion","1","4","5","Iraq",2015
+"Orthodox","154","152","306","Iraq",2015
+"Other Religion","0","1","1","Iraq",2015
+"Protestant","3","4","7","Iraq",2015
+"Sabeans-Mandean","53","41","94","Iraq",2015
+"Unknown","2","0","2","Iraq",2015
+"Yezidi","100","105","205","Iraq",2015
+"Atheist","1","10","11","Iraq",2016
+"Baptist","0","1","1","Iraq",2016
+"Catholic","390","389","779","Iraq",2016
+"Chaldean","57","43","100","Iraq",2016
+"Christian","349","360","709","Iraq",2016
+"Evangelical Christian","2","1","3","Iraq",2016
+"Greek Orthodox","2","1","3","Iraq",2016
+"Kaaka'i","3","6","9","Iraq",2016
+"Moslem","142","134","276","Iraq",2016
+"Moslem Shiite","1626","1716","3342","Iraq",2016
+"Moslem Suni","2507","2599","5106","Iraq",2016
+"No Religion","2","5","7","Iraq",2016
+"Orthodox","194","172","366","Iraq",2016
+"Other Religion","0","1","1","Iraq",2016
+"Protestant","3","2","5","Iraq",2016
+"Sabeans-Mandean","46","44","90","Iraq",2016
+"Yezidi","265","259","524","Iraq",2016
+"Atheist","0","1","1","Iraq",2017
+"Catholic","200","163","363","Iraq",2017
+"Chaldean","11","12","23","Iraq",2017
+"Christian","96","73","169","Iraq",2017
+"Kaaka'i","3","1","4","Iraq",2017
+"Moslem","64","46","110","Iraq",2017
+"Moslem Shiite","438","419","857","Iraq",2017
+"Moslem Suni","743","669","1412","Iraq",2017
+"No Religion","0","1","1","Iraq",2017
+"Orthodox","67","62","129","Iraq",2017
+"Other Religion","0","1","1","Iraq",2017
+"Sabeans-Mandean","15","7","22","Iraq",2017
+"Yezidi","122","125","247","Iraq",2017
+"Catholic","4","5","9","Iraq",2018
+"Christian","3","1","4","Iraq",2018
+"Moslem","4","7","11","Iraq",2018
+"Moslem Shiite","13","6","19","Iraq",2018
+"Moslem Suni","14","13","27","Iraq",2018
+"Orthodox","7","3","10","Iraq",2018
+"Sabeans-Mandean","1","1","2","Iraq",2018
+"Yezidi","5","4","9","Iraq",2018
+"Bahai","0","1","1","Somalia",2009
+"Baptist","2","0","2","Somalia",2009
+"Catholic","0","1","1","Somalia",2009
+"Christian","3","6","9","Somalia",2009
+"Evangelical Christian","1","0","1","Somalia",2009
+"Moslem","2215","2177","4392","Somalia",2009
+"Moslem Suni","90","115","205","Somalia",2009
+"Pentecostalist","0","1","1","Somalia",2009
+"Protestant","5","1","6","Somalia",2009
+"Unknown","0","2","2","Somalia",2009
+"Baptist","1","2","3","Somalia",2010
+"Catholic","0","1","1","Somalia",2010
+"Christian","13","14","27","Somalia",2010
+"Lutheran","2","1","3","Somalia",2010
+"Moslem","2005","2036","4041","Somalia",2010
+"Moslem Suni","147","163","310","Somalia",2010
+"No Religion","3","2","5","Somalia",2010
+"Pentecostalist","4","6","10","Somalia",2010
+"Seventh Day Adventist","0","1","1","Somalia",2010
+"Catholic","0","1","1","Somalia",2011
+"Christian","1","2","3","Somalia",2011
+"Moslem","1723","1559","3282","Somalia",2011
+"Moslem Suni","88","77","165","Somalia",2011
+"Pentecostalist","1","1","2","Somalia",2011
+"Catholic","3","2","5","Somalia",2012
+"Christian","4","7","11","Somalia",2012
+"Lutheran","2","2","4","Somalia",2012
+"Methodist","0","1","1","Somalia",2012
+"Moslem","2478","2944","5422","Somalia",2012
+"Moslem Shiite","0","1","1","Somalia",2012
+"Moslem Suni","178","256","434","Somalia",2012
+"Pentecostalist","1","2","3","Somalia",2012
+"Protestant","8","4","12","Somalia",2012
+"Catholic","0","2","2","Somalia",2013
+"Christian","10","10","20","Somalia",2013
+"Moslem","3175","3678","6853","Somalia",2013
+"Moslem Ismaici","0","1","1","Somalia",2013
+"Moslem Suni","208","362","570","Somalia",2013
+"Orthodox","0","1","1","Somalia",2013
+"Pentecostalist","2","1","3","Somalia",2013
+"Catholic","0","1","1","Somalia",2014
+"Christian","12","13","25","Somalia",2014
+"Moslem","4572","4771","9343","Somalia",2014
+"Moslem Ismaici","1","4","5","Somalia",2014
+"Moslem Shiite","0","1","1","Somalia",2014
+"Moslem Suni","235","446","681","Somalia",2014
+"Pentecostalist","0","1","1","Somalia",2014
+"Christian","0","1","1","Somalia",2015
+"Moslem","3599","3422","7021","Somalia",2015
+"Moslem Suni","286","470","756","Somalia",2015
+"Seventh Day Adventist","0","1","1","Somalia",2015
+"Christian","2","3","5","Somalia",2016
+"Moslem","5233","5058","10291","Somalia",2016
+"Moslem Suni","179","308","487","Somalia",2016
+"Pentecostalist","1","1","2","Somalia",2016
+"Unknown","0","1","1","Somalia",2016
+"Christian","6","3","9","Somalia",2017
+"Moslem","1420","1154","2574","Somalia",2017
+"Moslem Suni","90","96","186","Somalia",2017
+"No Religion","0","1","1","Somalia",2017
+"Moslem","80","49","129","Somalia",2018
+"Moslem Suni","4","6","10","Somalia",2018
