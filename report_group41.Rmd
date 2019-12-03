@@ -7,6 +7,8 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(tidyverse)
 ```
 
 ## Introduction
@@ -15,10 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data Transformation
 ```{r}
-library(readxl)
-library(tidyverse)
-
-
+# Used to clean the Arrivals data
 clean_arrival <- function(file, sheet_name) {
   dat <- read_excel(file, sheet = sheet_name)
   dat1 <- subset(dat, select = c(...6, ...8,...9))
@@ -53,6 +52,7 @@ clean_arrival <- function(file, sheet_name) {
 ```
 
 ```{r}
+# Used to clean the Demographics data
 clean_demographics <- function(file, sheet_name) {
   df <- read_excel(file, sheet = sheet_name)
   
@@ -88,7 +88,7 @@ clean_demographics <- function(file, sheet_name) {
 ```
 
 ```{r}
-
+# Cleans and combines all the files in the directory given by path
 combine_files <- function(path, data_cleaner, sheet_name, title) {
   df = data.frame()
   files <- list.files(path=path, pattern="*.xlsx", full.names=TRUE, recursive=FALSE)
@@ -119,10 +119,47 @@ combine_files <- function(path, data_cleaner, sheet_name, title) {
 # df_test3 <- combine_files(path, clean_demographics, sheet_name, title)
 ```
 
+```{r}
+# Cleaned all_arrivals data converted to csv files
+save_cleaned_all_arrivals <- function() {
+    path = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/raw/all_arrivals"
+  title = 'Arrivals_'
+  sheet_name = 'Detailed'
+  data_cleaner = clean_arrival
+  arrival_df <- combine_files(path, data_cleaner, sheet_name, title)
+  write.csv(arrival_df, file = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/clean/all_arrivals.csv", row.names = FALSE)
+}
+
+# Cleaned demographics data converted to csv files
+save_cleaned_all_demographics <- function() {
+  path = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/raw/demographics"
+  title = 'Demographics_'
+  sheet_names = c('Ethnicity', 'Age Group', 'Religion', 'Education', 'Native Language')
+  file_names = c('ethnicity', 'age_group', 'religion', 'education', 'native_language')
+  data_cleaner = clean_demographics
+  
+  for (i in 1:length(sheet_names)) {
+    demographic_df <- combine_files(path, data_cleaner, sheet_names[i], title)
+    file_name = paste("~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/clean/", file_names[i], sep='')
+    write.csv(demographic_df, file = paste(file_name, '.csv', sep=''), row.names = FALSE)
+  }
+}
+```
+
 
 ## Missing Values
 
 ## Results
+```{r}
+# Read cleaned data from github
+arrival_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/all_arrivals.csv')
+age_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/age_group.csv')
+ethnicity_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/ethnicity.csv')
+religion_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/religion.csv')
+education_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/education.csv')
+native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/native_language.csv')
+```
+
 
 ## Interactive Component
 
