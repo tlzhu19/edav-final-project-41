@@ -121,26 +121,28 @@ combine_files <- function(path, data_cleaner, sheet_name, title) {
 
 ```{r}
 # Cleaned all_arrivals data converted to csv files
-save_cleaned_all_arrivals <- function() {
-    path = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/raw/all_arrivals"
-  title = 'Arrivals_'
-  sheet_name = 'Detailed'
-  data_cleaner = clean_arrival
-  arrival_df <- combine_files(path, data_cleaner, sheet_name, title)
-  write.csv(arrival_df, file = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/clean/all_arrivals.csv", row.names = FALSE)
+save_cleaned_all_arrivals <- function(path) {
+    read_path = paste(path, "/edav-final-project-41/data/raw/all_arrivals", sep='')
+    write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
+    title = 'Arrivals_'
+    sheet_name = 'Detailed'
+    data_cleaner = clean_arrival
+    arrival_df <- combine_files(read_path, data_cleaner, sheet_name, title)
+    write.csv(arrival_df, file = paste(write_path, "all_arrivals.csv", sep=''), row.names = FALSE)
 }
 
 # Cleaned demographics data converted to csv files
-save_cleaned_all_demographics <- function() {
-  path = "~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/raw/demographics"
+save_cleaned_all_demographics <- function(path) {
+  read_path = paste(path, "/edav-final-project-41/data/raw/demographics", sep='')
+  write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
   title = 'Demographics_'
   sheet_names = c('Ethnicity', 'Age Group', 'Religion', 'Education', 'Native Language')
   file_names = c('ethnicity', 'age_group', 'religion', 'education', 'native_language')
   data_cleaner = clean_demographics
   
   for (i in 1:length(sheet_names)) {
-    demographic_df <- combine_files(path, data_cleaner, sheet_names[i], title)
-    file_name = paste("~/Desktop/CU/F19/STATW5702_EDAV/edav-final-project-41/data/clean/", file_names[i], sep='')
+    demographic_df <- combine_files(read_path, data_cleaner, sheet_names[i], title)
+    file_name = paste(write_path, file_names[i], sep='')
     write.csv(demographic_df, file = paste(file_name, '.csv', sep=''), row.names = FALSE)
   }
 }
