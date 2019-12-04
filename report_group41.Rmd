@@ -1,24 +1,43 @@
 ---
 title: "Refugee Resettlements in the USA"
 author: "Ji In Choi (jic2124), Jung Ah Shin (js5569), Olivia Wang (yw3324), Tiffany Zhu (tz2196)"
-date: "December 5, 2019"
-output: html_document
+date: "December 12, 2019"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: journal
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## Introduction
-
-## Data Sources
-
-## Data Transformation
-```{r}
+knitr::opts_chunk$set(echo = FALSE)
 library(readxl)
 library(tidyverse)
+```
+
+# Introduction
+According to the UNHCR, refugees are those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
+Furthermore, there are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
+
+The United States is one of the nations that have one of the largest resettlement of refugees. However, in 2017, the US resettled the fewest number of refugees compared to the rest of the world.We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
+
+i. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the US? Have there been increases/decreases in refugee settlements from 2009 - 2018?
+ii. What insights can we gain from geographical visualization of refugee settlement patterns in the US? Why might some states have larger refugee settlements than others?
+iii. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
 
 
+# Data Sources
+
+We first collected data from RPC (Refugee Processing Center), that provides refugee arrival information by state and nationality, by destination and nationality, by nationality and religion, and by demographic profile. 
+
+We can select the time frame, nationality. 
+Since the RPC website does not allow for faceting by year, we had to download the files year by year, and clean the data into the format we want for data analysis.
+
+
+# Data Transformation
+```{r}
+# Used to clean the Arrivals data
 clean_arrival <- function(file, sheet_name) {
   dat <- read_excel(file, sheet = sheet_name)
   dat1 <- subset(dat, select = c(...6, ...8,...9))
@@ -53,6 +72,7 @@ clean_arrival <- function(file, sheet_name) {
 ```
 
 ```{r}
+# Used to clean the Demographics data
 clean_demographics <- function(file, sheet_name) {
   df <- read_excel(file, sheet = sheet_name)
   
@@ -88,7 +108,7 @@ clean_demographics <- function(file, sheet_name) {
 ```
 
 ```{r}
-
+# Cleans and combines all the files in the directory given by path
 combine_files <- function(path, data_cleaner, sheet_name, title) {
   df = data.frame()
   files <- list.files(path=path, pattern="*.xlsx", full.names=TRUE, recursive=FALSE)
@@ -119,11 +139,50 @@ combine_files <- function(path, data_cleaner, sheet_name, title) {
 # df_test3 <- combine_files(path, clean_demographics, sheet_name, title)
 ```
 
+```{r}
+# Cleaned all_arrivals data converted to csv files
+save_cleaned_all_arrivals <- function(path) {
+    read_path = paste(path, "/edav-final-project-41/data/raw/all_arrivals", sep='')
+    write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
+    title = 'Arrivals_'
+    sheet_name = 'Detailed'
+    data_cleaner = clean_arrival
+    arrival_df <- combine_files(read_path, data_cleaner, sheet_name, title)
+    write.csv(arrival_df, file = paste(write_path, "all_arrivals.csv", sep=''), row.names = FALSE)
+}
 
-## Missing Values
+# Cleaned demographics data converted to csv files
+save_cleaned_all_demographics <- function(path) {
+  read_path = paste(path, "/edav-final-project-41/data/raw/demographics", sep='')
+  write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
+  title = 'Demographics_'
+  sheet_names = c('Ethnicity', 'Age Group', 'Religion', 'Education', 'Native Language')
+  file_names = c('ethnicity', 'age_group', 'religion', 'education', 'native_language')
+  data_cleaner = clean_demographics
+  
+  for (i in 1:length(sheet_names)) {
+    demographic_df <- combine_files(read_path, data_cleaner, sheet_names[i], title)
+    file_name = paste(write_path, file_names[i], sep='')
+    write.csv(demographic_df, file = paste(file_name, '.csv', sep=''), row.names = FALSE)
+  }
+}
+```
 
-## Results
 
-## Interactive Component
+# Missing Values
 
-## Conclusion
+# Results
+```{r}
+# Read cleaned data from github
+arrival_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/all_arrivals.csv')
+age_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/age_group.csv')
+ethnicity_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/ethnicity.csv')
+religion_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/religion.csv')
+education_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/education.csv')
+native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/native_language.csv')
+```
+
+
+# Interactive Component
+
+# Conclusion
