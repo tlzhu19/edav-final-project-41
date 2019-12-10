@@ -276,9 +276,9 @@ total_df <- education_df %>% group_by(country)%>% summarize(Total = sum(Total))
 # Total sum of missing data
 na_df <- na_df %>% group_by(country) %>% summarize(Total = sum(Total))
 # Change column name 
-names(d2)[2] <- "na_Total"
+names(na_df)[2] <- "na_Total"
 # Put two df together
-combine_df <- cbind(d3,d2[2])
+combine_df <- cbind(total_df,na_df[2])
 # Proportion of missing data 
 combine_df <- transform(final, proportion = na_Total/Total)
 # Plot missing data
