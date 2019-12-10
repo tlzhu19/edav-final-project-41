@@ -267,6 +267,7 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 We removed these rows since we are just curious about the fifty states.
 
 In Education data, we observed the proportion of missing data compared to the total data. 
+
 ```{r}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA 
 na_df<- select(filter(education_df, Education == "Bio Data not Complete" | Education == "Unknown"),c(Education,Total, country, Year))
