@@ -157,7 +157,7 @@ save_cleaned_all_arrivals <- function(path) {
     write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
     title = 'Arrivals_'
     sheet_name = 'Detailed'
-    data_cleaner = clean_arriva
+    data_cleaner = clean_arrival
     arrival_df <- combine_files(read_path, data_cleaner, sheet_name, title)
     write.csv(arrival_df, file = paste(write_path, "all_arrivals.csv", sep=''), row.names = FALSE)
 }
