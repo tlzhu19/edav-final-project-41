@@ -20,14 +20,41 @@ library(scales)
 ```
 
 # Introduction
-According to the UNHCR, refugees are those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
-Furthermore, there are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
+## Motivation
+The world’s forcibly displaced population hit its record high in 2017. Globally, at the end of 2017, the global refugee population increased by 2.9 million. By the end of the year, 68.5 million individuals were forcibly displaced worldwide as a result of persecution conflict, or generalized violence (https://www.unhcr.org/5b27be547.pdf). Despite the increase in demand for refugee admission and assistance, the United States specifically has taken a drastic turn away from supporting refugees. The number of refugees admitted to the United States has dropped from a recent high of 84,994 in FY 2016 to 22,874 in FY 2018 - the lowest in 40 years since 1977. The current ceiling for refugee admission has also dropped to 45,000, the lowest in the history of the current US resettlement program. Coming at a time when global numbers of refugees have reached record highs, the ratio of refugees admitted to the United States to the number of refugees worldwide has never been lower. For the first time, the US policy towards refugee admission is moving decisively against the trend of the total number of refugees worldwide (https://www.cgdev.org/blog/reflecting-world-refugee-day-trends-and-consequences-us-refugee-policy). 
+The recent years thus mark a significant shift in refugee resettlement in the US, as a result, this report will be examining the refugee admission trend in the US over the past 10 years (2009-2018). 
 
-The United States is one of the nations that have one of the largest resettlement of refugees. However, in 2017, the US resettled the fewest number of refugees compared to the rest of the world.We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
+## Background 
+According to the UNHCR, refugees are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
 
-i. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the US? Have there been increases/decreases in refugee settlements from 2009 - 2018?
-ii. What insights can we gain from geographical visualization of refugee settlement patterns in the US? Why might some states have larger refugee settlements than others?
-iii. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
+Process of refugee resettlement:
+  
+  1. The process of refugee resettlement to the U.S. is a lengthy and thorough process that takes approximately two years and involves numerous U.S. governmental agencies
+  
+  2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
+  
+  3. Once a refugee is recommended to the U.S. for settlement, the U.S. government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
+      * Screening by 8 federal agencies including the State Department, Department of Homeland Security and the FBI
+      * Six security database checks and biometric security checks screened against U.S. federal databases
+      * Medical screening
+      * Three in-person interviews with Department of Homeland Security Officers
+
+Under the Refugee Act of 1980, the president sets an annual ceiling for refugee admissions in consultation with Congress. The annual ceiling has varied over the years, from a high of 231,700 in FY 1980 to a prior low of 67,000 in FY 1986. Amid a large exodus of Syrinas from their war-torn country, President Obama raised the refugee ceiling for FY 2016 to 110,000. After taking office, Trump reduced the FY 2017 cap to 50,000, and for FY 2018 set one at a historic low of 45,000. Far fewer refugees, 22,874, were actually resettled in FY 2018.
+
+
+## Questions
+There are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. In order to better visualize the trend of refugee resettlement to the US, this report will be specifically focusing on the top 5 countries (Burma, Iraq, Somalia, Bhutan, Democratic Republic of the Congo) with the highest refugee resettlement population in the US, which accounted for 60.9% of the total refugee arrivals in the US (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
+
+We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
+  
+  1. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the US?
+      * Has there been increases/decreases in refugee resettlements population from 2009 - 2018?
+      * Is there a correlation between change in refugee resettlement population and major political events that have happened over the 10 years?
+
+  2. What insights can we gain from geographical visualization of refugee settlement patterns in the US over the 10 years? Why might some states have larger refugee settlements than others?
+  
+  3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
+      * Given the number of religions included in the refugee population, we will be focusing on the top 5 religions in the world (Christianity, Islam, Hinduism, Buddhism, Sikhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
 
 
 # Data Sources
@@ -223,6 +250,10 @@ kable(head(native_language_df))
 kable(head(religion_df))
 ```
 
+## Transforming the Data
+
+**WRITE STUFF**
+
 # Missing Values
 The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
 
@@ -397,4 +428,6 @@ ggplotly(gg)
 
 
 # Conclusion
+
+**WRITE STUFF**
 
