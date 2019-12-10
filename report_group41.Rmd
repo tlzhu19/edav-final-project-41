@@ -8,7 +8,6 @@ output:
     toc_float: true
     theme: journal
     number_sections: true
-runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -158,7 +157,7 @@ save_cleaned_all_arrivals <- function(path) {
     write_path = paste(path, "/edav-final-project-41/data/clean", sep='')
     title = 'Arrivals_'
     sheet_name = 'Detailed'
-    data_cleaner = clean_arrival
+    data_cleaner = clean_arriva
     arrival_df <- combine_files(read_path, data_cleaner, sheet_name, title)
     write.csv(arrival_df, file = paste(write_path, "all_arrivals.csv", sep=''), row.names = FALSE)
 }
@@ -362,6 +361,51 @@ p3 <- ggplot(age_df2, aes(x= reorder(Age.Group, -Percent), y=Percent)) +
 p3
 ```
 
+```{r}
+total_demo <- ethnicity_df
+total_demo$Total <- as.numeric(total_demo$Total)
+change_in_pop <- total_demo %>%
+  group_by(Year, country) %>%
+  summarize(sum=sum(Total))
+ggplot(change_in_pop, aes(Year, sum, color=country))+
+  geom_line() + 
+  xlab("Year") + 
+  ylab("Number of Individuals") +
+  labs(title = "Change in Refugee Resettlement to the US 
+       of Top 5 Refugee Origins from 2009-2018 ",
+       caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
+  theme(legend.title = element_blank())
+```
+
+
+```{r, fig.width=8}
+df_map <- arrival_df
+
+# remove extra 6 'States'
+df_map <- df_map[!df_map$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
+df_map$State <- as.factor(df_map$State)
+df_map$code <- state.abb[match(df_map$State, state.name)]
+
+#add Wyoming and Montana because they are misisng 
+df_add <- data.frame(State = c('Wyoming','Wyoming','Montana'), Cases = c(0, 0, 0), Inds = c(0, 0, 0), Year = c(2009, 2010, 2010), code = c('WY', 'WY', 'MT'))
+
+df_map <- rbind(df_map, df_add)
+
+df_map$State <- tolower(df_map$State)
+
+states <- map_data('state')
+
+# fill = Inds? or cases?
+map_basic <- ggplot(df_map, aes(map_id = State)) + 
+  geom_map(aes(fill = Inds), map = states) + 
+  expand_limits(x = states$long, y = states$lat) +
+  facet_wrap(~Year) +
+  scale_fill_gradient(low="#D6EAF8", high="#154360") +
+  ggtitle('Refugee Resettlement in the US by State')
+
+map_basic
+```
+
 
 # Interactive Component
 ```{r}
@@ -408,27 +452,6 @@ p2 <- plot_geo(df_2009, locationmode = 'USA-states') %>%
   )
 
 p2
-```
-
-```{r}
-library(shiny)
-shinyApp(
-
-  ui = fluidPage(
-    selectInput("region", "Region:",
-                choices = colnames(WorldPhones)),
-    plotOutput("phonePlot")
-  ),
-
-  server = function(input, output) {
-    output$phonePlot = renderPlot({
-      barplot(WorldPhones[,input$region]*1000,
-              ylab = "Number of Telephones", xlab = "Year")
-    })
-  },
-
-  options = list(height = 500)
-)
 ```
 
 # Conclusion
