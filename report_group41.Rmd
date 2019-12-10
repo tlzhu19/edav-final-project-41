@@ -14,6 +14,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 library(readxl)
 library(tidyverse)
+library(plotly)
+library(knitr)
 ```
 
 # Introduction
@@ -36,6 +38,15 @@ Since the RPC website does not allow for faceting by year, we had to download th
 
 
 # Data Transformation
+## Cleaning the Data in R
+
+1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
+2. Wrote two functions to clean Excel sheet for a given year. 
+    i. `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
+    ii. `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
+3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
+4. Saved these as csv files and uploaded to GitHub to easily access.
+
 ```{r}
 # Used to clean the Arrivals data
 clean_arrival <- function(file, sheet_name) {
@@ -168,10 +179,7 @@ save_cleaned_all_demographics <- function(path) {
 }
 ```
 
-
-# Missing Values
-
-# Results
+## Cleaned Data Format
 ```{r}
 # Read cleaned data from github
 arrival_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/all_arrivals.csv')
@@ -182,7 +190,269 @@ education_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-pr
 native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/native_language.csv')
 ```
 
+After cleaning the data, we have six '.csv' files that can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/clean). 
+
+1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the US from 2009-2018. All raw files to make this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
+```{r}
+kable(head(arrival_df))
+```
+
+2. `age_group.csv`: 
+```{r}
+kable(head(age_df))
+```
+
+3. `education.csv`: 
+```{r}
+kable(head(education_df))
+```
+
+4. `ethnicity.csv`: 
+```{r}
+kable(head(ethnicity_df))
+```
+
+5. `native_language.csv`: 
+```{r}
+kable(head(native_language_df))
+```
+
+6. `religion.csv`: 
+```{r}
+kable(head(religion_df))
+```
+
+# Missing Values
+The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
+
+* American Samoa
+* District of Columbia
+* Guam
+* Puerto Rico
+* Unknown State
+* Virgin Islands
+
+We removed these rows since we are just curious about the fifty states.
+
+
+# Results
+
+
+```{r}
+# Compare ceilings with actual admissions
+total_arrival_df <- arrival_df %>%
+  group_by(Year) %>%
+  summarise(Actual = sum(Inds))
+
+# data from https://www.migrationpolicy.org/article/refugees-and-asylees-united-states#Refugee_Admission_Ceiling
+Ceiling = c(80000, 80000, 80000, 76000, 70000, 70000, 70000, 85000, 50000, 45000)
+# Actual = c(74654, 73311, 56424, 58238, 69926, 69987, 69933, 84995, 53716, 22491)
+# Year = 2009:2018
+# total_arrival_df = data.frame(ceiling, actual, year)
+
+total_arrival_df$Ceiling = Ceiling
+
+total_arrival_df <- total_arrival_df %>%
+  gather(key, Individuals, Actual, Ceiling)
+
+p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key)) +
+      geom_line() +
+      geom_point() +
+      geom_vline(xintercept = 2016, color='gray') +
+      annotate("text", x=2015, y =50000, label="Trump\nelected", color='gray', hjust=0) +
+      ggtitle('Ceilings Vs Actual Refugee Resettlements')
+
+ggplotly(p)
+```
+
+
+We take a closer look at the top 5 countries that have refugees resettled in the USA (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
+
+```{r, fig.height=6}
+# bar chart of the top countries faceted by year
+# Todo: change to proportions?
+top_countries <- age_df %>% 
+  group_by(country, Year) %>%
+  summarise(Inds = sum(Male) + sum(Female))
+
+ggplot(top_countries, aes(x= reorder(country, -Inds), y=Inds)) + 
+  geom_bar(stat="identity") +
+  facet_grid(top_countries$Year) +
+  labs(x = 'Country', y = 'Individuals') +
+  ggtitle('')
+```
+
+The top 5 religions in the world are: Christianity, Islam, Hinduism, Buddhism, Sikhism (https://thecountriesof.com/top-5-largest-religions-in-the-world/). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one.
+
+```{r}
+# religion_df2 <- religion_df %>% 
+#   group_by(country, Year, Religion) %>%
+#   summarise(Inds = sum(Male) + sum(Female)) %>%
+#   mutate(Percent = Inds / sum(Inds))
+
+# burma_religion_df = religion_df2[religion_df2$country == 'Burma', ]
+# p <- ggplot(burma_religion_df, aes(x= reorder(Religion, -Percent), y=Percent)) + 
+#   geom_bar(stat="identity") +
+#   facet_grid(burma_religion_df$Year) +
+#   labs(x = 'Religion', y = 'Individuals') +
+#   ggtitle('Religion (Burma)')
+
+
+muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
+
+religion_df3 <- religion_df %>% 
+  group_by(Year, Religion) %>%
+  summarise(Inds = sum(Male) + sum(Female)) %>%
+  mutate(Percent = Inds / sum(Inds))
+
+# rename to Moslem
+religion_df3[religion_df3$Religion %in% muslim_names, 'Religion'] <- 'Moslem'
+
+innerFunc <- function(sub_df){
+  row <- head(sub_df, 1)
+  row$Inds <- sum(head(sub_df$Inds))
+  return(row)
+}
+
+religions = c('Christian', 'Moslem', 'Buddhist', 'Hindu')
+subset_religion_df3 <- religion_df3[religion_df3$Religion %in% religions, ]
+
+# combines Moslem for each year
+create_religion_df <- function(current_df) {
+  df <- do.call(rbind,
+                  by(data=current_df[current_df$Year==2009, ],
+                     INDICES=current_df[current_df$Year==2009, ]$Religion, FUN=innerFunc))
+    
+  for (year in c(2010:2018)) {
+    df2 <- do.call(rbind,
+                   by(data=current_df[current_df$Year==year, ],
+                     INDICES=current_df[current_df$Year==year, ]$Religion, FUN=innerFunc))
+    df <- rbind(df, df2)
+}
+  
+  return(df)
+}
+
+subset_religion_df4 <- create_religion_df(subset_religion_df3)
+
+
+p2 <- ggplot(subset_religion_df4, aes(x= reorder(Religion, -Percent), y=Percent)) + 
+  geom_bar(stat="identity") +
+  facet_grid(subset_religion_df4$Year) +
+  labs(x = 'Religion', y = 'Individuals Percentages') +
+  ggtitle('Religion Over Time')
+
+p2
+```
+
+```{r}
+# Age group
+age_df2 <- age_df %>% 
+  group_by(Year, Age.Group) %>%
+  summarise(Inds = sum(Male) + sum(Female)) %>%
+  mutate(Percent = Inds / sum(Inds))
+
+p3 <- ggplot(age_df2, aes(x= reorder(Age.Group, -Percent), y=Percent)) + 
+  geom_bar(stat="identity") +
+  facet_grid(age_df2$Year) +
+  labs(x = 'Age Group', y = 'Individuals Percentages') +
+  ggtitle('Age Group Over Time')
+
+p3
+```
+
+```{r}
+total_demo <- ethnicity_df
+total_demo$Total <- as.numeric(total_demo$Total)
+change_in_pop <- total_demo %>%
+  group_by(Year, country) %>%
+  summarize(sum=sum(Total))
+ggplot(change_in_pop, aes(Year, sum, color=country))+
+  geom_line() + 
+  xlab("Year") + 
+  ylab("Number of Individuals") +
+  labs(title = "Change in Refugee Resettlement to the US 
+       of Top 5 Refugee Origins from 2009-2018 ",
+       caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
+  theme(legend.title = element_blank())
+```
+
+
+```{r, fig.width=8}
+df_map <- arrival_df
+
+# remove extra 6 'States'
+df_map <- df_map[!df_map$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
+df_map$State <- as.factor(df_map$State)
+df_map$code <- state.abb[match(df_map$State, state.name)]
+
+#add Wyoming and Montana because they are misisng 
+df_add <- data.frame(State = c('Wyoming','Wyoming','Montana'), Cases = c(0, 0, 0), Inds = c(0, 0, 0), Year = c(2009, 2010, 2010), code = c('WY', 'WY', 'MT'))
+
+df_map <- rbind(df_map, df_add)
+
+df_map$State <- tolower(df_map$State)
+
+states <- map_data('state')
+
+# fill = Inds? or cases?
+map_basic <- ggplot(df_map, aes(map_id = State)) + 
+  geom_map(aes(fill = Inds), map = states) + 
+  expand_limits(x = states$long, y = states$lat) +
+  facet_wrap(~Year) +
+  scale_fill_gradient(low="#D6EAF8", high="#154360") +
+  ggtitle('Refugee Resettlement in the US by State')
+
+map_basic
+```
+
 
 # Interactive Component
+```{r}
+# remove extra 6 'States'
+arrival_df2 <- arrival_df[!arrival_df$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
+arrival_df2$State <- as.factor(arrival_df2$State)
+arrival_df2$code <- state.abb[match(arrival_df2$State, state.name)]
+
+gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) + 
+  geom_bar(stat="identity", position='identity') +
+  labs(x = "State", y="Individuals") +
+  ggtitle('Refugee Resettlements By State from 2009-2018') +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ggplotly(gg)
+```
+
+```{r}
+library(maps)
+arrival_df2$hover <- with(arrival_df2, paste(State, '<br>', "Inds", Inds))
+
+# give state boundaries a white border
+l <- list(color = toRGB("white"), width = 2)
+# specify some map projection/options
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+df_2009 <- arrival_df2[arrival_df2$Year==2009, ]
+p2 <- plot_geo(df_2009, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~Inds,
+    locations = ~code,
+    text = ~hover,
+    color = ~Inds,
+    colors = 'Blues'
+  ) %>%
+  colorbar(title = "Number of Individuals") %>%
+  layout(
+    title = '2009 Refugee Resettlements in USA',
+    geo = g
+  )
+
+p2
+```
 
 # Conclusion
+
