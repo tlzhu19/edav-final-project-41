@@ -401,6 +401,15 @@ p2
 
 ```{r}
 # todo: add plot for Education
+edu_df<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,Total, country, Year))
+edu_country <- edu_df %>% 
+  group_by(country) %>%
+  mutate(proportion = Total/sum(Total))
+ggplot(edu_country, aes(x= reorder(Education, - proportion),y=proportion, fill=Education))+
+  geom_bar(stat="identity")+
+  facet_grid(edu_country$country) +
+  theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  ggtitle("Education Data by Country")
 ```
 
 
