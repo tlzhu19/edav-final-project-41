@@ -266,6 +266,27 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 
 We removed these rows since we are just curious about the fifty states.
 
+In Education data, we observed the proportion of missing data compared to the total data. 
+```{r}
+# CODE FOR PLOTTING PERCENTAGE OF MISSING DATA 
+na_df<- select(filter(education_df, Education == "Bio Data not Complete" | Education == "Unknown"),c(Education,Total, country, Year))
+# Total sum of data 
+total_df <- education_df %>% group_by(country)%>% summarize(Total = sum(Total))
+# Total sum of missing data
+na_df <- na_df %>% group_by(country) %>% summarize(Total = sum(Total))
+# Change column name 
+names(d2)[2] <- "na_Total"
+# Put two df together
+combine_df <- cbind(d3,d2[2])
+# Proportion of missing data 
+combine_df <- transform(final, proportion = na_Total/Total)
+# Plot missing data
+ggplot(final, aes(x=country, y=proportion, fill=country))+
+  geom_bar(stat="identity")+
+  theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  ggtitle("Missing Education Data by Country")
+```
+
 
 # Results
 
