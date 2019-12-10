@@ -16,6 +16,7 @@ library(readxl)
 library(tidyverse)
 library(plotly)
 library(knitr)
+library(scales)
 ```
 
 # Introduction
@@ -255,55 +256,53 @@ total_arrival_df$Ceiling = Ceiling
 total_arrival_df <- total_arrival_df %>%
   gather(key, Individuals, Actual, Ceiling)
 
-p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key)) +
+total_arrival_df$events = c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
+
+p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=events)) +
       geom_line() +
       geom_point() +
       geom_vline(xintercept = 2016, color='gray') +
-      annotate("text", x=2015, y =50000, label="Trump\nelected", color='gray', hjust=0) +
-      ggtitle('Ceilings Vs Actual Refugee Resettlements')
+      annotate("text", x=2015.3, y =50000, label="Trump\nelected", color='gray', hjust=0) +
+      geom_vline(xintercept = 2012, color='gray') +
+      annotate("text", x=2011.3, y =40000, label="Obama\nreelected", color='gray', hjust=0) +
+      ggtitle('Ceilings Vs Actual Refugee Resettlements') +
+      scale_y_continuous(labels = comma)
 
-ggplotly(p)
+ggplotly(p, tooltip = c('y', 'label'))
 ```
 
 
 We take a closer look at the top 5 countries that have refugees resettled in the USA (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
 
-```{r, fig.height=6}
-# bar chart of the top countries faceted by year
-# Todo: change to proportions?
-top_countries <- age_df %>% 
-  group_by(country, Year) %>%
-  summarise(Inds = sum(Male) + sum(Female))
+```{r}
+total_demo <- ethnicity_df
+total_demo$Total <- as.numeric(total_demo$Total)
+change_in_pop <- total_demo %>%
+  group_by(Year, country) %>%
+  summarize(sum=sum(Total))
 
-ggplot(top_countries, aes(x= reorder(country, -Inds), y=Inds)) + 
-  geom_bar(stat="identity") +
-  facet_grid(top_countries$Year) +
-  labs(x = 'Country', y = 'Individuals') +
-  ggtitle('')
+change_in_pop$events <- c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
+countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=events))+
+  geom_line() + 
+  xlab("Year") + 
+  ylab("Number of Individuals") +
+  labs(title = "Change in Refugee Resettlement to the US 
+       of Top 5 Refugee Origins from 2009-2018 ",
+       caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
+  theme(legend.title = element_blank())
+
+ggplotly(countries_plot, tooltip = c('y', 'label'))
 ```
 
 The top 5 religions in the world are: Christianity, Islam, Hinduism, Buddhism, Sikhism (https://thecountriesof.com/top-5-largest-religions-in-the-world/). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one.
 
-```{r}
-# religion_df2 <- religion_df %>% 
-#   group_by(country, Year, Religion) %>%
-#   summarise(Inds = sum(Male) + sum(Female)) %>%
-#   mutate(Percent = Inds / sum(Inds))
-
-# burma_religion_df = religion_df2[religion_df2$country == 'Burma', ]
-# p <- ggplot(burma_religion_df, aes(x= reorder(Religion, -Percent), y=Percent)) + 
-#   geom_bar(stat="identity") +
-#   facet_grid(burma_religion_df$Year) +
-#   labs(x = 'Religion', y = 'Individuals') +
-#   ggtitle('Religion (Burma)')
-
-
+```{r, fig.height=7}
 muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
 
 religion_df3 <- religion_df %>% 
   group_by(Year, Religion) %>%
   summarise(Inds = sum(Male) + sum(Female)) %>%
-  mutate(Percent = Inds / sum(Inds))
+  mutate(Proportion = Inds / sum(Inds))
 
 # rename to Moslem
 religion_df3[religion_df3$Religion %in% muslim_names, 'Religion'] <- 'Moslem'
@@ -335,46 +334,20 @@ create_religion_df <- function(current_df) {
 
 subset_religion_df4 <- create_religion_df(subset_religion_df3)
 
+subset_religion_df4$Religion <- factor(subset_religion_df4$Religion, levels = c('Christian','Moslem','Hindu', 'Buddhist'))
 
-p2 <- ggplot(subset_religion_df4, aes(x= reorder(Religion, -Percent), y=Percent)) + 
+p2 <- ggplot(subset_religion_df4, aes(x= reorder(Religion, -Proportion), y=Proportion, fill=Religion)) + 
   geom_bar(stat="identity") +
   facet_grid(subset_religion_df4$Year) +
-  labs(x = 'Religion', y = 'Individuals Percentages') +
-  ggtitle('Religion Over Time')
-
+  labs(x = 'Religion', y = 'Proportion') +
+  scale_x_discrete(labels = c('Christian','Muslim','Hindu', 'Buddhist')) +
+  ggtitle('Religion Over Time') +
+  theme(legend.position = 'none')
 p2
 ```
 
 ```{r}
-# Age group
-age_df2 <- age_df %>% 
-  group_by(Year, Age.Group) %>%
-  summarise(Inds = sum(Male) + sum(Female)) %>%
-  mutate(Percent = Inds / sum(Inds))
-
-p3 <- ggplot(age_df2, aes(x= reorder(Age.Group, -Percent), y=Percent)) + 
-  geom_bar(stat="identity") +
-  facet_grid(age_df2$Year) +
-  labs(x = 'Age Group', y = 'Individuals Percentages') +
-  ggtitle('Age Group Over Time')
-
-p3
-```
-
-```{r}
-total_demo <- ethnicity_df
-total_demo$Total <- as.numeric(total_demo$Total)
-change_in_pop <- total_demo %>%
-  group_by(Year, country) %>%
-  summarize(sum=sum(Total))
-ggplot(change_in_pop, aes(Year, sum, color=country))+
-  geom_line() + 
-  xlab("Year") + 
-  ylab("Number of Individuals") +
-  labs(title = "Change in Refugee Resettlement to the US 
-       of Top 5 Refugee Origins from 2009-2018 ",
-       caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
-  theme(legend.title = element_blank())
+# todo: add plot for Education
 ```
 
 
@@ -422,37 +395,6 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
 ggplotly(gg)
 ```
 
-```{r}
-library(maps)
-arrival_df2$hover <- with(arrival_df2, paste(State, '<br>', "Inds", Inds))
-
-# give state boundaries a white border
-l <- list(color = toRGB("white"), width = 2)
-# specify some map projection/options
-g <- list(
-  scope = 'usa',
-  projection = list(type = 'albers usa'),
-  showlakes = TRUE,
-  lakecolor = toRGB('white')
-)
-
-df_2009 <- arrival_df2[arrival_df2$Year==2009, ]
-p2 <- plot_geo(df_2009, locationmode = 'USA-states') %>%
-  add_trace(
-    z = ~Inds,
-    locations = ~code,
-    text = ~hover,
-    color = ~Inds,
-    colors = 'Blues'
-  ) %>%
-  colorbar(title = "Number of Individuals") %>%
-  layout(
-    title = '2009 Refugee Resettlements in USA',
-    geo = g
-  )
-
-p2
-```
 
 # Conclusion
 
