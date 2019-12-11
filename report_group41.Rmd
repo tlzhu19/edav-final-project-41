@@ -252,7 +252,7 @@ kable(head(religion_df))
 
 ## Transforming the Data
 
-**WRITE STUFF**
+**TODO: WRITE STUFF**
 
 # Missing Values
 The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
@@ -280,17 +280,19 @@ names(na_df)[2] <- "na_Total"
 # Put two df together
 combine_df <- cbind(total_df,na_df[2])
 # Proportion of missing data 
-combine_df <- transform(final, proportion = na_Total/Total)
+combine_df <- transform(combine_df, proportion = na_Total/Total)
 # Plot missing data
-ggplot(final, aes(x=country, y=proportion, fill=country))+
+ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  labs(x='Country', y='Proportion') +
   ggtitle("Missing Education Data by Country")
 ```
 
 
 # Results
 
+## Temporal Analysis
 
 ```{r}
 # Compare ceilings with actual admissions
@@ -317,9 +319,11 @@ p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=events
       geom_vline(xintercept = 2016, color='gray') +
       annotate("text", x=2015.3, y =50000, label="Trump\nelected", color='gray', hjust=0) +
       geom_vline(xintercept = 2012, color='gray') +
-      annotate("text", x=2011.3, y =40000, label="Obama\nreelected", color='gray', hjust=0) +
+      annotate("text", x=2011.2, y =40000, label="Obama\nreelected", color='gray', hjust=0) +
+      ylab("Number of Individuals") +
       ggtitle('Ceilings Vs Actual Refugee Resettlements') +
-      scale_y_continuous(labels = comma)
+      scale_y_continuous(labels = comma) +
+      theme(plot.title=element_text(hjust=0.5))
 
 ggplotly(p, tooltip = c('y', 'label'))
 ```
@@ -337,15 +341,51 @@ change_in_pop <- total_demo %>%
 change_in_pop$events <- c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
 countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=events))+
   geom_line() + 
+  geom_point() +
   xlab("Year") + 
   ylab("Number of Individuals") +
-  labs(title = "Change in Refugee Resettlement to the US 
-       of Top 5 Refugee Origins from 2009-2018 ",
+  labs(title = "Change in Refugee Resettlement to the US \nof Top 5 Refugee Origins from 2009-2018 ",
        caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5))
 
 ggplotly(countries_plot, tooltip = c('y', 'label'))
 ```
+
+## Geographical Analysis
+
+```{r, fig.width=9}
+df_map <- arrival_df
+
+# remove extra 6 'States'
+df_map <- df_map[!df_map$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
+df_map$State <- as.factor(df_map$State)
+df_map$code <- state.abb[match(df_map$State, state.name)]
+
+#add Wyoming and Montana because they are misisng 
+df_add <- data.frame(State = c('Wyoming','Wyoming','Montana'), Cases = c(0, 0, 0), Inds = c(0, 0, 0), Year = c(2009, 2010, 2010), code = c('WY', 'WY', 'MT'))
+
+df_map <- rbind(df_map, df_add)
+
+df_map$State <- tolower(df_map$State)
+
+states <- map_data('state')
+
+# fill = Inds? or cases?
+map_basic <- ggplot(df_map, aes(map_id = State)) + 
+  geom_map(aes(fill = Inds), map = states) + 
+  expand_limits(x = states$long, y = states$lat) +
+  facet_wrap(~Year) +
+  scale_fill_gradient(low="#D6EAF8", high="#154360") +
+  ggtitle('Refugee Resettlement in the US by State') +
+  theme(plot.title=element_text(hjust=0.5))
+
+map_basic
+```
+
+
+## Demographic Analysis
+
+### Religion
 
 The top 5 religions in the world are: Christianity, Islam, Hinduism, Buddhism, Sikhism (https://thecountriesof.com/top-5-largest-religions-in-the-world/). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one.
 
@@ -395,51 +435,47 @@ p2 <- ggplot(subset_religion_df4, aes(x= reorder(Religion, -Proportion), y=Propo
   labs(x = 'Religion', y = 'Proportion') +
   scale_x_discrete(labels = c('Christian','Muslim','Hindu', 'Buddhist')) +
   ggtitle('Religion Over Time') +
-  theme(legend.position = 'none')
+  theme(legend.position = 'none', plot.title=element_text(hjust=0.5))
 p2
 ```
 
+### Education Level
+
 ```{r}
-# todo: add plot for Education
 edu_df<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,Total, country, Year))
+
 edu_country <- edu_df %>% 
   group_by(country) %>%
   mutate(proportion = Total/sum(Total))
+
 ggplot(edu_country, aes(x= reorder(Education, - proportion),y=proportion, fill=Education))+
-  geom_bar(stat="identity")+
+  geom_bar(stat="identity") +
   facet_grid(edu_country$country) +
-  theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  labs(x='Education Level', y='Proportion') +
+  theme(legend.position="none", plot.title=element_text(hjust=0.5), axis.text.x = element_text(angle = 90, hjust = 1)) +
   ggtitle("Education Data by Country")
 ```
 
+### Age Group
 
-```{r, fig.width=8}
-df_map <- arrival_df
+```{r}
+age_df2 <- age_df %>% 
+  group_by(country) %>%
+  mutate(Proportion = Total/sum(Total))
 
-# remove extra 6 'States'
-df_map <- df_map[!df_map$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
-df_map$State <- as.factor(df_map$State)
-df_map$code <- state.abb[match(df_map$State, state.name)]
+age_df2$Age.Group <- factor(age_df2$Age.Group, levels = c("Under 14", "Age 14 to 20", "Age 21 to 30", "Age 31 to 40", "Age 41 to 50", "Age 51 to 64", "Age 65 and Over"))
 
-#add Wyoming and Montana because they are misisng 
-df_add <- data.frame(State = c('Wyoming','Wyoming','Montana'), Cases = c(0, 0, 0), Inds = c(0, 0, 0), Year = c(2009, 2010, 2010), code = c('WY', 'WY', 'MT'))
+p3 <- ggplot(age_df2, aes(x= Age.Group, y=Proportion, fill=Age.Group)) + 
+  geom_bar(stat="identity") +
+  facet_grid(age_df2$country) +
+  labs(x = 'Age Group', y = 'Proportion') +
+  theme(legend.position="none", plot.title=element_text(hjust=0.5)) +
+  ggtitle('Age Group by Country')
 
-df_map <- rbind(df_map, df_add)
-
-df_map$State <- tolower(df_map$State)
-
-states <- map_data('state')
-
-# fill = Inds? or cases?
-map_basic <- ggplot(df_map, aes(map_id = State)) + 
-  geom_map(aes(fill = Inds), map = states) + 
-  expand_limits(x = states$long, y = states$lat) +
-  facet_wrap(~Year) +
-  scale_fill_gradient(low="#D6EAF8", high="#154360") +
-  ggtitle('Refugee Resettlement in the US by State')
-
-map_basic
+p3
 ```
+
+DRC and Somalia have the highest proportions of refugees who are under 14.
 
 
 # Interactive Component
@@ -453,12 +489,12 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
   geom_bar(stat="identity", position='identity') +
   labs(x = "State", y="Individuals") +
   ggtitle('Refugee Resettlements By State from 2009-2018') +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, hjust = 1), plot.title=element_text(hjust=0.5))
 ggplotly(gg)
 ```
 
 
 # Conclusion
 
-**WRITE STUFF**
+**TODO: WRITE STUFF**
 
