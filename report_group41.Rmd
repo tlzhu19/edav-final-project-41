@@ -233,27 +233,32 @@ After cleaning the data, we have six '.csv' files that can be found [here](https
 kable(head(arrival_df))
 ```
 
-2. `age_group.csv`: 
+2. `age_group.csv`: The composition of refugee population based on age groups from under 14 years old to age 51 to 64. Provides additional information on which gender, country, and year these individuals in age groups belong.
+
 ```{r}
 kable(head(age_df))
 ```
 
-3. `education.csv`: 
+3. `education.csv`: The composition of refugee population based on the education levels of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+
 ```{r}
 kable(head(education_df))
 ```
 
-4. `ethnicity.csv`: 
+4. `ethnicity.csv`: The composition of refugee population based on the ethnicity of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong.
+
 ```{r}
 kable(head(ethnicity_df))
 ```
 
-5. `native_language.csv`: 
+5. `native_language.csv`: The composition of refugee population based on the native languages used by the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+
 ```{r}
 kable(head(native_language_df))
 ```
 
-6. `religion.csv`: 
+6. `religion.csv`: The composition of refugee population based on the religion of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+
 ```{r}
 kable(head(religion_df))
 ```
