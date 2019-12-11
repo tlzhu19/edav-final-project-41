@@ -25,7 +25,7 @@ The world’s forcibly displaced population hit its record high in 2017. Globall
 The recent years thus mark a significant shift in refugee resettlement in the US, as a result, this report will be examining the refugee admission trend in the US over the past 10 years (2009-2018). 
 
 ## Background 
-According to the UNHCR, refugees are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
+According to the UNHCR, `refugees` are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
 
 Process of refugee resettlement:
   
