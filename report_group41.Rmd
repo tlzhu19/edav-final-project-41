@@ -270,7 +270,7 @@ We removed these rows since we are just curious about the fifty states.
 In Education data, we observed the proportion of missing data compared to the total data. 
 
 ```{r}
-# CODE FOR PLOTTING PERCENTAGE OF MISSING DATA 
+# CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
 na_df<- select(filter(education_df, Education == "Bio Data not Complete" | Education == "Unknown"),c(Education,Total, country, Year))
 # Total sum of data 
 total_df <- education_df %>% group_by(country)%>% summarize(Total = sum(Total))
@@ -288,6 +288,29 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
   labs(x='Country', y='Proportion') +
   ggtitle("Missing Education Data by Country")
+
+
+# Religion
+
+#group by country and bar plot for Unknown ()
+# CODE FOR PLOTTING PERCENTAGE OF MISSING DATA 
+na_df1<- select(filter(religion_df, Religion == "Unknown"),c(Religion,Total, country, Year))
+# Total sum of data 
+total_df1 <- religion_df %>% group_by(country)%>% summarize(Total = sum(Total))
+# Total sum of missing data
+na_df1 <- na_df1 %>% group_by(country) %>% summarize(Total = sum(Total))
+# Change column name 
+names(na_df1)[2] <- "na_Total"
+# Put two df together
+combine_df1 <- cbind(total_df1,na_df1[2])
+# Proportion of missing data 
+combine_df1 <- transform(combine_df1, proportion = na_Total/Total)
+
+# Plot missing data
+ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
+  geom_bar(stat="identity")+
+  theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  ggtitle("Missing Religion Data by Country")
 ```
 
 
