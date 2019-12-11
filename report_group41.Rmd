@@ -252,9 +252,17 @@ kable(head(native_language_df))
 kable(head(religion_df))
 ```
 
+Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the US. To further elaborate, when we visualized the Ethnicity and Native language trend over the years, the overall trend remained consistent throughout the period, and did not seem to clearly show the refugee resettlement trends unlike the other demographic data we used for analysis. 
+
+Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
+
+
 ## Transforming the Data
 
-**TODO: WRITE STUFF**
+In order to visualize and compare the refugee resettlement trends among countries or between years, we had to group the data by country or year. 
+
+For the same reason, in addition to using the raw values given in the data (number of people belonging to that group), we transformed the data into proportion to see a clear comparison among the countries, religions, education level, and age. 
+
 
 # Missing Values
 The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
@@ -268,7 +276,13 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 
 We removed these rows since we are just curious about the fifty states.
 
-In Education data, we observed the proportion of missing data compared to the total data. For example, Bhutan has more than 30% of missing data in education. 
+In Education data, there were two rows called “Bio Data not Complete” and “NONE”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
+
+In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
+
+Similarly, for the Religion data, we also considered the row “NONE” to be missing data, and calculated the proportion of missing data compared to the total data. Unlike the Education data, the proportion of missing data were much smaller. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
+ 
+Lastly, Age data did not contain any missing data, so no further analysis was needed to analyze missing patterns for this dataset. 
 
 ```{r}
 # Colors
@@ -698,6 +712,9 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
 ggplotly(gg)
 ```
 
+Through this interactive graph, we can gain a better understanding of the refugee resettlement trends within the US states (2009 - 2018).
+
+In terms of the overall trend, we can observe a significant decrease in overall refugee resettlements in the US from 2009 to 2018. While there was a slight increase from 2015 to 2016, the numbers dropped drastically from 2016 onwards. We can also note that the two states with the largest refugee resettlements are California and Texas, and this has remained constant during the entire period. Interestingly, 2009 was the only year where California accepted more than 9000 refugees. Other states have never exceeded this number. 
 ## Demographics: Religion
 
 ```{r} 
