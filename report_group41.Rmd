@@ -276,13 +276,6 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 
 We removed these rows since we are just curious about the fifty states.
 
-In Education data, there were two rows called “Bio Data not Complete” and “NONE”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
-
-In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
-
-Similarly, for the Religion data, we also considered the row “NONE” to be missing data, and calculated the proportion of missing data compared to the total data. Unlike the Education data, the proportion of missing data were much smaller. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
- 
-Lastly, Age data did not contain any missing data, so no further analysis was needed to analyze missing patterns for this dataset. 
 
 ```{r}
 # Colors
@@ -300,7 +293,6 @@ PURPLE_h = '#DA70D6'
 # for the countries
 our_palette = c('orange', BLUE_h, RED_h, GREEN_h, PURPLE_h)
 ```
-
 
 ```{r}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
@@ -322,8 +314,13 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   labs(x='Country', y='Proportion') +
   ggtitle("Missing Education Data by Country") +
   scale_fill_manual(values=our_palette)
+```
 
+In Education data, there were two rows called “Bio Data not Complete” and “NONE”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
 
+In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
+
+```{r}
 # Religion
 
 #group by country and bar plot for Unknown ()
@@ -344,9 +341,14 @@ combine_df1 <- transform(combine_df1, proportion = na_Total/Total)
 ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
+  labs(x='Country', y='Proportion') +
   ggtitle("Missing Religion Data by Country") +
   scale_fill_manual(values=our_palette)
 ```
+
+Similarly, for the Religion data, we also considered the row “NONE” to be missing data, and calculated the proportion of missing data compared to the total data. Unlike the Education data, the proportion of missing data were much smaller. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
+ 
+Lastly, Age data did not contain any missing data, so no further analysis was needed to analyze missing patterns for this dataset. 
 
 
 # Results
