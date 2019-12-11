@@ -318,6 +318,14 @@ ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
 
 ## Temporal Analysis
 
+Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
+
+In this graph, we have the years we are looking at on the x-axis and the population count on the y-axis. The green line indicates the ceiling set by the U.S. government on the maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+We hypothesize that the change in the refugee admission ceiling and the actual refugee resettlement population are correlated with:
+
+  1) The government administration at the time
+  2) The US economy and major events in general
+  
 ```{r}
 # Compare ceilings with actual admissions
 total_arrival_df <- arrival_df %>%
@@ -403,6 +411,13 @@ p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=Events
 
 ggplotly(p, tooltip = c('y', 'label'))
 ```
+
+Looking at the general trend of change in refugee admission ceiling, the two timepoints that stand out the most are 2015 and 2016.
+  * In 2015, the refugee admission ceiling increased drastically from 70,000 to a record high of 85,000 in 2016 under President Obama’s administration. 
+  * In 2016, however, the refugee admission ceiling decreased drastically from 85,000 to a record low of 45,000 in 2018 under President Trump’s administration and has continued to decrease.
+
+Looking at the general trend of change in the actual refugee resettlement population, we can see that the population decreased from 79,943 in 2009 to a low of 51,458 in 2011, when President Obama was re-elected. 
+However, the resettlement population increased from 51,458 in 2011 to a record high of 96,874 in 2016, and decreased drastically from 96,874 in 2016 to a record low of 22,847 in 2018 under President Trump’s administration.
 
 
 We take a closer look at the top 5 countries that have refugees resettled in the USA (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
