@@ -316,7 +316,7 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   scale_fill_manual(values=our_palette)
 ```
 
-In Education data, there were two rows called “Bio Data not Complete” and “NONE”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
+In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
 
 In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
 
@@ -667,10 +667,13 @@ edu_country <- edu_df %>%
   group_by(country) %>%
   mutate(proportion = Total/sum(Total))
 
-ggplot(edu_country, aes(x= reorder(Education, - proportion),y=proportion, fill=Education))+
+edu_country$Education <- factor(edu_country$Education, levels = c('Kindergarten', 'Primary','Secondary', 'Intermediate', 'Pre-University', 'University/College', 'Graduate School', 'Technical School', 'Professional', 'NONE'))
+
+ggplot(edu_country, aes(x= Education, y=proportion, fill=Education))+
   geom_bar(stat="identity") +
   facet_grid(edu_country$country) +
   labs(x='Education Level', y='Proportion') +
+  scale_x_discrete(labels = c('Kindergarten', 'Primary','Secondary', 'Intermediate', 'Pre-University', 'University/College', 'Graduate School', 'Technical School', 'Professional', 'No Education')) +
   theme(legend.position="none", plot.title=element_text(hjust=0.5), axis.text.x = element_text(angle = 90, hjust = 1)) +
   ggtitle("Education Data by Country")
 ```
