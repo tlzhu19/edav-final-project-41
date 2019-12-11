@@ -662,7 +662,7 @@ DRC and Somalia have the highest proportions of refugees who are under 14.
 
 # Interactive Component
 
-## Geophics
+## Geographics
 ```{r}
 # remove extra 6 'States'
 arrival_df2 <- arrival_df[!arrival_df$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
@@ -734,112 +734,97 @@ muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year"
 
 ```{r}
 
+BLUE = 'rgb(26, 118, 255)'
+
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Bhutan, name = 'Bhutan') %>%
-  add_bars(y = ~Burma, name = 'Burma') %>%
-  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Percentage') %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Percentage') %>%
+  add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color='orange')) %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
+  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Proportion', marker= list(color='orange'), visible=F) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
   layout(
-    title = 'Hindu by Country Over Time', 
+    title = 'Hindus by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
     yaxis = list(title = 'Hindu'),
     updatemenus = list(
       list(
-            y = 0.9,
+            x = 1.4,
+            y = 0.7,
             buttons = list(
               list(method = 'restyle',
                    args = list('visible', list(TRUE, TRUE, F, F)),
                    label = 'All Individuals'),
               list(method = 'restyle',
-                   args = list('visible', list(F, F, T, T)),
-                   label = 'All Percentages'),
-              list(method = 'restyle',
                    args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
-                   label = 'Hindu from Bhutan'),
+                   label = '\t\t\tHindus from Bhutan'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, TRUE, FALSE, FALSE)),
-                   label = 'Hindu from Burma'),
-              list(method = 'restyle',
-                   args = list('visible', list(FALSE, FALSE, TRUE, FALSE)),
-                   label = 'Hindu from \nBhutan in Percent'),
-              list(method = 'restyle',
-                   args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
-                   label = 'Hindu from \nBurma in Percent'))
-      ),
-    
-      list(
-            y = 0.5,
-            buttons = list(
-              list(method = 'restyle',
-                   args = list('visible', list(TRUE, TRUE, F, F)),
-                   label = 'All Individuals'),
+                   label = '\t\t\tHindus from Burma'), 
               list(method = 'restyle',
                    args = list('visible', list(F, F, T, T)),
-                   label = 'All Percentages'),
-              list(method = 'restyle',
-                   args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
-                   label = 'Hindu from Bhutan'),
-              list(method = 'restyle',
-                   args = list('visible', list(FALSE, TRUE, FALSE, FALSE)),
-                   label = 'Hindu from Burma'),
+                   label = 'All Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, TRUE, FALSE)),
-                   label = 'Hindu from \nBhutan in Percent'),
+                   label = '\t\t\tHindus from \n\t\t\tBhutan in Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
-                   label = 'Hindu from \nBurma in Percent'))
+                   label = '\t\t\tHindus from \n\t\t\tBurma in Proportions'))
       )
       
     )
   )
 
+RED = 'rgb(255, 99, 71)'
+GREEN = 'rgb(60, 179, 113)'
+PURPLE = 'rgb(218, 112, 214)'
+
 p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Burma, name = 'Burma') %>%
-  add_bars(y = ~DRC, name = 'DRC') %>%
-  add_bars(y = ~Iraq, name = 'Iraq') %>%
-  add_bars(y = ~Somalia, name = 'Somalia') %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Percent') %>%
-  add_bars(y = ~DRC_Percentage, name = 'DRC Percent') %>%
-  add_bars(y = ~Iraq_Percentage, name = 'Iraq Percent') %>%
-  add_bars(y = ~Somalia_Percentage, name = 'Somalia Percent') %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
+  add_bars(y = ~DRC, name = 'DRC', marker= list(color=PURPLE)) %>%
+  add_bars(y = ~Iraq, name = 'Iraq', marker= list(color=GREEN)) %>%
+  add_bars(y = ~Somalia, name = 'Somalia', marker= list(color=RED)) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
+  add_bars(y = ~DRC_Percentage, name = 'DRC Proportion', marker= list(color=PURPLE), visible=F) %>%
+  add_bars(y = ~Iraq_Percentage, name = 'Iraq Proportion', marker= list(color=GREEN), visible=F) %>%
+  add_bars(y = ~Somalia_Percentage, name = 'Somalia Proportion', marker= list(color=RED), visible=F) %>%
   layout(
-    title = 'Muslim by Country Over Time', 
+    title = 'Muslims by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
     yaxis = list(title = 'Muslim'),
     updatemenus = list(
       list(
-            y = 0.9,
+            x= 1.4,
+            y = 0.6,
             buttons = list(
               list(method = 'restyle',
                    args = list('visible', list(TRUE, TRUE, TRUE, TRUE, F, F, F, F)),
                    label = 'All Individuals'),
               list(method = 'restyle',
-                   args = list('visible', list(F, F, F, F, TRUE, TRUE, TRUE, TRUE)),
-                   label = 'All Percentages'),
-              list(method = 'restyle',
                    args = list('visible', list(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE)),
-                   label = 'Muslims from Burma'),
+                   label = '\t\t\tMuslims from Burma'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, TRUE, FALSE, FALSE, FALSE, FALSE,FALSE, FALSE)),
-                   label = 'Muslims from DRC'),
+                   label = '\t\t\tMuslims from DRC'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE)),
-                   label = 'Muslims from Iraq'),
+                   label = '\t\t\tMuslims from Iraq'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE)),
-                   label = 'Muslims from Somalia'),
+                   label = '\t\t\tMuslims from Somalia'),
+              list(method = 'restyle',
+                   args = list('visible', list(F, F, F, F, TRUE, TRUE, TRUE, TRUE)),
+                   label = 'All Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE)),
-                   label = 'Muslim from \nBurma in Percentage'),
+                   label = '\t\t\tMuslims from \n\t\t\tBurma in Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE)),
-                   label = 'Muslim from \nDRC in Percentage'),
+                   label = '\t\t\tMuslims from \n\t\t\tDRC in Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)),
-                   label = 'Muslim from \nIraq in Percentage'),
+                   label = '\t\t\tMuslims from \n\t\t\tIraq in Proportions'),
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)),
-                   label = 'Muslim from \nSomalia in Percentage'))
+                   label = '\t\t\tMuslims from \n\t\t\tSomalia in Proportions'))
         )
       )
     )
