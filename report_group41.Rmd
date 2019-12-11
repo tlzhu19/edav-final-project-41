@@ -335,7 +335,7 @@ total_arrival_df$Ceiling = Ceiling
 total_arrival_df <- total_arrival_df %>%
   gather(key, Individuals, Actual, Ceiling)
 
-total_arrival_df$events = c("
+total_arrival_df$Events = c("
 -Barack Obama is inaugurated.
 -In Cairo, President Obama addresses the 
 world's Muslims, vowing to forge a 'new beginning'.
@@ -389,7 +389,7 @@ the U.S was met with stiff resistance from some House Republicans', '\n-Donald T
 -Migrant children were separated from their parents as part 
 of President Trump’s ‘zero tolerance’ border policy')
 
-p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=events)) +
+p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=Events)) +
       geom_line() +
       geom_point(size = .75) +
       geom_vline(xintercept = 2016, color='gray') +
@@ -414,7 +414,7 @@ change_in_pop <- total_demo %>%
   group_by(Year, country) %>%
   summarize(sum=sum(Total))
 
-change_in_pop$events <- c('\n-A 6.1 magnitude earthquake occurred in eastern 
+change_in_pop$Events <- c('\n-A 6.1 magnitude earthquake occurred in eastern 
 Bhutan, leaving at least 10 dead
 -Huanglongbing virus wipes out much of Bhutan’s 
 orange crop, an important export for Bhutan', "\n- Government signs ceasefire with rebels 
@@ -480,7 +480,7 @@ and is replaced by Win Myint, a fellow Suu Kyi loyalist.', '\n- Main opposition 
 Progress chooses Felix Tshisekedi as its candidate 
 for the December presidential election.
 - Ebola outbreak in the east.', 'blah', 'blah')
-countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=events))+
+countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Events))+
   geom_line() + 
   geom_point(size = .75) +
   xlab("Year") + 
