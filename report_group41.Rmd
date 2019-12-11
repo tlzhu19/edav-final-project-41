@@ -226,7 +226,7 @@ education_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-pr
 native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-final-project-41/master/data/clean/native_language.csv')
 ```
 
-After cleaning the data, we have six '.csv' files that can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/clean). 
+After cleaning the data, we have six '.csv' files that can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/clean). The following tables are a preview of the first few rows of these csv files.
 
 1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the U.S. from 2009-2018. All raw files to make this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
 ```{r}
