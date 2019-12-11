@@ -27,17 +27,17 @@ The world’s forcibly displaced population hit its record high in 2017. Globall
 The recent years thus mark a significant shift in refugee resettlement in the US, as a result, this report will be examining the refugee admission trend in the US over the past 10 years (2009-2018). 
 
 ## Background 
-According to the UNHCR, `refugees` are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
+According to the UNHCR, refugees are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
 
 Process of refugee resettlement:
   
-  1. The process of refugee resettlement to the U.S. is a lengthy and thorough process that takes approximately two years and involves numerous U.S. governmental agencies
+  1. The process of refugee resettlement to the US is a lengthy and thorough process that takes approximately two years and involves numerous US governmental agencies.
   
-  2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
+  2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency, identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
   
-  3. Once a refugee is recommended to the U.S. for settlement, the U.S. government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
+  3. Once a refugee is recommended to the US for settlement, the US government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
       * Screening by 8 federal agencies including the State Department, Department of Homeland Security and the FBI
-      * Six security database checks and biometric security checks screened against U.S. federal databases
+      * Six security database checks and biometric security checks screened against US federal databases
       * Medical screening
       * Three in-person interviews with Department of Homeland Security Officers
 
@@ -55,8 +55,8 @@ We are interested in answering the following questions to gain a better understa
 
   2. What insights can we gain from geographical visualization of refugee settlement patterns in the US over the 10 years? Why might some states have larger refugee settlements than others?
   
-  3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
-      * Given the number of religions included in the refugee population, we will be focusing on the top 5 religions in the world (Christianity, Islam, Hinduism, Buddhism, Sikhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
+  3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize?
+      * Given the number of religions included in the refugee population, we will be focusing on the top 4 religions in the world (Christianity, Islam, Hinduism, Buddhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
 
 
 # Data Sources
@@ -252,9 +252,17 @@ kable(head(native_language_df))
 kable(head(religion_df))
 ```
 
+Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the US. To further elaborate, when we visualized the Ethnicity and Native language trend over the years, the overall trend remained consistent throughout the period, and did not seem to clearly show the refugee resettlement trends unlike the other demographic data we used for analysis. 
+
+Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
+
+
 ## Transforming the Data
 
-**TODO: WRITE STUFF**
+In order to visualize and compare the refugee resettlement trends among countries or between years, we had to group the data by country or year. 
+
+For the same reason, in addition to using the raw values given in the data (number of people belonging to that group), we transformed the data into proportion to see a clear comparison among the countries, religions, education level, and age. 
+
 
 # Missing Values
 The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
@@ -268,7 +276,23 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 
 We removed these rows since we are just curious about the fifty states.
 
-In Education data, we observed the proportion of missing data compared to the total data. For example, Bhutan has more than 30% of missing data in education. 
+
+```{r}
+# Colors
+
+BUHTAN_COLOR = 'orange'
+BURMA_COLOR = BLUE = 'rgb(26, 118, 255)'
+BLUE_h = '#1A76FF'
+DRC_COLOR = RED = 'rgb(255, 99, 71)'
+RED_h = '#FF6347'
+IRAQ_COLOR = GREEN = 'rgb(60, 179, 113)'
+GREEN_h = '#3CB371'
+SOMALIA_COLOR = PURPLE = 'rgb(218, 112, 214)'
+PURPLE_h = '#DA70D6'
+
+# for the countries
+our_palette = c('orange', BLUE_h, RED_h, GREEN_h, PURPLE_h)
+```
 
 ```{r}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
@@ -288,9 +312,15 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
   labs(x='Country', y='Proportion') +
-  ggtitle("Missing Education Data by Country")
+  ggtitle("Missing Education Data by Country") +
+  scale_fill_manual(values=our_palette)
+```
 
+In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
 
+In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
+
+```{r}
 # Religion
 
 #group by country and bar plot for Unknown ()
@@ -311,8 +341,14 @@ combine_df1 <- transform(combine_df1, proportion = na_Total/Total)
 ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
-  ggtitle("Missing Religion Data by Country")
+  labs(x='Country', y='Proportion') +
+  ggtitle("Missing Religion Data by Country") +
+  scale_fill_manual(values=our_palette)
 ```
+
+Similarly, for the Religion data, we also considered the row “NONE” to be missing data, and calculated the proportion of missing data compared to the total data. Unlike the Education data, the proportion of missing data were much smaller. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
+ 
+Lastly, Age data did not contain any missing data, so no further analysis was needed to analyze missing patterns for this dataset. 
 
 
 # Results
@@ -321,7 +357,7 @@ ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
 
 Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
 
-In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the U.S. government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the US government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
 We hypothesize that the change in the refugee admission ceiling, and the actual refugee resettlement population are correlated with:
 
   1) The government administration at the time
@@ -526,9 +562,10 @@ countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Even
   geom_point(size = .75) +
   xlab("Year") + 
   ylab("Number of Individuals") +
-  labs(title = "Change in Refugee Resettlement to the US \nof Top 5 Refugee Origins from 2009-2018 ",
+  labs(title = "Change in Refugee Resettlements to the US \nof Top 5 Refugee Origins from 2009-2018 ",
        caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
-  theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5))
+  theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5)) +
+  scale_color_manual(values=our_palette)
 
 ggplotly(countries_plot, tooltip = c('y', 'label'))
 ```
@@ -630,10 +667,13 @@ edu_country <- edu_df %>%
   group_by(country) %>%
   mutate(proportion = Total/sum(Total))
 
-ggplot(edu_country, aes(x= reorder(Education, - proportion),y=proportion, fill=Education))+
+edu_country$Education <- factor(edu_country$Education, levels = c('Kindergarten', 'Primary','Secondary', 'Intermediate', 'Pre-University', 'University/College', 'Graduate School', 'Technical School', 'Professional', 'NONE'))
+
+ggplot(edu_country, aes(x= Education, y=proportion, fill=Education))+
   geom_bar(stat="identity") +
   facet_grid(edu_country$country) +
   labs(x='Education Level', y='Proportion') +
+  scale_x_discrete(labels = c('Kindergarten', 'Primary','Secondary', 'Intermediate', 'Pre-University', 'University/College', 'Graduate School', 'Technical School', 'Professional', 'No Education')) +
   theme(legend.position="none", plot.title=element_text(hjust=0.5), axis.text.x = element_text(angle = 90, hjust = 1)) +
   ggtitle("Education Data by Country")
 ```
@@ -676,6 +716,10 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1), plot.title=element_text(hjust=0.5))
 ggplotly(gg)
 ```
+
+Through this interactive graph, we can gain a better understanding of the refugee resettlement trends within the US states (2009 - 2018).
+
+In terms of the overall trend, we can observe a significant decrease in overall refugee resettlements in the US from 2009 to 2018. While there was a slight increase from 2015 to 2016, the numbers dropped drastically from 2016 onwards. We can also note that the two states with the largest refugee resettlements are California and Texas, and this has remained constant during the entire period. Interestingly, 2009 was the only year where California accepted more than 9000 refugees. Other states have never exceeded this number. 
 
 ## Demographics: Religion
 
@@ -743,15 +787,13 @@ hindu_df_messy_final <- merge(hindu_df_messy, hindu_percent_df, by = c("Year", "
 muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year", "Religion"))
 ```
 
+
 ```{r}
-
-BLUE = 'rgb(26, 118, 255)'
-
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color='orange')) %>%
-  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
-  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Proportion', marker= list(color='orange'), visible=F) %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
+  add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color=BUHTAN_COLOR)) %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
+  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Proportion', marker= list(color=BUHTAN_COLOR), visible=F) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BURMA_COLOR), visible=F) %>%
   layout(
     title = 'Hindus by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
@@ -784,19 +826,15 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
     )
   )
 
-RED = 'rgb(255, 99, 71)'
-GREEN = 'rgb(60, 179, 113)'
-PURPLE = 'rgb(218, 112, 214)'
-
 p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
-  add_bars(y = ~DRC, name = 'DRC', marker= list(color=PURPLE)) %>%
-  add_bars(y = ~Iraq, name = 'Iraq', marker= list(color=GREEN)) %>%
-  add_bars(y = ~Somalia, name = 'Somalia', marker= list(color=RED)) %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
-  add_bars(y = ~DRC_Percentage, name = 'DRC Proportion', marker= list(color=PURPLE), visible=F) %>%
-  add_bars(y = ~Iraq_Percentage, name = 'Iraq Proportion', marker= list(color=GREEN), visible=F) %>%
-  add_bars(y = ~Somalia_Percentage, name = 'Somalia Proportion', marker= list(color=RED), visible=F) %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
+  add_bars(y = ~DRC, name = 'DRC', marker= list(color=DRC_COLOR)) %>%
+  add_bars(y = ~Iraq, name = 'Iraq', marker= list(color=IRAQ_COLOR)) %>%
+  add_bars(y = ~Somalia, name = 'Somalia', marker= list(color=SOMALIA_COLOR)) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BURMA_COLOR), visible=F) %>%
+  add_bars(y = ~DRC_Percentage, name = 'DRC Proportion', marker= list(color=DRC_COLOR), visible=F) %>%
+  add_bars(y = ~Iraq_Percentage, name = 'Iraq Proportion', marker= list(color=IRAQ_COLOR), visible=F) %>%
+  add_bars(y = ~Somalia_Percentage, name = 'Somalia Proportion', marker= list(color=SOMALIA_COLOR), visible=F) %>%
   layout(
     title = 'Muslims by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
