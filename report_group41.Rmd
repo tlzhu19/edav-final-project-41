@@ -12,6 +12,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+#install.packages("maps")
 library(readxl)
 library(tidyverse)
 library(plotly)
@@ -315,7 +316,7 @@ total_arrival_df$events = c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'bla
 
 p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=events)) +
       geom_line() +
-      geom_point() +
+      geom_point(size = .75) +
       geom_vline(xintercept = 2016, color='gray') +
       annotate("text", x=2015.3, y =50000, label="Trump\nelected", color='gray', hjust=0) +
       geom_vline(xintercept = 2012, color='gray') +
@@ -341,7 +342,7 @@ change_in_pop <- total_demo %>%
 change_in_pop$events <- c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
 countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=events))+
   geom_line() + 
-  geom_point() +
+  geom_point(size = .75) +
   xlab("Year") + 
   ylab("Number of Individuals") +
   labs(title = "Change in Refugee Resettlement to the US \nof Top 5 Refugee Origins from 2009-2018 ",
