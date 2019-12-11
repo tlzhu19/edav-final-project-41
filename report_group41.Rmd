@@ -24,9 +24,9 @@ library(data.table)
 # Introduction
 ## Motivation
 
-The world’s forcibly displaced population hit its record high in 2017. Globally, at the end of 2017, the global refugee population increased by 2.9 million. By the end of the year, 68.5 million individuals were forcibly displaced worldwide as a result of persecution conflict, or generalized violence (https://www.unhcr.org/5b27be547.pdf). Despite the increase in demand for refugee admission and assistance, the United States specifically has taken a drastic turn away from supporting refugees. The number of refugees admitted to the United States has dropped from a recent high of 84,994 in FY 2016 to 22,874 in FY 2018 - the lowest in 40 years since 1977. The current ceiling for refugee admission has also dropped to 45,000, the lowest in the history of the current US resettlement program. Coming at a time when global numbers of refugees have reached record highs, the ratio of refugees admitted to the United States to the number of refugees worldwide has never been lower. For the first time, the US policy towards refugee admission is moving decisively against the trend of the total number of refugees worldwide (https://www.cgdev.org/blog/reflecting-world-refugee-day-trends-and-consequences-us-refugee-policy). 
+The world’s forcibly displaced population hit its record high in 2017. Globally, at the end of 2017, the global refugee population increased by 2.9 million. By the end of the year, 68.5 million individuals were forcibly displaced worldwide as a result of persecution conflict, or generalized violence (https://www.unhcr.org/5b27be547.pdf). Despite the increase in demand for refugee admission and assistance, the United States specifically has taken a drastic turn away from supporting refugees. The number of refugees admitted to the United States has dropped from a recent high of 84,994 in FY 2016 to 22,874 in FY 2018 - the lowest in 40 years since 1977. The current ceiling for refugee admission has also dropped to 45,000, the lowest in the history of the current U.S. resettlement program. Coming at a time when global numbers of refugees have reached record highs, the ratio of refugees admitted to the United States to the number of refugees worldwide has never been lower. For the first time, the U.S. policy towards refugee admission is moving decisively against the trend of the total number of refugees worldwide (https://www.cgdev.org/blog/reflecting-world-refugee-day-trends-and-consequences-us-refugee-policy). 
 
-The recent years thus mark a significant shift in refugee resettlement in the US, as a result, this report will be examining the refugee admission trend in the US over the past 10 years (2009-2018). 
+The recent years thus mark a significant shift in refugee resettlement in the U.S., as a result, this report will be examining the refugee admission trend in the U.S. over the past 10 years (2009-2018). 
 
 
 ## Background 
@@ -36,13 +36,13 @@ According to the UNHCR, refugees are defined as those who have been forced to le
 Process of refugee resettlement (https://www.unrefugees.org/refugee-facts/usa/
 ):
   
-  1. The process of refugee resettlement to the US is a lengthy and thorough process that takes approximately two years and involves numerous US governmental agencies.
+  1. The process of refugee resettlement to the U.S. is a lengthy and thorough process that takes approximately two years and involves numerous U.S. governmental agencies.
   
   2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency, identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
   
-  3. Once a refugee is recommended to the US for settlement, the US government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
+  3. Once a refugee is recommended to the U.S. for settlement, the U.S. government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
       * Screening by 8 federal agencies including the State Department, Department of Homeland Security and the FBI
-      * Six security database checks and biometric security checks screened against US federal databases
+      * Six security database checks and biometric security checks screened against U.S. federal databases
       * Medical screening
       * Three in-person interviews with Department of Homeland Security Officers
 
@@ -51,15 +51,15 @@ Under the Refugee Act of 1980, the president sets an annual ceiling for refugee 
 
 ## Questions
 
-There are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. In order to better visualize the trend of refugee resettlement to the US, this report will be specifically focusing on the top 5 countries (Burma, Iraq, Somalia, Bhutan, Democratic Republic of the Congo) with the highest refugee resettlement population in the US, which accounted for 60.9% of the total refugee arrivals in the US (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
+There are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. In order to better visualize the trend of refugee resettlement to the U.S., this report will be specifically focusing on the top 5 countries (Burma, Iraq, Somalia, Bhutan, Democratic Republic of the Congo) with the highest refugee resettlement population in the U.S., which accounted for 60.9% of the total refugee arrivals in the U.S. (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
 
 We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
   
-  1. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the US?
+  1. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the U.S.?
       * Has there been increases/decreases in refugee resettlements population from 2009 - 2018?
       * Is there a correlation between change in refugee resettlement population and major political events that have happened over the 10 years?
 
-  2. What insights can we gain from geographical visualization of refugee settlement patterns in the US over the 10 years? Why might some states have larger refugee settlements than others?
+  2. What insights can we gain from geographical visualization of refugee settlement patterns in the U.S. over the 10 years? Why might some states have larger refugee settlements than others?
   
   3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize?
       * Given the number of religions included in the refugee population, we will be focusing on the top 4 religions in the world (Christianity, Islam, Hinduism, Buddhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
@@ -228,7 +228,7 @@ native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-fi
 
 After cleaning the data, we have six '.csv' files that can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/clean). 
 
-1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the US from 2009-2018. All raw files to make this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
+1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the U.S. from 2009-2018. All raw files to make this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
 ```{r}
 kable(head(arrival_df))
 ```
@@ -263,7 +263,7 @@ kable(head(native_language_df))
 kable(head(religion_df))
 ```
 
-Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the US. To further elaborate, when we visualized the Ethnicity and Native language trend over the years, the overall trend remained consistent throughout the period, and did not seem to clearly show the refugee resettlement trends unlike the other demographic data we used for analysis. 
+Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the U.S.. To further elaborate, when we visualized the Ethnicity and Native language trend over the years, the overall trend remained consistent throughout the period, and did not seem to clearly show the refugee resettlement trends unlike the other demographic data we used for analysis. 
 
 Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
 
@@ -327,7 +327,7 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   scale_fill_manual(values=our_palette)
 ```
 
-In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the US. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
+In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the U.S.. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
 
 In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
 
@@ -368,11 +368,11 @@ Lastly, Age data did not contain any missing data, so no further analysis was ne
 
 Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
 
-In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the US government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the U.S. government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
 We hypothesize that the change in the refugee admission ceiling, and the actual refugee resettlement population are correlated with:
 
   1. The government administration at the time
-  2. The US economy and major events in general
+  2. The U.S. economy and major events in general
   
 ```{r}
 # Compare ceilings with actual admissions
@@ -395,10 +395,10 @@ total_arrival_df$Events = c("
 -Barack Obama is inaugurated.
 -In Cairo, President Obama addresses the 
 world's Muslims, vowing to forge a 'new beginning'.
-US forces pull out of Iraq's main cities and towns.", '
+U.S. forces pull out of Iraq's main cities and towns.", '
 -The long war in Iraq was officially declared over
 -Unemployment rate rose to 9.8%
--The Arizona Immigration Law', '\nUS forces killed the al-Qaida leader, Osama Bin Laden', '
+-The Arizona Immigration Law', '\nU.S. forces killed the al-Qaida leader, Osama Bin Laden', '
 -Gay marriage made legal
 -Facebook IPO
 -U.S. general election where democratic Obama beat Republican 
@@ -421,10 +421,10 @@ of President Trump’s ‘zero tolerance’ border policy', "
 -Barack Obama is inaugurated.
 -In Cairo, President Obama addresses the 
 world's Muslims, vowing to forge a 'new beginning'.
-US forces pull out of Iraq's main cities and towns.", '
+U.S. forces pull out of Iraq's main cities and towns.", '
 -The long war in Iraq was officially declared over
 -Unemployment rate rose to 9.8%
--The Arizona Immigration Law', '\nUS forces killed the al-Qaida leader, Osama Bin Laden', '
+-The Arizona Immigration Law', '\nU.S. forces killed the al-Qaida leader, Osama Bin Laden', '
 -Gay marriage made legal
 -Facebook IPO
 -U.S. general election where democratic Obama beat Republican 
@@ -457,7 +457,8 @@ p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=Events
       scale_y_continuous(labels = comma) +
       theme(plot.title=element_text(hjust=0.5))
 
-ggplotly(p, tooltip = c('y', 'label'))
+ggplotly(p, tooltip = c('y', 'label')) %>%
+  layout(annotations = list(x=-0.1, y = -0.10, text = "Hover over points to read about major events", showarrow = F, xref = 'paper', yref = 'paper', xanchor = 'left', yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 11, color = "grey")))
 ```
 
 Looking at the general trend of change in refugee admission ceiling, the two timepoints that stand out the most are 2015 and 2016.
@@ -470,7 +471,7 @@ However, the resettlement population increased from 51,458 in 2011 to a record h
 
 In order to take a closer look at the refugee resettlement pattern of each individual country, we decided to visualize each of our five countries individually(https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
 
-We hypothesize this trend to be both correlated to the US refugee admission policy, the US economy overall, and major political and social events in each of the 5 countries.
+We hypothesize this trend to be both correlated to the U.S. refugee admission policy, the U.S. economy overall, and major political and social events in each of the 5 countries.
 
 ```{r}
 total_demo <- ethnicity_df
@@ -487,10 +488,10 @@ of Karen ethnic group.
 - Myanmar abolishes pre-publication 
 media censorship.", '\nEastern Congo offensive - a joint Congo-Rwanda military 
 offensive against the Hutu FDLR rebel group descended from 
-those groups that carried out the 1994 Rwanda genocide.', '\n-US hands over responsibility for 
+those groups that carried out the 1994 Rwanda genocide.', '\n-U.S. hands over responsibility for 
 security in the Green Zone to Iraqi forces 
 - lowest monthly death toll since the
-US-led invasion of March 2003
+U.S.-led invasion of March 2003
 - several car bombings ', '\n-Multiple hijacking by Somali pirates
 -Oxfam International describes the 
 humanitarian crisis in Somalia as "very dire".', '\nAlthough Bhutan saw a decline in annual tourism 
@@ -501,11 +502,11 @@ included guidelines for importers, processors and
 consumers buying Congolese minerals, which are the 
 source of funding for many rebel groups.', '\n-Parliamentary election: secular, non-sectarian 
 Iraqi National Movement received the most votes 
--President Obama announced that US combat 
+-President Obama announced that U.S. combat 
 operations in Iraq will end Aug 31', 'Ongoing Somali Civil War', '\nKing Jigme Khesar Namgyel Wangchuck marries 
 21-year-old student Jetsun Pema', '\n- Thein Sein is sworn in as president 
 of a new, nominally civilian government.
-- US Secretary of State Hillary Clinton 
+- U.S. Secretary of State Hillary Clinton 
 visits, meets Aung San Suu Kyi and President Thein Sein', '\nPresidential and parliamentary elections. Mr Kabila 
 gains another term. The vote is criticised abroad and 
 the opposition disputes the result.', 'War officially ended', '\n-East Africa Drought
@@ -528,14 +529,14 @@ violent conflict with the central government &
 sectarian violence among religious groups)', 'NA', '\nThe World Bank Group’s Senior Vice President and 
 Chief Economist, Kaushik Basu, visited Bhutan to learn 
 from the country’s unique development experience as the 
-country makes rapid progress in reducing poverty.', '\n- US extends some sanctions for another year, 
+country makes rapid progress in reducing poverty.', '\n- U.S. extends some sanctions for another year, 
 saying that despite the recent reforms, rights abuses 
 and army influence on politics and the economy persist.', '\nThe Democratic Republic of Congo confirms two deaths 
 from Ebola in the north of the country, the first 
 cases reported from the current outbreak in West Africa', '\nBeginning of Iraqi Civil War & ISIS militants 
 control the Iraqi cities & Northern Iraq offensive', '\nThe Somali government-led Operation Indian 
 Ocean was launched to clean up the remaining 
-insurgent-held pockets in the countryside', '\nJohn Kerry becomes the first-ever US secretary of state 
+insurgent-held pockets in the countryside', '\nJohn Kerry becomes the first-ever U.S. secretary of state 
 to hold a cabinet-level meeting with a Bhutanese official 
 when he meets Bhutanese Prime Minister Tshering Tobgay in India', '\n- A draft ceasefire agreement is signed between 
 the government and 16 rebel groups.
@@ -575,14 +576,14 @@ countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Even
   geom_point(size = .75) +
   xlab("Year") + 
   ylab("Number of Individuals") +
-  labs(title = "Change in Refugee Resettlements to the US \nof Top 5 Refugee Origins from 2009-2018 ",
-       caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
+  labs(title = "Change in Refugee Resettlements to the U.S. \nof Top 5 Refugee Origins from 2009-2018 ") +
   theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5)) +
   scale_color_manual(values=our_palette)
 
-ggplotly(countries_plot, tooltip = c('y', 'label'))
+ggplotly(countries_plot, tooltip = c('y', 'label')) %>%
+  layout(annotations = list(x = -0.1, y = -0.1, text = "Hover over points to read about major events", showarrow = F, xref = 'paper', yref = 'paper', xanchor = 'left', yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 11, color = "grey")))
 ```
-Overall, the amount of refugees that resettled to the US decreased drastically from 2009 to 2018.
+Overall, the amount of refugees that resettled to the U.S. decreased drastically from 2009 to 2018.
 
 **Bhutan:**
 
@@ -593,7 +594,7 @@ Overall, there is a decrease in the number of Bhutan refugees that resettled to 
 **Burma:**
 
 The Rohingya people of Burma have faced decades of systematic discrimination, statelessness and targeted violence. Such persecution have forced Rohingya people out of the country for many years, with significant spikes following violent attacks in 1978, 1991-1992, and again in 2016. It was August 2017 that triggered by far the largest and fastest refugee outflux in Burma (https://www.unocha.org/rohingya-refugee-crisis).
-There is an overall decrease in the number of Burma refugees that resettled to the U.S. However, we can see that it first decreased from 2009 to 2013, and then increased from 2013 to 2015, when hundreds of Muslim Rohingyas migrants leave by sea in flimsy boats. However, this population drastically fell after 2015 to a record low of 3,771 in 2018 despite the rise in overall Rohingya refugees in 2017. We can thus infer this as a reflection of the tightening of US refugee admission policy.
+There is an overall decrease in the number of Burma refugees that resettled to the U.S. However, we can see that it first decreased from 2009 to 2013, and then increased from 2013 to 2015, when hundreds of Muslim Rohingyas migrants leave by sea in flimsy boats. However, this population drastically fell after 2015 to a record low of 3,771 in 2018 despite the rise in overall Rohingya refugees in 2017. We can thus infer this as a reflection of the tightening of U.S. refugee admission policy.
 
 **Democratic Republic of the Congo (D.R.C):**
 Despite the DRC’s civil war being brought to an end in 2013, the nation has continued to see sporadic waves of fighting - especially in the Eastern parts of the country. Since 2016, a new wave of violence also affected the DTC’s previously peaceful Kasai region, bringing thousands of civilians to struggle for survival (https://www.unhcr.org/en-us/dr-congo-emergency.html).
@@ -602,7 +603,7 @@ The refugee resettlement trend from the DRC to the U.S. is the reverse of the ov
 
 **Iraq:**
 As a victim to decades of conflict and widespread violence, Iraq has more than 3.3 million Iriqis displaced across the country since 2014. Although armed violence has declined in some parts of the country, armed groups and small scale military operations continued to carry out unpredictable attacks throughout the country, resulting in new displacements (https://www.unrefugees.org/emergencies/iraq/).
-Iraq’s overall refugee resettlement trend in the US is probably the most related one to the US policy. As we can see from the graph, the refugee resettlement population from Iraq first dropped in 2011, when the war between the U.S. combat operations in Iraq officially ended, to a record low of 6,339. However, the refugee resettlement population peaked again in 2014 at 20,337 when the Iraqi Civil War began and ISIS militants controlled Iraqi cities. This number, however, fell from 20,337 in 2014 to a low of 91 in 2017.
+Iraq’s overall refugee resettlement trend in the U.S. is probably the most related one to the U.S. policy. As we can see from the graph, the refugee resettlement population from Iraq first dropped in 2011, when the war between the U.S. combat operations in Iraq officially ended, to a record low of 6,339. However, the refugee resettlement population peaked again in 2014 at 20,337 when the Iraqi Civil War began and ISIS militants controlled Iraqi cities. This number, however, fell from 20,337 in 2014 to a low of 91 in 2017.
 
 **Somalia:**
 
@@ -643,7 +644,7 @@ map_basic <- ggplot(df_map, aes(map_id = State)) +
   expand_limits(x = states$long, y = states$lat) +
   facet_wrap(~Year) +
   scale_fill_gradient(low="#D6EAF8", high="#154360") +
-  ggtitle('Refugee Resettlement in the US by State') +
+  ggtitle('Refugee Resettlement in the U.S. by State') +
   theme(plot.title=element_text(hjust=0.5))
 
 map_basic
@@ -783,9 +784,9 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
 ggplotly(gg)
 ```
 
-Through this interactive graph, we can gain a better understanding of the refugee resettlement trends within the US states (2009 - 2018).
+Through this interactive graph, we can gain a better understanding of the refugee resettlement trends within the U.S. states (2009 - 2018).
 
-In terms of the overall trend, we can observe a significant decrease in overall refugee resettlements in the US from 2009 to 2018. While there was a slight increase from 2015 to 2016, the numbers dropped drastically from 2016 onwards. We can also note that the two states with the largest refugee resettlements are California and Texas, and this has remained constant during the entire period. Interestingly, 2009 was the only year where California accepted more than 9000 refugees. Other states have never exceeded this number. 
+In terms of the overall trend, we can observe a significant decrease in overall refugee resettlements in the U.S. from 2009 to 2018. While there was a slight increase from 2015 to 2016, the numbers dropped drastically from 2016 onwards. We can also note that the two states with the largest refugee resettlements are California and Texas, and this has remained constant during the entire period. Interestingly, 2009 was the only year where California accepted more than 9000 refugees. Other states have never exceeded this number. 
 
 ## Demographics: Religion
 
@@ -953,7 +954,7 @@ p_muslim_dropdown
 
 # Conclusion
 
-Research shows that refugees contribute significantly to the U.S. workforce and society. Comparing the 1.1 million refugees that arrived between the 1980s and the 2010s with non-refugees, the refugees’ labor force participation is at 68% and employment rates is at 64%, exceeding those of the total US population (63 and 60% respectively.. In addition to which, refugees are more likely to be skilled workers (38%) than non-refugees (33%) or the foreign born (35%) (https://doi.org/10.1177/2331502418787787). 
+Research shows that refugees contribute significantly to the U.S. workforce and society. Comparing the 1.1 million refugees that arrived between the 1980s and the 2010s with non-refugees, the refugees’ labor force participation is at 68% and employment rates is at 64%, exceeding those of the total U.S. population (63 and 60% respectively.. In addition to which, refugees are more likely to be skilled workers (38%) than non-refugees (33%) or the foreign born (35%) (https://doi.org/10.1177/2331502418787787). 
 On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us). 
 However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which it had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can entern. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
 This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. 
@@ -963,6 +964,13 @@ Overall, it can be visualized that the most significant U.S. refugee resettlemen
 On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of origins. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011.
 Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population.
 Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries like California, Texas, Washington and New York had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
+
+## Limitations
+
+Whereas this report provides a detailed analysis into the refugee resettlement in the U.S. in the past 10 years,its limitations are as follows:
+  1. Our analysis is limited to only the top 5 refugee origins.
+  2. Our analysis is restricted to only the last 10 years
+For future  analysis, it would be helpful to expand our dataset to include more information. 
 
 ## Future Directions
 
