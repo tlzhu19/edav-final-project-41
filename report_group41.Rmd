@@ -321,8 +321,8 @@ ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
 
 Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
 
-In this graph, we have the years we are looking at on the x-axis and the population count on the y-axis. The green line indicates the ceiling set by the U.S. government on the maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
-We hypothesize that the change in the refugee admission ceiling and the actual refugee resettlement population are correlated with:
+In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the U.S. government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+We hypothesize that the change in the refugee admission ceiling, and the actual refugee resettlement population are correlated with:
 
   1) The government administration at the time
   2) The US economy and major events in general
