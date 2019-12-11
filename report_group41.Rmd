@@ -267,7 +267,7 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 
 We removed these rows since we are just curious about the fifty states.
 
-In Education data, we observed the proportion of missing data compared to the total data. 
+In Education data, we observed the proportion of missing data compared to the total data. For example, Bhutan has more than 30% of missing data in education. 
 
 ```{r}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
@@ -503,6 +503,8 @@ DRC and Somalia have the highest proportions of refugees who are under 14.
 
 
 # Interactive Component
+
+## Geophics
 ```{r}
 # remove extra 6 'States'
 arrival_df2 <- arrival_df[!arrival_df$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
@@ -516,6 +518,8 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1), plot.title=element_text(hjust=0.5))
 ggplotly(gg)
 ```
+
+## Demographics: Religion
 
 ```{r} 
 # Line Chart with Drop-down menu for Hindu and Muslim by Country 
