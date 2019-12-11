@@ -715,6 +715,7 @@ ggplotly(gg)
 Through this interactive graph, we can gain a better understanding of the refugee resettlement trends within the US states (2009 - 2018).
 
 In terms of the overall trend, we can observe a significant decrease in overall refugee resettlements in the US from 2009 to 2018. While there was a slight increase from 2015 to 2016, the numbers dropped drastically from 2016 onwards. We can also note that the two states with the largest refugee resettlements are California and Texas, and this has remained constant during the entire period. Interestingly, 2009 was the only year where California accepted more than 9000 refugees. Other states have never exceeded this number. 
+
 ## Demographics: Religion
 
 ```{r} 
