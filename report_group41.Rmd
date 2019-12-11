@@ -422,25 +422,35 @@ of Karen ethnic group.
 - Myanmar abolishes pre-publication 
 media censorship.", '\nEastern Congo offensive - a joint Congo-Rwanda military 
 offensive against the Hutu FDLR rebel group descended from 
-those groups that carried out the 1994 Rwanda genocide.', 'blah', 'blah', '\nAlthough Bhutan saw a decline in annual tourism 
+those groups that carried out the 1994 Rwanda genocide.', '\n-US hands over responsibility for 
+security in the Green Zone to Iraqi forces 
+- lowest monthly death toll since the
+US-led invasion of March 2003
+- several car bombings ', '\n-Multiple hijacking by Somali pirates
+-Oxfam International describes the 
+humanitarian crisis in Somalia as "very dire".', '\nAlthough Bhutan saw a decline in annual tourism 
 revenues and a loss of over $67 million due to 
 earthquake and cyclone damages', "\n- Government changes country's flag, 
 national anthem and official name.", '\nThe UN renewed sanctions on the DRC which 
 included guidelines for importers, processors and 
 consumers buying Congolese minerals, which are the 
-source of funding for many rebel groups.', 'blah', 'blah', '\nKing Jigme Khesar Namgyel Wangchuck marries 
+source of funding for many rebel groups.', '\n-Parliamentary election: secular, non-sectarian 
+Iraqi National Movement received the most votes 
+-President Obama announced that US combat 
+operations in Iraq will end Aug 31', 'Ongoing Somali Civil War', '\nKing Jigme Khesar Namgyel Wangchuck marries 
 21-year-old student Jetsun Pema', '\n- Thein Sein is sworn in as president 
 of a new, nominally civilian government.
 - US Secretary of State Hillary Clinton 
 visits, meets Aung San Suu Kyi and President Thein Sein', '\nPresidential and parliamentary elections. Mr Kabila 
 gains another term. The vote is criticised abroad and 
-the opposition disputes the result.', 'blah', 'blah', '\nPolitical leaders enforced a nearly six-month 
+the opposition disputes the result.', 'War officially ended', '\n-East Africa Drought
+-Somalia Famine', '\nPolitical leaders enforced a nearly six-month 
 ban on all public religious activities ahead 
 of the upcoming elections', '\n- Government signs ceasefire with rebels 
 of Karen ethnic group.
 - Myanmar abolishes pre-publication 
 media censorship.', '\nThe Child Protection Law of 2009 sets the minimum age 
-for full-time work at 18, unless a parent consents', 'blah', 'blah', '\nParliamentary elections: opposition People’s Democratic 
+for full-time work at 18, unless a parent consents', 'Ongoing explosions, suicide bombings', 'Somali presidential election', '\nParliamentary elections: opposition People’s Democratic 
 Party wins 32 seats in the lower house, against the 
 incumbent Druk Phuensum Tshogpa party’s 15 seats.', '\n- Rioting between Muslims and Buddhists in 
 Meiktila leaves at least 10 people dead.
@@ -448,14 +458,19 @@ Meiktila leaves at least 10 people dead.
 first time in almost 50 years as the state monopoly ends.', '\n- Representatives of 11 African countries sign an 
 accord pledging to help end the conflict in DR Congo. 
 - 3,000-member UN Intervention Brigade deployed to 
-fight and disarm rebels in the east.', 'blah', 'blah', '\nThe World Bank Group’s Senior Vice President and 
+fight and disarm rebels in the east.', '\nIraqi protests (Iraqi Insurgency/Iraq Crisis : 
+violent conflict with the central government & 
+sectarian violence among religious groups)', 'NA', '\nThe World Bank Group’s Senior Vice President and 
 Chief Economist, Kaushik Basu, visited Bhutan to learn 
 from the country’s unique development experience as the 
 country makes rapid progress in reducing poverty.', '\n- US extends some sanctions for another year, 
 saying that despite the recent reforms, rights abuses 
 and army influence on politics and the economy persist.', '\nThe Democratic Republic of Congo confirms two deaths 
 from Ebola in the north of the country, the first 
-cases reported from the current outbreak in West Africa', 'blah', 'blah', '\nJohn Kerry becomes the first-ever US secretary of state 
+cases reported from the current outbreak in West Africa', '\nBeginning of Iraqi Civil War & ISIS militants 
+control the Iraqi cities & Northern Iraq offensive', '\nThe Somali government-led Operation Indian 
+Ocean was launched to clean up the remaining 
+insurgent-held pockets in the countryside', '\nJohn Kerry becomes the first-ever US secretary of state 
 to hold a cabinet-level meeting with a Bhutanese official 
 when he meets Bhutanese Prime Minister Tshering Tobgay in India', '\n- A draft ceasefire agreement is signed between 
 the government and 16 rebel groups.
@@ -463,23 +478,33 @@ the government and 16 rebel groups.
 by sea in flimsy boats.
 \n- Opposition National League for Democracy, 
 led by Aung San Suu Kyi, wins enough seats in 
-parliamentary elections to form a government.', 'D\nozens killed in protests against proposed electoral 
+parliamentary elections to form a government.', '\nDozens killed in protests against proposed electoral 
 law changes which the opposition said were designed 
-to allow President Kabila to remain in power.', 'blah', 'blah', 'blah', "\n- Htin Kyaw sworn in as president, ushering in a 
+to allow President Kabila to remain in power.', '\nISIL -> destruction of Mosul Museum, bombings in 
+Baghdad, destruction of the city of Hatra, Nimrud, 
+and Bash Tapia Castle', '\nAMISOM and Somalia National Army regained many 
+villages and major towns of Baardhere and Dinsoor', '\nKing Jigme Khesar Namgyel Wangchuck and his wife, Queen Jetsun 
+Pema announce the birth of Crown Prince Jigme Namgyal Wangchuck', "\n- Htin Kyaw sworn in as president, ushering in a 
 new era as Aung San Suu Kyi's democracy movement takes 
 power after 50 years of military domination.", "\nA political deal signed between President Kabila's 
 ruling coalition and the opposition to delay the 
 presidential election until 2018 sees Prime Minister 
 Augustin Matata Ponyo and his cabinet resign, paving 
-the way for a new cabinet to include opposition figures.", 'blah', 'blah', 'blah', '\n- The United Nations human rights council decides 
+the way for a new cabinet to include opposition figures.", '\nIslamic State attacked and briefly seized 
+an Iraqi army base in Al Tarah', '\nDrought', '\nBhutan protests to China over its building of a 
+road in disputed territory', '\n- The United Nations human rights council decides 
 to set up an investigation into alleged human rights abuses 
 by the army against the Rohingya Muslim minority.', '\nDR Congo is experiencing a "mega-crisis", with conflict 
 having forced 1.7 million people to flee their homes 
-during the year, aid agencies say.', 'blah', 'blah', 'blah', '\n- President Htin Kyaw resigns on health grounds 
+during the year, aid agencies say.', '\n-Iraqi government official threat to Kurdish to 
+close a border in Northern Iraq follow vote for 
+independence referendum
+-Ongoing suicide car bombings ', '\nMogadishu bombings', 'NA', '\n- President Htin Kyaw resigns on health grounds 
 and is replaced by Win Myint, a fellow Suu Kyi loyalist.', '\n- Main opposition Union for Democracy and Social 
 Progress chooses Felix Tshisekedi as its candidate 
 for the December presidential election.
-- Ebola outbreak in the east.', 'blah', 'blah')
+- Ebola outbreak in the east.', 'Baghdad bombings (two suicide bombings)', '\n-Mogadishu attack
+-Cyclone Sagar makes landfall ')
 countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Events))+
   geom_line() + 
   geom_point(size = .75) +
