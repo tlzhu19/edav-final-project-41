@@ -335,7 +335,59 @@ total_arrival_df$Ceiling = Ceiling
 total_arrival_df <- total_arrival_df %>%
   gather(key, Individuals, Actual, Ceiling)
 
-total_arrival_df$events = c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
+total_arrival_df$events = c("
+-Barack Obama is inaugurated.
+-In Cairo, President Obama addresses the 
+world's Muslims, vowing to forge a 'new beginning'.
+US forces pull out of Iraq's main cities and towns.", '
+-The long war in Iraq was officially declared over
+-Unemployment rate rose to 9.8%
+-The Arizona Immigration Law', '\nUS forces killed the al-Qaida leader, Osama Bin Laden', '
+-Gay marriage made legal
+-Facebook IPO
+-U.S. general election where democratic Obama beat Republican 
+rival Mitt Romney to win a second term in the White House', '
+-Detroit filed for bankruptcy 
+-Unable to reach agreement on federal spending levels, 
+a dysfunctional Congress stumbled into the first government 
+shutdown since the mid-1990s', '
+-U.S. air attacks against ISIS forces in Iraq and Syria began in August
+-U.S. - Cuba thaw after Alan Gross was freed after 5 years', '
+-President Obama’s plan to allow 10,000 Syrian refugees into 
+the U.S was met with stiff resistance from some House Republicans', '\n-Donald Trump elected as the next U.S. president
+-Flint, Michigan water crisis', '
+-Donald Trump is inaugurated as the 45th president of the U.S.
+-American tensions with North Korea intensified
+-Devastating hurricane season in southeast Texas and Florida', '
+-In California, wildfires left 88 dead in the massive Camp Fire
+-Migrant children were separated from their parents as part 
+of President Trump’s ‘zero tolerance’ border policy', "
+-Barack Obama is inaugurated.
+-In Cairo, President Obama addresses the 
+world's Muslims, vowing to forge a 'new beginning'.
+US forces pull out of Iraq's main cities and towns.", '
+-The long war in Iraq was officially declared over
+-Unemployment rate rose to 9.8%
+-The Arizona Immigration Law', '\nUS forces killed the al-Qaida leader, Osama Bin Laden', '
+-Gay marriage made legal
+-Facebook IPO
+-U.S. general election where democratic Obama beat Republican 
+rival Mitt Romney to win a second term in the White House', '
+-Detroit filed for bankruptcy 
+-Unable to reach agreement on federal spending levels, 
+a dysfunctional Congress stumbled into the first government 
+shutdown since the mid-1990s', '
+-U.S. air attacks against ISIS forces in Iraq and Syria began in August
+-U.S. - Cuba thaw after Alan Gross was freed after 5 years', '
+-President Obama’s plan to allow 10,000 Syrian refugees into 
+the U.S was met with stiff resistance from some House Republicans', '\n-Donald Trump elected as the next U.S. president
+-Flint, Michigan water crisis', '
+-Donald Trump is inaugurated as the 45th president of the U.S.
+-American tensions with North Korea intensified
+-Devastating hurricane season in southeast Texas and Florida', '
+-In California, wildfires left 88 dead in the massive Camp Fire
+-Migrant children were separated from their parents as part 
+of President Trump’s ‘zero tolerance’ border policy')
 
 p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=events)) +
       geom_line() +
@@ -362,7 +414,72 @@ change_in_pop <- total_demo %>%
   group_by(Year, country) %>%
   summarize(sum=sum(Total))
 
-change_in_pop$events <- c('blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah', 'blah')
+change_in_pop$events <- c('\n-A 6.1 magnitude earthquake occurred in eastern 
+Bhutan, leaving at least 10 dead
+-Huanglongbing virus wipes out much of Bhutan’s 
+orange crop, an important export for Bhutan', "\n- Government signs ceasefire with rebels 
+of Karen ethnic group.
+- Myanmar abolishes pre-publication 
+media censorship.", '\nEastern Congo offensive - a joint Congo-Rwanda military 
+offensive against the Hutu FDLR rebel group descended from 
+those groups that carried out the 1994 Rwanda genocide.', 'blah', 'blah', '\nAlthough Bhutan saw a decline in annual tourism 
+revenues and a loss of over $67 million due to 
+earthquake and cyclone damages', "\n- Government changes country's flag, 
+national anthem and official name.", '\nThe UN renewed sanctions on the DRC which 
+included guidelines for importers, processors and 
+consumers buying Congolese minerals, which are the 
+source of funding for many rebel groups.', 'blah', 'blah', '\nKing Jigme Khesar Namgyel Wangchuck marries 
+21-year-old student Jetsun Pema', '\n- Thein Sein is sworn in as president 
+of a new, nominally civilian government.
+- US Secretary of State Hillary Clinton 
+visits, meets Aung San Suu Kyi and President Thein Sein', '\nPresidential and parliamentary elections. Mr Kabila 
+gains another term. The vote is criticised abroad and 
+the opposition disputes the result.', 'blah', 'blah', '\nPolitical leaders enforced a nearly six-month 
+ban on all public religious activities ahead 
+of the upcoming elections', '\n- Government signs ceasefire with rebels 
+of Karen ethnic group.
+- Myanmar abolishes pre-publication 
+media censorship.', '\nThe Child Protection Law of 2009 sets the minimum age 
+for full-time work at 18, unless a parent consents', 'blah', 'blah', '\nParliamentary elections: opposition People’s Democratic 
+Party wins 32 seats in the lower house, against the 
+incumbent Druk Phuensum Tshogpa party’s 15 seats.', '\n- Rioting between Muslims and Buddhists in 
+Meiktila leaves at least 10 people dead.
+- Four private daily newspapers appear for the 
+first time in almost 50 years as the state monopoly ends.', '\n- Representatives of 11 African countries sign an 
+accord pledging to help end the conflict in DR Congo. 
+- 3,000-member UN Intervention Brigade deployed to 
+fight and disarm rebels in the east.', 'blah', 'blah', '\nThe World Bank Group’s Senior Vice President and 
+Chief Economist, Kaushik Basu, visited Bhutan to learn 
+from the country’s unique development experience as the 
+country makes rapid progress in reducing poverty.', '\n- US extends some sanctions for another year, 
+saying that despite the recent reforms, rights abuses 
+and army influence on politics and the economy persist.', '\nThe Democratic Republic of Congo confirms two deaths 
+from Ebola in the north of the country, the first 
+cases reported from the current outbreak in West Africa', 'blah', 'blah', '\nJohn Kerry becomes the first-ever US secretary of state 
+to hold a cabinet-level meeting with a Bhutanese official 
+when he meets Bhutanese Prime Minister Tshering Tobgay in India', '\n- A draft ceasefire agreement is signed between 
+the government and 16 rebel groups.
+\n- Hundreds of Muslim Rohingyas migrants leave 
+by sea in flimsy boats.
+\n- Opposition National League for Democracy, 
+led by Aung San Suu Kyi, wins enough seats in 
+parliamentary elections to form a government.', 'D\nozens killed in protests against proposed electoral 
+law changes which the opposition said were designed 
+to allow President Kabila to remain in power.', 'blah', 'blah', 'blah', "\n- Htin Kyaw sworn in as president, ushering in a 
+new era as Aung San Suu Kyi's democracy movement takes 
+power after 50 years of military domination.", "\nA political deal signed between President Kabila's 
+ruling coalition and the opposition to delay the 
+presidential election until 2018 sees Prime Minister 
+Augustin Matata Ponyo and his cabinet resign, paving 
+the way for a new cabinet to include opposition figures.", 'blah', 'blah', 'blah', '\n- The United Nations human rights council decides 
+to set up an investigation into alleged human rights abuses 
+by the army against the Rohingya Muslim minority.', '\nDR Congo is experiencing a "mega-crisis", with conflict 
+having forced 1.7 million people to flee their homes 
+during the year, aid agencies say.', 'blah', 'blah', 'blah', '\n- President Htin Kyaw resigns on health grounds 
+and is replaced by Win Myint, a fellow Suu Kyi loyalist.', '\n- Main opposition Union for Democracy and Social 
+Progress chooses Felix Tshisekedi as its candidate 
+for the December presidential election.
+- Ebola outbreak in the east.', 'blah', 'blah')
 countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=events))+
   geom_line() + 
   geom_point(size = .75) +
