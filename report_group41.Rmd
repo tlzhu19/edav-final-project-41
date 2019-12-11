@@ -351,6 +351,99 @@ countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=even
 ggplotly(countries_plot, tooltip = c('y', 'label'))
 ```
 
+```{r} 
+# Line Chart with Drop-down menu for Hindu and Muslim by Country 
+muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
+
+religion_df5 = religion_df
+religion_df5[religion_df5$Religion %in% muslim_names, 'Religion'] <- 'Moslem'
+
+religions_2 = c('Moslem', 'Hindu')
+subset_religion_df5 <- religion_df5[religion_df5$Religion %in% religions_2, ]
+
+subset_religion_df5 <- subset_religion_df5 %>% group_by(Year, Religion, country,) %>% summarise(Total = sum(Male)+sum(Female))
+
+```
+
+
+```{r}
+hindu_df <- filter(subset_religion_df5, Religion == 'Hindu') 
+hindu_df_messy <- spread(hindu_df, country, Total)
+
+muslim_df <- filter(subset_religion_df5, Religion == 'Moslem')
+muslim_df_messy <- spread(muslim_df, country, Total)
+drop <- c('Bhutan')
+muslim_df_messy <- muslim_df_messy[, !names(muslim_df_messy) %in% drop]
+```
+
+```{r}
+
+p_hindu_dropdown <- plot_ly(hindu_df_messy, x = ~Year) %>%
+  add_bars(y = ~Bhutan, name = 'Bhutan') %>%
+  add_bars(y = ~Burma, name = 'Burma') %>%
+  layout(
+    title = 'Hindu by Country Over Time', 
+    xaxis = list(domain = c(2009, 2018)), 
+    yaxis = list(title = 'y'),
+    updatemenus = list(
+      list(
+            y = 0.8,
+            buttons = list(
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, TRUE)),
+                   label = 'All'),
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, FALSE)),
+                   label = 'Bhutan'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, TRUE)),
+                   label = 'Burma'))
+      )
+          )
+    )
+            
+
+
+p_muslim_dropdown <- plot_ly(muslim_df_messy, x = ~Year) %>%
+  add_bars(y = ~Burma, name = 'Burma') %>%
+  add_bars(y = ~DRC, name = 'DRC') %>%
+  add_bars(y = ~Iraq, name = 'Iraq') %>%
+  add_bars(y = ~Somalia, name = 'Somalia') %>%
+  layout(
+    title = 'Muslim by Country Over Time', 
+    xaxis = list(domain = c(2009, 2018)), 
+    yaxis = list(title = 'y'),
+    updatemenus = list(
+      list(
+            y = 0.8,
+            buttons = list(
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, TRUE, TRUE, TRUE)),
+                   label = 'All'),
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
+                   label = 'Burma'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, TRUE, FALSE, FALSE)),
+                   label = 'DRC'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, TRUE, FALSE)),
+                   label = 'Iraq'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
+                   label = 'Somalia'))
+      )
+          )
+    )
+
+
+
+p_hindu_dropdown 
+
+p_muslim_dropdown
+```
+
+
 ## Geographical Analysis
 
 ```{r, fig.width=9}
@@ -493,7 +586,97 @@ gg <- ggplot(arrival_df2, aes(code, Inds, frame = Year)) +
 ggplotly(gg)
 ```
 
+```{r} 
+# Line Chart with Drop-down menu for Hindu and Muslim by Country 
+muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
 
+religion_df5 = religion_df
+religion_df5[religion_df5$Religion %in% muslim_names, 'Religion'] <- 'Moslem'
+
+religions_2 = c('Moslem', 'Hindu')
+subset_religion_df5 <- religion_df5[religion_df5$Religion %in% religions_2, ]
+
+subset_religion_df5 <- subset_religion_df5 %>% group_by(Year, Religion, country,) %>% summarise(Total = sum(Male)+sum(Female))
+
+```
+
+
+```{r}
+hindu_df <- filter(subset_religion_df5, Religion == 'Hindu') 
+hindu_df_messy <- spread(hindu_df, country, Total)
+
+muslim_df <- filter(subset_religion_df5, Religion == 'Moslem')
+muslim_df_messy <- spread(muslim_df, country, Total)
+drop <- c('Bhutan')
+muslim_df_messy <- muslim_df_messy[, !names(muslim_df_messy) %in% drop]
+```
+
+```{r}
+
+p_hindu_dropdown <- plot_ly(hindu_df_messy, x = ~Year) %>%
+  add_bars(y = ~Bhutan, name = 'Bhutan') %>%
+  add_bars(y = ~Burma, name = 'Burma') %>%
+  layout(
+    title = 'Hindu by Country Over Time', 
+    xaxis = list(domain = c(2009, 2018)), 
+    yaxis = list(title = 'y'),
+    updatemenus = list(
+      list(
+            y = 0.8,
+            buttons = list(
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, TRUE)),
+                   label = 'All'),
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, FALSE)),
+                   label = 'Bhutan'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, TRUE)),
+                   label = 'Burma'))
+      )
+          )
+    )
+            
+
+
+p_muslim_dropdown <- plot_ly(muslim_df_messy, x = ~Year) %>%
+  add_bars(y = ~Burma, name = 'Burma') %>%
+  add_bars(y = ~DRC, name = 'DRC') %>%
+  add_bars(y = ~Iraq, name = 'Iraq') %>%
+  add_bars(y = ~Somalia, name = 'Somalia') %>%
+  layout(
+    title = 'Muslim by Country Over Time', 
+    xaxis = list(domain = c(2009, 2018)), 
+    yaxis = list(title = 'y'),
+    updatemenus = list(
+      list(
+            y = 0.8,
+            buttons = list(
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, TRUE, TRUE, TRUE)),
+                   label = 'All'),
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
+                   label = 'Burma'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, TRUE, FALSE, FALSE)),
+                   label = 'DRC'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, TRUE, FALSE)),
+                   label = 'Iraq'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
+                   label = 'Somalia'))
+      )
+          )
+    )
+
+
+
+p_hindu_dropdown 
+
+p_muslim_dropdown
+```
 # Conclusion
 
 **TODO: WRITE STUFF**
