@@ -233,31 +233,31 @@ After cleaning the data, we have six '.csv' files that can be found [here](https
 kable(head(arrival_df))
 ```
 
-2. `age_group.csv`: The composition of refugee population based on age groups from under 14 years old to age 51 to 64. Provides additional information on which gender, country, and year these individuals in age groups belong.
+2. `age_group.csv`: The composition of refugee population based on age groups from under 14 years old to age 65 and over. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(age_df))
 ```
 
-3. `education.csv`: The composition of refugee population based on the education levels of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+3. `education.csv`: The composition of refugee population based on the education levels of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(education_df))
 ```
 
-4. `ethnicity.csv`: The composition of refugee population based on the ethnicity of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong.
+4. `ethnicity.csv`: The composition of refugee population based on the ethnicity of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(ethnicity_df))
 ```
 
-5. `native_language.csv`: The composition of refugee population based on the native languages used by the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+5. `native_language.csv`: The composition of refugee population based on the native languages used by the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(native_language_df))
 ```
 
-6. `religion.csv`: The composition of refugee population based on the religion of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. 
+6. `religion.csv`: The composition of refugee population based on the religion of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(religion_df))
@@ -968,8 +968,10 @@ Looking within the U.S., we can see that the geographical makeup of the states h
 ## Limitations
 
 Whereas this report provides a detailed analysis into the refugee resettlement in the U.S. in the past 10 years,its limitations are as follows:
-  1. Our analysis is limited to only the top 5 refugee origins.
-  2. Our analysis is restricted to only the last 10 years
+
+  1. Our analysis is limited to only the top 5 refugee origins and top 4 religions.
+  2. Our analysis is restricted to only the last 10 years.
+
 For future  analysis, it would be helpful to expand our dataset to include more information. 
 
 ## Future Directions
