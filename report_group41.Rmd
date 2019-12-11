@@ -271,6 +271,24 @@ We removed these rows since we are just curious about the fifty states.
 In Education data, we observed the proportion of missing data compared to the total data. For example, Bhutan has more than 30% of missing data in education. 
 
 ```{r}
+# Colors
+
+BUHTAN_COLOR = 'orange'
+BURMA_COLOR = BLUE = 'rgb(26, 118, 255)'
+BLUE_h = '#1A76FF'
+DRC_COLOR = RED = 'rgb(255, 99, 71)'
+RED_h = '#FF6347'
+IRAQ_COLOR = GREEN = 'rgb(60, 179, 113)'
+GREEN_h = '#3CB371'
+SOMALIA_COLOR = PURPLE = 'rgb(218, 112, 214)'
+PURPLE_h = '#DA70D6'
+
+# for the countries
+our_palette = c('orange', BLUE_h, RED_h, GREEN_h, PURPLE_h)
+```
+
+
+```{r}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
 na_df<- select(filter(education_df, Education == "Bio Data not Complete" | Education == "Unknown"),c(Education,Total, country, Year))
 # Total sum of data 
@@ -288,7 +306,8 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
   labs(x='Country', y='Proportion') +
-  ggtitle("Missing Education Data by Country")
+  ggtitle("Missing Education Data by Country") +
+  scale_fill_manual(values=our_palette)
 
 
 # Religion
@@ -311,7 +330,8 @@ combine_df1 <- transform(combine_df1, proportion = na_Total/Total)
 ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
   geom_bar(stat="identity")+
   theme(legend.position="none", plot.title=element_text(hjust=0.5))+
-  ggtitle("Missing Religion Data by Country")
+  ggtitle("Missing Religion Data by Country") +
+  scale_fill_manual(values=our_palette)
 ```
 
 
@@ -526,9 +546,10 @@ countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Even
   geom_point(size = .75) +
   xlab("Year") + 
   ylab("Number of Individuals") +
-  labs(title = "Change in Refugee Resettlement to the US \nof Top 5 Refugee Origins from 2009-2018 ",
+  labs(title = "Change in Refugee Resettlements to the US \nof Top 5 Refugee Origins from 2009-2018 ",
        caption = "Figure: Times series graph of top 5 refugee origins with the most number refugee resettlements.") +
-  theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5))
+  theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5)) +
+  scale_color_manual(values=our_palette)
 
 ggplotly(countries_plot, tooltip = c('y', 'label'))
 ```
@@ -732,15 +753,13 @@ hindu_df_messy_final <- merge(hindu_df_messy, hindu_percent_df, by = c("Year", "
 muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year", "Religion"))
 ```
 
+
 ```{r}
-
-BLUE = 'rgb(26, 118, 255)'
-
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color='orange')) %>%
-  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
-  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Proportion', marker= list(color='orange'), visible=F) %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
+  add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color=BUHTAN_COLOR)) %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
+  add_bars(y = ~Bhutan_Percentage, name = 'Bhutan Proportion', marker= list(color=BUHTAN_COLOR), visible=F) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BURMA_COLOR), visible=F) %>%
   layout(
     title = 'Hindus by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
@@ -773,19 +792,15 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
     )
   )
 
-RED = 'rgb(255, 99, 71)'
-GREEN = 'rgb(60, 179, 113)'
-PURPLE = 'rgb(218, 112, 214)'
-
 p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
-  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BLUE)) %>%
-  add_bars(y = ~DRC, name = 'DRC', marker= list(color=PURPLE)) %>%
-  add_bars(y = ~Iraq, name = 'Iraq', marker= list(color=GREEN)) %>%
-  add_bars(y = ~Somalia, name = 'Somalia', marker= list(color=RED)) %>%
-  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BLUE), visible=F) %>%
-  add_bars(y = ~DRC_Percentage, name = 'DRC Proportion', marker= list(color=PURPLE), visible=F) %>%
-  add_bars(y = ~Iraq_Percentage, name = 'Iraq Proportion', marker= list(color=GREEN), visible=F) %>%
-  add_bars(y = ~Somalia_Percentage, name = 'Somalia Proportion', marker= list(color=RED), visible=F) %>%
+  add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
+  add_bars(y = ~DRC, name = 'DRC', marker= list(color=DRC_COLOR)) %>%
+  add_bars(y = ~Iraq, name = 'Iraq', marker= list(color=IRAQ_COLOR)) %>%
+  add_bars(y = ~Somalia, name = 'Somalia', marker= list(color=SOMALIA_COLOR)) %>%
+  add_bars(y = ~Burma_Percentage, name = 'Burma Proportion', marker= list(color=BURMA_COLOR), visible=F) %>%
+  add_bars(y = ~DRC_Percentage, name = 'DRC Proportion', marker= list(color=DRC_COLOR), visible=F) %>%
+  add_bars(y = ~Iraq_Percentage, name = 'Iraq Proportion', marker= list(color=IRAQ_COLOR), visible=F) %>%
+  add_bars(y = ~Somalia_Percentage, name = 'Somalia Proportion', marker= list(color=SOMALIA_COLOR), visible=F) %>%
   layout(
     title = 'Muslims by Country Over Time', 
     xaxis = list(domain = c(2009, 2018)), 
