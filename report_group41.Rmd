@@ -27,17 +27,17 @@ The world’s forcibly displaced population hit its record high in 2017. Globall
 The recent years thus mark a significant shift in refugee resettlement in the US, as a result, this report will be examining the refugee admission trend in the US over the past 10 years (2009-2018). 
 
 ## Background 
-According to the UNHCR, `refugees` are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
+According to the UNHCR, refugees are defined as those who have been forced to leave their country due to violence, war, or persecution based on their race, religion, nationality, political opinion or particular social group. 
 
 Process of refugee resettlement:
   
-  1. The process of refugee resettlement to the U.S. is a lengthy and thorough process that takes approximately two years and involves numerous U.S. governmental agencies
+  1. The process of refugee resettlement to the US is a lengthy and thorough process that takes approximately two years and involves numerous US governmental agencies.
   
-  2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
+  2. Refugees do not choose the country in which they would like to live. UNHCR, the UN Refugee Agency, identifies the most vulnerable refugees for resettlement and then makes recommendations to select countries.
   
-  3. Once a refugee is recommended to the U.S. for settlement, the U.S. government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
+  3. Once a refugee is recommended to the US for settlement, the US government conducts a thorough vetting of each applicant. The process of which takes between 12 to 24 months and includes:
       * Screening by 8 federal agencies including the State Department, Department of Homeland Security and the FBI
-      * Six security database checks and biometric security checks screened against U.S. federal databases
+      * Six security database checks and biometric security checks screened against US federal databases
       * Medical screening
       * Three in-person interviews with Department of Homeland Security Officers
 
@@ -55,8 +55,8 @@ We are interested in answering the following questions to gain a better understa
 
   2. What insights can we gain from geographical visualization of refugee settlement patterns in the US over the 10 years? Why might some states have larger refugee settlements than others?
   
-  3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize? Can we observe any relationship between certain demographics and refugee settlements?
-      * Given the number of religions included in the refugee population, we will be focusing on the top 5 religions in the world (Christianity, Islam, Hinduism, Buddhism, Sikhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
+  3. What changes in demographic patterns (i.e., religion, gender, age, etc.) within the refugee population over the 10 years can we visualize?
+      * Given the number of religions included in the refugee population, we will be focusing on the top 4 religions in the world (Christianity, Islam, Hinduism, Buddhism). In Iraq, they separate the Muslim population into three categories: Muslim, Muslim Shiite, and Muslim Suni. For the purposes of this analysis, we will combine them as one (https://thecountriesof.com/top-5-largest-religions-in-the-world/).
 
 
 # Data Sources
@@ -341,7 +341,7 @@ ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
 
 Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
 
-In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the U.S. government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the US government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
 We hypothesize that the change in the refugee admission ceiling, and the actual refugee resettlement population are correlated with:
 
   1) The government administration at the time
