@@ -18,6 +18,7 @@ library(tidyverse)
 library(plotly)
 library(knitr)
 library(scales)
+library(data.table)
 ```
 
 # Introduction
@@ -680,8 +681,6 @@ ggplotly(gg)
 
 ```{r} 
 
-library(data.table)
-
 # Line Chart with Drop-down menu for Hindu and Muslim by Country 
 muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
 
@@ -749,8 +748,34 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
             y = 0.9,
             buttons = list(
               list(method = 'restyle',
-                   args = list('visible', list(TRUE, TRUE, TRUE, TRUE)),
-                   label = 'All'),
+                   args = list('visible', list(TRUE, TRUE, F, F)),
+                   label = 'All Individuals'),
+              list(method = 'restyle',
+                   args = list('visible', list(F, F, T, T)),
+                   label = 'All Percentages'),
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
+                   label = 'Hindu from Bhutan'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, TRUE, FALSE, FALSE)),
+                   label = 'Hindu from Burma'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, TRUE, FALSE)),
+                   label = 'Hindu from \nBhutan in Percent'),
+              list(method = 'restyle',
+                   args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
+                   label = 'Hindu from \nBurma in Percent'))
+      ),
+    
+      list(
+            y = 0.5,
+            buttons = list(
+              list(method = 'restyle',
+                   args = list('visible', list(TRUE, TRUE, F, F)),
+                   label = 'All Individuals'),
+              list(method = 'restyle',
+                   args = list('visible', list(F, F, T, T)),
+                   label = 'All Percentages'),
               list(method = 'restyle',
                    args = list('visible', list(TRUE, FALSE, FALSE, FALSE)),
                    label = 'Hindu from Bhutan'),
@@ -764,6 +789,7 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
                    args = list('visible', list(FALSE, FALSE, FALSE, TRUE)),
                    label = 'Hindu from \nBurma in Percent'))
       )
+      
     )
   )
 
@@ -785,8 +811,11 @@ p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
             y = 0.9,
             buttons = list(
               list(method = 'restyle',
-                   args = list('visible', list(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE)),
-                   label = 'All'),
+                   args = list('visible', list(TRUE, TRUE, TRUE, TRUE, F, F, F, F)),
+                   label = 'All Individuals'),
+              list(method = 'restyle',
+                   args = list('visible', list(F, F, F, F, TRUE, TRUE, TRUE, TRUE)),
+                   label = 'All Percentages'),
               list(method = 'restyle',
                    args = list('visible', list(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE)),
                    label = 'Muslims from Burma'),
@@ -811,8 +840,8 @@ p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
               list(method = 'restyle',
                    args = list('visible', list(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE)),
                    label = 'Muslim from \nSomalia in Percentage'))
+        )
       )
-          )
     )
 
 
@@ -821,6 +850,7 @@ p_hindu_dropdown
 
 p_muslim_dropdown
 ```
+
 # Conclusion
 
 **TODO: WRITE STUFF**
