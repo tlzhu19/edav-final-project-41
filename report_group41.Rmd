@@ -812,10 +812,11 @@ We can see that DRC and Somalia have the highest proportions of refugees who are
 
 ### Multidimensional Analysis
 
+To observe whether there are any correlations among the demographic variables, we decided to examine a few relationships through mosaic plots. The specific variables used for multi-dimensional analysis are provided below.
+
 **Age Group and Gender**
 
-In order to better visualize multidimensional correlations, we decided to examine the correlation between the age groups and gender in the refugee resettlement population using a mosaic plot.
-We hypothesize that the two variables should be independent.
+We examine the correlation between the age groups and gender in the refugee resettlement population.
 
 ```{r, fig.align='center'}
 age_df_b = select(filter(age_df), c(Age.Group, Male,Female,country,Year))
@@ -842,12 +843,12 @@ ggplot(melted_data2)+
   theme(legend.position="none")
 ```
 
-As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each age group is almost consistent across age groups. Although we can see that there are slightly more males than females in the older age groups (age 41 and older), the difference is quite trivial.
+We can observe that the mosaic plot shows us little to no correlation between the two variables. Throughout all age groups, we can see equal distribution among males and females. Although we can see that there are slightly more males than females in the older age groups (age 41 and older), the difference is quite trivial.
 
 **Education Level and Gender**
 
-In order to better visualize multidimensional correlations, we decided to examine the correlation between the education and gender in the refugee resettlement population using a mosaic plot.
-We hypothesize that the two variables should be independent.
+We also examine the correlation between the education and gender in the refugee resettlement population. 
+Our original assumption was that education would be dependent on gender.
 
 ```{r, fig.align='center'}
 education_df2<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,  Male, Female, country, Year))
