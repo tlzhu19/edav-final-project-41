@@ -794,7 +794,30 @@ We can see that DRC and Somalia have the highest proportions of refugees who are
 ## Multidimensional Analysis
 
 ```{r}
+age_df = select(filter(age_df),c(Age.Group, Male,Female,country,Year))
+#age_df
+library(reshape)
+library(ggmosaic)
+mdata1 <- melt(age_df, id=c("Age.Group","country", "Year"))
+#mdata1 
+names(mdata1)[4] <- "gender"
+names(mdata1)[5] <- "freq"
+#mdata1
 
+hello <- mdata1%>% group_by(Age.Group, gender) %>% summarize(Total = sum(freq))
+#hello
+
+#hello$Age.Group <- factor(c("Age 14 to 20", "Age 21 to 30", "Age 31 to 40", "Age 41 to 50", "Age 51 to 64", "Age 65 and Over", "Under 14"), levels=c("Under 14","Age 14 to 20", "Age 21 to 30", "Age 31 to 40", "Age 41 to 50", "Age 51 to 64", "Age 65 and Over"))
+
+ggplot(hello)+
+  geom_mosaic(
+    aes(x=product(gender, Age.Group),
+        weight=Total,
+        fill=gender
+        ),
+    divider=c("hspine","vspine")
+  ) +
+  labs(x="Gender", y="Age Group", title="Refugee Resettlements in the U.S. by Age Group and Gender")
 ```
 
 
