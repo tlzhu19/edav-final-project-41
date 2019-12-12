@@ -595,7 +595,7 @@ Progress chooses Felix Tshisekedi as its candidate
 for the December presidential election.
 - Ebola outbreak in the east.', 'Baghdad bombings (two suicide bombings)', '\n-Mogadishu attack
 -Cyclone Sagar makes landfall ')
-countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, label=Events))+
+countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, shape=change_in_pop$country, label=Events))+
   geom_line() + 
   geom_point(size = .75) +
   xlab("Year") + 
