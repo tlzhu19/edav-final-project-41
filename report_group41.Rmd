@@ -85,7 +85,6 @@ Since the RPC website does not allow for faceting by year, we had to download th
     ii. `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
         * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
         * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
-        * 
 3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
         * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
         * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
