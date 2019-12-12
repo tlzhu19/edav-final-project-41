@@ -77,11 +77,22 @@ Since the RPC website does not allow for faceting by year, we had to download th
 ## Cleaning the Data in R
 
 1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
-2. Wrote two functions to clean Excel sheet for a given year. 
+    i. As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into 1 and add in the year from which the data was obtained from.
+    ii. We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.)
+2. Wrote two functions to clean Excel sheet for a given year so that they are in a format that is easily readable by r. 
     i. `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
+        * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
     ii. `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
+        * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
+        * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
+        * 
 3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
+        * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
+        * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
+        * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*)
 4. Saved these as csv files and uploaded to GitHub to easily access.
+        * We now have only 1 file for the overall refugee resettlement population data that consisted of the total refugee resettlement population by state
+        * In terms of demographics information, or refugee resettlement information by country of origin, we have 1 file for each demographics category (thus 5 in total)
 
 ```{r}
 # Used to clean the Arrivals data
