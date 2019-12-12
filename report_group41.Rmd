@@ -67,31 +67,45 @@ We are interested in answering the following questions to gain a better understa
 
 # Data Sources
 
-We first collected data from RPC (Refugee Processing Center), that provides refugee arrival information by state and nationality, by destination and nationality, by nationality and religion, and by demographic profile. 
+## Refugee Processing Center Data
 
-We can select the time frame, nationality. 
-Since the RPC website does not allow for faceting by year, we had to download the files year by year, and clean the data into the format we want for data analysis.
+We first collected data from RPC (Refugee Processing Center), that provides refugee arrival information 1) by state and nationality, 2) by demographic profile, 3) by destination and nationality, and 4) by nationality and religion. We focused on 1) and 2). Note that the data in 3) was included in 2). 
+
+### Total Refugee Resettlements by State
+
+We initially wanted to download the number of refugee resettlements in each state in the U.S. per year. Since the RPC website does not allow for faceting by year, we had an excel sheet for each year. The original total arrivals file for each year showed the table containing information on the State, Cases, and the number of individuals that arrived in each state. For this data, there were 50-56 records per year (from 2009 to 2018). Each record represented a state or U.S. territory, the extra six records were American Samoa, District of Columbia, Guam, Puerto Rico, Unknown State, and Virgin Islands. For the purposes of our analysis, we wanted to focus on the States rather than the U.S. territories. Since we wanted a single dataframe for all of these data while excluding the non-state U.S. territories in the State column, we had to combine and clean the original data where more detailed steps are provided Section 3: Data Transformation. 
+
+### Demographic Information of Resettled Refugees
+
+For the same reasons stated above, we had an excel sheet detailing the refugee demographics information for the top-5 countries (Bhutan, Burma, DRC, Iraq, and Somalia) for each year. These countries had the most number of refugees resettling in the U.S.  The individual original demographics file for each year contained five sheets: Age Group, Religion, Ethnicity, Education, and Native Language. The Age Group sheet contained the age groups, gender, cumulative total, and percentage of individuals belonging to that specific group. The Religion sheet contains records of the number and percentage of individuals belonging to a certain religion. Similarly, Ethnicity, Education, and Native Language sheets all contained information regarding the total number of individuals. Other than Age Group and Education, the other three sheets (Ethnicity, Native Language, and Religion) all varied among countries and years, thus we also had to further clean and combine the original dataset. 
+
+## Refugee Ceiling Data
+
+We obtained 10 data points, representing the annual ceilings in the past decade, which were set since the resettlement program was enacted with the Refugee Act of 1980. We sourced the data from the State Department Bureau of Population Refugees website.
 
 
 # Data Transformation
 ## Cleaning the Data in R
 
 1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
-    i. As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into 1 and add in the year from which the data was obtained from.
-    ii. We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.)
+    * As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into 1 and add in the year from which the data was obtained from.
+    * We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.)
+
 2. Wrote two functions to clean Excel sheet for a given year so that they are in a format that is easily readable by r. 
-    i. `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
+    * `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
         * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
-    ii. `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
+    * `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
         * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
         * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
+        
 3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
-        * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
-        * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
-        * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*)
+      * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
+      * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
+      * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*)
+
 4. Saved these as csv files and uploaded to GitHub to easily access.
-        * We now have only 1 file for the overall refugee resettlement population data that consisted of the total refugee resettlement population by state
-        * In terms of demographics information, or refugee resettlement information by country of origin, we have 1 file for each demographics category (thus 5 in total)
+      * We now have only 1 file for the overall refugee resettlement population data that consisted of the total refugee resettlement population by state
+      * In terms of demographics information, or refugee resettlement information by country of origin, we have 1 file for each demographics category (thus 5 in total)
 
 ```{r}
 # Used to clean the Arrivals data
@@ -964,16 +978,15 @@ p_muslim_dropdown
 
 # Conclusion
 
-Research shows that refugees contribute significantly to the U.S. workforce and society. Comparing the 1.1 million refugees that arrived between the 1980s and the 2010s with non-refugees, the refugees’ labor force participation is at 68% and employment rates is at 64%, exceeding those of the total U.S. population (63 and 60% respectively.. In addition to which, refugees are more likely to be skilled workers (38%) than non-refugees (33%) or the foreign born (35%) (https://doi.org/10.1177/2331502418787787). 
-On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us). 
+Research shows that refugees contribute significantly to the U.S. workforce and society. On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us). 
+
 However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which it had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can entern. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
+
 This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. 
 It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. 
 This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
-Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. 
-On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of origins. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011.
-Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population.
-Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries like California, Texas, Washington and New York had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
+
+Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of origins. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries like California, Texas, Washington and New York had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
 
 ## Limitations
 
