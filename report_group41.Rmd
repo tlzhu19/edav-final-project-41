@@ -911,9 +911,6 @@ To dive further into religions of refugees, we visualized the breakdown of Hindu
   
 In addition to these two options, there are options to see the breakdown of each category by country. For example, “Hindus from Bhutan” means number of Hindu refugees from Bhutan over time. Moreover, “Hindus from Bhutan in Proportions” means proportion of refugees from Bhutan within Hindu refugees over time. 
 
-The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, and they decreased from nearly 12,000 to 200, which explains the overall decrease in the past decade.  
-In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8724 individuals, which is nearly a 75% reduction. 
-
 
 ```{r} 
 
@@ -929,7 +926,6 @@ subset_religion_df5 <- religion_df5[religion_df5$Religion %in% religions_2, ]
 subset_religion_df5 <- subset_religion_df5 %>% group_by(Year, Religion, country,) %>% summarise(Total = sum(Male)+sum(Female))
 
 ```
-
 
 ```{r}
 
@@ -968,6 +964,7 @@ hindu_df_messy_final <- merge(hindu_df_messy, hindu_percent_df, by = c("Year", "
 muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year", "Religion"))
 ```
 
+The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, and they decreased from nearly 12,000 to 200, which explains the overall decrease in the past decade.  
 
 ```{r}
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
@@ -981,8 +978,8 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
     yaxis = list(title = 'Hindu'),
     updatemenus = list(
       list(
-            x = 1.4,
-            y = 0.7,
+            x = 1.5,
+            y = 0.8,
             buttons = list(
               list(method = 'restyle',
                    args = list('visible', list(TRUE, TRUE, F, F)),
@@ -1007,6 +1004,13 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
     )
   )
 
+p_hindu_dropdown 
+```
+
+In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8724 individuals, which is nearly a 75% reduction. 
+
+```{r}
+
 p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
   add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
   add_bars(y = ~DRC, name = 'DRC', marker= list(color=DRC_COLOR)) %>%
@@ -1022,8 +1026,8 @@ p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
     yaxis = list(title = 'Muslim'),
     updatemenus = list(
       list(
-            x= 1.4,
-            y = 0.6,
+            x= 1.5,
+            y = 0.8,
             buttons = list(
               list(method = 'restyle',
                    args = list('visible', list(TRUE, TRUE, TRUE, TRUE, F, F, F, F)),
@@ -1059,13 +1063,8 @@ p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
       )
     )
 
-
-
-p_hindu_dropdown 
-
 p_muslim_dropdown
 ```
-
 
 # Conclusion
 
