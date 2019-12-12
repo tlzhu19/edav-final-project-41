@@ -634,17 +634,19 @@ The Rohingya people of Burma have faced decades of systematic discrimination, st
 There is an overall decrease in the number of Burma refugees that resettled to the U.S. However, we can see that it first decreased from 2009 to 2013, and then increased from 2013 to 2015, when hundreds of Muslim Rohingyas migrants leave by sea in flimsy boats. However, this population drastically fell after 2015 to a record low of 3,771 in 2018 despite the rise in overall Rohingya refugees in 2017. We can thus infer this as a reflection of the tightening of U.S. refugee admission policy.
 
 **Democratic Republic of the Congo (D.R.C):**
+
 Despite the DRC’s civil war being brought to an end in 2013, the nation has continued to see sporadic waves of fighting - especially in the Eastern parts of the country. Since 2016, a new wave of violence also affected the DTC’s previously peaceful Kasai region, bringing thousands of civilians to struggle for survival (https://www.unhcr.org/en-us/dr-congo-emergency.html).
 In addition to widespread violence from armed groups, many displaced people are facing major health risks, including a recent outbreak of Ebola. The eastern provinces of Ituri and North Kivu, which are most affected by the outbreak are also the areas most affected by displacement and violence (https://www.unrefugees.org/news/democratic-republic-of-the-congo-refugee-crisis-explained/#What%20conflicts%20are%20occurring%20within%20the%20DRC?). 
 The refugee resettlement trend from the DRC to the U.S. is the reverse of the overall refugee resettlement trend among the 5 countries and experienced an overall increase. It increased drastically from 1,134 in 2009 to 19,829 in 2016, but dropped drastically to 5,252 in 2017. However, there is still an overall increase of 8,171 over the 10 years.
 
 **Iraq:**
+
 As a victim to decades of conflict and widespread violence, Iraq has more than 3.3 million Iriqis displaced across the country since 2014. Although armed violence has declined in some parts of the country, armed groups and small scale military operations continued to carry out unpredictable attacks throughout the country, resulting in new displacements (https://www.unrefugees.org/emergencies/iraq/).
 Iraq’s overall refugee resettlement trend in the U.S. is probably the most related one to the U.S. policy. As we can see from the graph, the refugee resettlement population from Iraq first dropped in 2011, when the war between the U.S. combat operations in Iraq officially ended, to a record low of 6,339. However, the refugee resettlement population peaked again in 2014 at 20,337 when the Iraqi Civil War began and ISIS militants controlled Iraqi cities. This number, however, fell from 20,337 in 2014 to a low of 91 in 2017.
 
 **Somalia:**
 
-The impact of nearly two-and-a-half decades of armed conflict in Somalia, compounded by drought and other natural hazards, drove over 870,000 Somalis to flee their homes.
+The impact of nearly two-and-a-half decades of armed conflict in Somalia, compounded by drought and other natural hazards, drove over 870,000 Somalis to flee their homes(https://www.unhcr.org/en-us/somalia.html).
 We can see from our graph that the population of Somalian refugees in the U.S. first increased from 4,620 in 2009 to 10,786 in 2016. Unsurprisingly, however, this population dropped to 139 in 2017.
 
 
@@ -655,6 +657,7 @@ In order to visualize the overall refugee resettlement trend within the United S
 We hypothesize that:
   1. There would be an overall decrease in refugee resettlement population in the U.S. in all states
   2. Coastal states would have more refugees than other states.
+  
 
 ```{r, fig.width=9}
 df_map <- arrival_df
@@ -685,7 +688,9 @@ map_basic
 ```
 
 We can see that there is a slight decrease in the overall refugee resettlement population in 2011 and increased slightly from 2012 to 2016. However, this population decreased drastically in all states after 2016.
+
 Confirming our hypothesis, we can also see that in all 10 years, the number of refugees in coastal states like California was significantly higher than other states. Together, states like Texas, California, Washington and New York resettled roughly a quarter of all refugees.
+
 In order to further examine the refugee resettlement pattern within the U.S. states, we will be providing an interactive visualization in a later part of this report.
 
 
@@ -755,7 +760,8 @@ In order to further examine the resettlement pattern of individuals within each 
  
 ### Education Level
 
-Refugees children are found to be five times more likely to be out of school than their non-refugee peers. According to the UNHCR, 76% of refugee adolescents were not in secondary school, only 61% of refugee children attend primary school, and only 3% of refugees enroll in a college or university.
+Refugee children are found to be five times more likely to be out of school than their non-refugee peers. According to the UNHCR, 76% of refugee adolescents were not in secondary school, only 61% of refugee children attend primary school, and only 3% of refugees enroll in a college or university (https://www.unrefugees.org/refugee-facts/statistics/).
+
 We decided to visualize the education level attained by refugees resettled in the U.S. from 2009 to 2018 with a bar chart faceted by country. 
 
 ```{r}
@@ -781,6 +787,7 @@ We can see that for all of the 5 countries, most of the refugee population have 
 ### Age Group
 
 In order to visualize the distribution of age groups within the refugee resettlement population from each of the 5 countries, we used a bar chart faceted by country. 
+
 ```{r}
 age_df2 <- age_df %>% 
   group_by(country) %>%
@@ -870,6 +877,7 @@ As we can see, the mosaic plot shows us little to no correlation between the two
 
 Given the nature of our topic and data, we believe that multidimensionality is not the most informative factor in our analysis.
 
+
 # Interactive Component
 
 ## Geographics
@@ -898,7 +906,7 @@ To dive further into religions of refugees, we visualized the breakdown of Hindu
   * All Individuals: count of individuals in each religion by country 
   * All Proportions: proportions of each country within a religion
   
-In addition to these two options, there are options to see breakdown of each category by country. For example, “Hindus from Bhutan” means number of Hindu refugees from Bhutan over time. Moreover, “Hindus from Bhutan in Proportions” means proportion of refugees from Bhutan within Hindu refugees over time. 
+In addition to these two options, there are options to see the breakdown of each category by country. For example, “Hindus from Bhutan” means number of Hindu refugees from Bhutan over time. Moreover, “Hindus from Bhutan in Proportions” means proportion of refugees from Bhutan within Hindu refugees over time. 
 
 The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, and they decreased from nearly 12,000 to 200, which explains the overall decrease in the past decade.  
 In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8724 individuals, which is nearly a 75% reduction. 
@@ -1055,15 +1063,16 @@ p_hindu_dropdown
 p_muslim_dropdown
 ```
 
+
 # Conclusion
 
-Research shows that refugees contribute significantly to the U.S. workforce and society. On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us). 
+Research shows that refugees contribute significantly to the U.S. workforce and society. On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us).
 
 However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which it had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can entern. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
 
-This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
+This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. This led us to question what the refugee resettlement trend has been for the past decade and what are the main factors driving this trend. 
 
-Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of origins. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries like California, Texas, Washington and New York had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
+Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of refugee origin. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries, like California, Texas, Washington and New York, had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
 
 ## Limitations
 
@@ -1077,6 +1086,7 @@ For future  analysis, it would be helpful to expand our dataset to include more 
 ## Future Directions
 
 Overall, given the current observed trend in refugee resettlement to the U.S., we can see that the future of the refugee resettlement program is uncertain despite its long history and the success and contributions of refugees in the U.S.
+
 Shockingly, there still exists a gap between the terms of the refugee admissions policy debate and the reality of who refugees are.
 Policy conversations should be informed by the reality of the global refugee population and their contribution to communities across the country. Despite the fact that they come from challenging circumstances, the fact that they contribute to the vitality of communities across the U.S. should be evidence that this they should not be seen as a threat to national security and economy, especially not in a peak time of refugee crisis.
 In a time like this, it is crucial that we drop our differences and come together as one to overcome this global crisis.
