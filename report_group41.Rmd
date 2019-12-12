@@ -287,7 +287,7 @@ kable(head(native_language_df))
 kable(head(religion_df))
 ```
 
-Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the U.S.. To further elaborate, when we visualized the Ethnicity and Native language trend over the years, the overall trend remained consistent throughout the period, and did not seem to clearly show the refugee resettlement trends unlike the other demographic data we used for analysis. 
+Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the U.S.. More specifically, Ethnicity and Native Language are directly related to country of origin and thus are redundant information. 
 
 Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
 
@@ -791,6 +791,14 @@ p3
 We can see that DRC and Somalia have the highest proportions of refugees who are under 14.
 
 
+## Multidimensional Analysis
+
+```{r}
+
+```
+
+
+
 # Interactive Component
 
 ## Geographics
@@ -982,9 +990,7 @@ Research shows that refugees contribute significantly to the U.S. workforce and 
 
 However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which it had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can entern. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
 
-This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. 
-It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. 
-This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
+This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. 
 
 Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of origins. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries like California, Texas, Washington and New York had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
 
