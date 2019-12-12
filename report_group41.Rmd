@@ -4,6 +4,7 @@ author: "Ji In Choi (jic2124), Jung Ah Shin (js5569), Olivia Wang (yw3324), Tiff
 date: "December 12, 2019"
 output:
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
     theme: journal
@@ -11,8 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-#install.packages("maps")
+knitr::opts_chunk$set(echo = T)
 library(readxl)
 library(tidyverse)
 library(plotly)
@@ -22,6 +22,8 @@ library(data.table)
 library(reshape)
 library(ggmosaic)
 ```
+
+[GitHub](https://github.com/tlzhu19/edav-final-project-41) | [Website](http://rpubs.com/tlzhu/refugees_in_us)
 
 # Introduction
 ## Motivation
@@ -860,6 +862,8 @@ melted_data3 <- melted_data2 %>%
   group_by(Education, Gender) %>% 
   summarize(Total = sum(freq))
 
+levels(melted_data3$Education)[levels(melted_data3$Education)=="NONE"] <- "No Education"
+
 ggplot(melted_data3)+
   geom_mosaic(
     aes(x=product(Gender, Education),
@@ -871,8 +875,6 @@ ggplot(melted_data3)+
   labs(x="Gender", y="Education Level", title="Refugee Resettlements in the U.S. by Education Level and Gender") +
   theme(legend.position="none")
 ```
-
-(note: NONE = no education attained)
 
 As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each education level is almost consistent across each education level. Although there are slightly more females who had obtained an education level of higher than professional school (professional, technical and graduate school) than males.
 
