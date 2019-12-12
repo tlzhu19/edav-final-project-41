@@ -499,6 +499,7 @@ ggplotly(p, tooltip = c('y', 'label')) %>%
 ```
 
 Looking at the general trend of change in refugee admission ceiling, the two timepoints that stand out the most are 2015 and 2016.
+
   * In 2015, the refugee admission ceiling increased drastically from 70,000 to a record high of 85,000 in 2016 under President Obama’s administration. 
   * In 2016, however, the refugee admission ceiling decreased drastically from 85,000 to a record low of 45,000 in 2018 under President Trump’s administration and has continued to decrease.
 
@@ -848,7 +849,7 @@ We can observe that the mosaic plot shows us little to no correlation between th
 **Education Level and Gender**
 
 We also examine the correlation between the education and gender in the refugee resettlement population. 
-Our original assumption was that education would be dependent on gender.
+Our original assumption was that education would be dependent on gender due to social and cultural conventions that often result in males being prioritized over females to attend school.
 
 ```{r, fig.align='center'}
 education_df2<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,  Male, Female, country, Year))
@@ -877,7 +878,7 @@ ggplot(melted_data3)+
   theme(legend.position="none")
 ```
 
-As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each education level is almost consistent across each education level. Although there are slightly more females who had obtained an education level of higher than professional school (professional, technical and graduate school) than males.
+As we can see, the mosaic plot shows us little to no correlation between the two variables. Contrary to our hypothesis, the distribution of gender within each education level is almost consistent across all education levels. Although there are slightly more females who had obtained an education level of higher than professional school (professional, technical and graduate school) than males, there is no significant difference between the education levels of females and males.
 
 Given the nature of our topic and data, we believe that multidimensionality is not the most informative factor in our analysis.
 
@@ -912,6 +913,7 @@ To dive further into religions of refugees, we visualized the breakdown of Hindu
   
 In addition to these two options, there are options to see the breakdown of each category by country. For example, “Hindus from Bhutan” means number of Hindu refugees from Bhutan over time. Moreover, “Hindus from Bhutan in Proportions” means proportion of refugees from Bhutan within Hindu refugees over time. 
 
+The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, which decreased from nearly 12,000 to 200. This reduction explains the overall decrease in Hindu refugees over the past decade.  
 
 ```{r} 
 
@@ -925,10 +927,6 @@ religions_2 = c('Moslem', 'Hindu')
 subset_religion_df5 <- religion_df5[religion_df5$Religion %in% religions_2, ]
 
 subset_religion_df5 <- subset_religion_df5 %>% group_by(Year, Religion, country,) %>% summarise(Total = sum(Male)+sum(Female))
-
-```
-
-```{r}
 
 #Absolute Number Calculation
 hindu_df <- filter(subset_religion_df5, Religion == 'Hindu') 
@@ -965,7 +963,6 @@ hindu_df_messy_final <- merge(hindu_df_messy, hindu_percent_df, by = c("Year", "
 muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year", "Religion"))
 ```
 
-The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, and they decreased from nearly 12,000 to 200, which explains the overall decrease in the past decade.  
 
 ```{r, fig.align='center'}
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
@@ -1008,7 +1005,7 @@ p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
 p_hindu_dropdown 
 ```
 
-In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8724 individuals, which is nearly a 75% reduction. 
+In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8,724 individuals, which is nearly a 75% reduction.
 
 ```{r, fig.align='center'}
 
@@ -1071,11 +1068,11 @@ p_muslim_dropdown
 
 Research shows that refugees contribute significantly to the U.S. workforce and society. On average, refugees participate in the labor force at higher rates, their earnings rise, and their use of public benefits declines. Those who arrive when they are young often goes on to finish college. Refugees also contribute to local communities by working in key industries, revitalizing distressed neighborhoods, and adding diversity(https://www.urban.org/urban-wire/debate-versus-reality-refugees-us).
 
-However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which it had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can entern. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
+However, under the Trump administration’s broader attack on legal immigration programs, refugees are treated as a burden and a potential threat to the nation. Despite the rise in overall number of refugees globally, the United States set an extremely low refugee admissions ceiling (45,000) in 2017, which had no intention of meeting. It has also tightened the special clearance procedures for refugees from mostly Muslim majority states so that virtually none can enter. The administration has thus put the United States on pace to resettle the lowest number of refugees in USRAP’s 38-year history, despite the record levels of forced displacement in the world (https://doi.org/10.1177/2331502418787787).
 
-This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. This led us to question what the refugee resettlement trend has been for the past decade and what are the main factors driving this trend. 
+This current report aims at examining the refugee resettlement trend in the United States over the past decade, from 2009 to 2018. It focuses on the top 5 refugee origin countries, Burma, Iraq, Somalia, Bhutan, the Democratic Republic of the Congo. It visualizes the overall resettlement trend, how it is affected by events within the United States and the countries of refugee origin, and the demographic breakdowns of the refugee population. This observation led us to question what the refugee resettlement trend has been for the past decade and what are the main factors driving this trend. 
 
-Overall, it can be visualized that the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of refugee origin. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries, like California, Texas, Washington and New York, had the most number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
+Overall,the most significant U.S. refugee resettlement trend happened in 2016, under President Trump’s administration. The overall refugee resettlement population in the U.S. fell drastically. This is accompanied by a drop in the Muslim population within the refugee population. On top of the U.S. refugee admission policies, we can also see that the refugee resettlement pattern was influenced by events within the countries of refugee origin. This is exemplified by the drop in Iraq refugee resettlement to the U.S. when President Obama withdrew the U.S. forces from Iraq in 2011. Delving deeper, we can also see that the refugee population was made even more vulnerable given the lower overall education level and proportion of individuals younger than 14 in the refugee population. Looking within the U.S., we can see that the geographical makeup of the states had an effect on the refugee resettlement as well. Coastal states/ states bordering neighboring countries, like California, Texas, Washington and New York, had the highest number of refugees resettled in these states, accounting for more than 40% of the total refugee population in the U.S.
 
 ## Limitations
 
@@ -1088,10 +1085,10 @@ For future  analysis, it would be helpful to expand our dataset to include more 
 
 ## Future Directions
 
-Overall, given the current observed trend in refugee resettlement to the U.S., we can see that the future of the refugee resettlement program is uncertain despite its long history and the success and contributions of refugees in the U.S.
+Overall, given the current observed trend in refugee resettlement to the U.S., we can see that the future of the refugee resettlement program is uncertain, despite its long history and the success and contributions of refugees in the U.S.
 
-Shockingly, there still exists a gap between the terms of the refugee admissions policy debate and the reality of who refugees are.
-Policy conversations should be informed by the reality of the global refugee population and their contribution to communities across the country. Despite the fact that they come from challenging circumstances, the fact that they contribute to the vitality of communities across the U.S. should be evidence that this they should not be seen as a threat to national security and economy, especially not in a peak time of refugee crisis.
+Shockingly, there still exists a gap between refugee admissions policy, and the reality of who refugees are.
+Policy conversations should be informed by the reality of the global refugee population, and their contribution to communities across the country. Despite their challenging circumstances, the fact that refugees contribute to the vitality of communities across the U.S. should be an evidence that they should not be seen as a threat to national security and economy.
 In a time like this, it is crucial that we drop our differences and come together as one to overcome this global crisis.
 
 
