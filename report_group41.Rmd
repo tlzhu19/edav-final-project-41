@@ -822,7 +822,9 @@ ggplot(melted_data2)+
 
 As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each age group is almost consistent across age groups. Although we can see that there are slightly more males than females in the older age groups (age 41 and older), the difference is quite trivial.
 
-Given the nature of our topic and data, we believe that multidimensionality is not the most informative factor in our analysis.
+
+In order to better visualize multidimensional correlations, we decided to examine the correlation between the education and gender in the refugee resettlement population using a mosaic plot.
+We hypothesize that the two variables should be independent.
 
 ```{r}
 education_df2<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,  Male, Female, country, Year))
@@ -848,7 +850,11 @@ ggplot(melted_data3)+
   labs(x="Gender", y="Education Level", title="Refugee Resettlements in the U.S. by Education Level and Gender") +
   theme(legend.position="none")
 ```
+(note: NONE = no education attained)
 
+As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each education level is almost consistent across each education level. Although there are slightly more females who had obtained an education level of higher than professional school (professional, technical and graduate school) than males.
+
+Given the nature of our topic and data, we believe that multidimensionality is not the most informative factor in our analysis.
 
 # Interactive Component
 
