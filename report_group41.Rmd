@@ -513,8 +513,9 @@ total_demo <- ethnicity_df
 total_demo$Total <- as.numeric(total_demo$Total)
 change_in_pop <- total_demo %>%
   group_by(Year, country) %>%
-  summarize(sum=sum(Total))
+  summarize(Individuals=sum(Total))
 
+change_in_pop <- rename(change_in_pop, c('country'='Country'))
 change_in_pop$Events <- c('\n-A 6.1 magnitude earthquake occurred in eastern 
 Bhutan, leaving at least 10 dead
 -Huanglongbing virus wipes out much of Bhutan’s 
@@ -606,16 +607,16 @@ Progress chooses Felix Tshisekedi as its candidate
 for the December presidential election.
 - Ebola outbreak in the east.', 'Baghdad bombings (two suicide bombings)', '\n-Mogadishu attack
 -Cyclone Sagar makes landfall ')
-countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, shape=change_in_pop$country, label=Events))+
+countries_plot <- ggplot(change_in_pop, aes(Year, Individuals, color=Country, shape=Country, label=Events))+
   geom_line() + 
-  geom_point(size = .75) +
+  geom_point(size = .9) +
   xlab("Year") + 
   ylab("Number of Individuals") +
   labs(title = "Change in Refugee Resettlements to the U.S. \nof Top 5 Refugee Origins from 2009-2018 ") +
   theme(legend.title = element_blank(), plot.title=element_text(hjust=0.5)) +
   scale_color_manual(values=our_palette)
 
-ggplotly(countries_plot, tooltip = c('y', 'label')) %>%
+ggplotly(countries_plot, tooltip = c('shape', 'y', 'label')) %>%
   layout(annotations = list(x = -0.1, y = -0.1, text = "Hover over points to read about major events", showarrow = F, xref = 'paper', yref = 'paper', xanchor = 'left', yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 11, color = "grey")))
 ```
 
@@ -800,7 +801,9 @@ p3
 We can see that DRC and Somalia have the highest proportions of refugees who are under 14.
 
 
-## Multidimensional Analysis
+### Multidimensional Analysis
+
+**Age Group and Gender**
 
 In order to better visualize multidimensional correlations, we decided to examine the correlation between the age groups and gender in the refugee resettlement population using a mosaic plot.
 We hypothesize that the two variables should be independent.
@@ -832,6 +835,7 @@ ggplot(melted_data2)+
 
 As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each age group is almost consistent across age groups. Although we can see that there are slightly more males than females in the older age groups (age 41 and older), the difference is quite trivial.
 
+**Education Level and Gender**
 
 In order to better visualize multidimensional correlations, we decided to examine the correlation between the education and gender in the refugee resettlement population using a mosaic plot.
 We hypothesize that the two variables should be independent.
