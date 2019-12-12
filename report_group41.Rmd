@@ -341,7 +341,7 @@ PURPLE_h = '#DA70D6'
 our_palette = c('orange', BLUE_h, RED_h, GREEN_h, PURPLE_h)
 ```
 
-```{r}
+```{r, fig.width=4.5, fig.height=4.5, fig.align='center'}
 # CODE FOR PLOTTING PERCENTAGE OF MISSING DATA (Education)
 na_df<- select(filter(education_df, Education == "Bio Data not Complete" | Education == "Unknown"),c(Education,Total, country, Year))
 # Total sum of data 
@@ -367,7 +367,7 @@ In Education data, there were two rows called “Bio Data not Complete” and �
 
 In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
 
-```{r}
+```{r, fig.width=4.5, fig.height=4.5, fig.align='center'}
 # Religion
 
 #group by country and bar plot for Unknown ()
@@ -411,7 +411,7 @@ We hypothesize that the change in the refugee admission ceiling, and the actual 
   1. The government administration at the time
   2. The U.S. economy and major events in general
   
-```{r}
+```{r, fig.align='center'}
 # Compare ceilings with actual admissions
 total_arrival_df <- arrival_df %>%
   group_by(Year) %>%
@@ -510,7 +510,7 @@ In order to take a closer look at the refugee resettlement pattern of each indiv
 
 We hypothesize this trend to be both correlated to the U.S. refugee admission policy, the U.S. economy overall, and major political and social events in each of the 5 countries.
 
-```{r}
+```{r, fig.align='center'}
 total_demo <- ethnicity_df
 total_demo$Total <- as.numeric(total_demo$Total)
 change_in_pop <- total_demo %>%
@@ -661,7 +661,7 @@ We hypothesize that:
   2. Coastal states would have more refugees than other states.
   
 
-```{r, fig.width=9}
+```{r, fig.width=9, fig.align='center'}
 df_map <- arrival_df
 
 # remove extra 6 'States'
@@ -706,7 +706,7 @@ We hypothesize that under President Trump’s administration, the population of 
 We decided to visualize this trend using a bar chart, faceted by the year.
 As mentioned previously, we will be looking at the top 4 religions.
 
-```{r, fig.height=7}
+```{r, fig.height=7, fig.align='center'}
 muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
 
 religion_df3 <- religion_df %>% 
@@ -766,7 +766,7 @@ Refugee children are found to be five times more likely to be out of school than
 
 We decided to visualize the education level attained by refugees resettled in the U.S. from 2009 to 2018 with a bar chart faceted by country. 
 
-```{r}
+```{r, fig.align='center'}
 edu_df<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,Total, country, Year))
 
 edu_country <- edu_df %>% 
@@ -790,7 +790,7 @@ We can see that for all of the 5 countries, most of the refugee population have 
 
 In order to visualize the distribution of age groups within the refugee resettlement population from each of the 5 countries, we used a bar chart faceted by country. 
 
-```{r}
+```{r, fig.align='center'}
 age_df2 <- age_df %>% 
   group_by(country) %>%
   mutate(Proportion = Total/sum(Total))
@@ -817,7 +817,7 @@ We can see that DRC and Somalia have the highest proportions of refugees who are
 In order to better visualize multidimensional correlations, we decided to examine the correlation between the age groups and gender in the refugee resettlement population using a mosaic plot.
 We hypothesize that the two variables should be independent.
 
-```{r}
+```{r, fig.align='center'}
 age_df_b = select(filter(age_df), c(Age.Group, Male,Female,country,Year))
 
 melted_data <- melt(age_df_b, id=c("Age.Group","country", "Year"))
@@ -849,7 +849,7 @@ As we can see, the mosaic plot shows us little to no correlation between the two
 In order to better visualize multidimensional correlations, we decided to examine the correlation between the education and gender in the refugee resettlement population using a mosaic plot.
 We hypothesize that the two variables should be independent.
 
-```{r}
+```{r, fig.align='center'}
 education_df2<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,  Male, Female, country, Year))
 
 melted_data2 <- melt(education_df2, id=c("Education","country", "Year"))
@@ -884,7 +884,7 @@ Given the nature of our topic and data, we believe that multidimensionality is n
 # Interactive Component
 
 ## Geographics
-```{r}
+```{r, fig.align='center'}
 # remove extra 6 'States'
 arrival_df2 <- arrival_df[!arrival_df$State %in% c('American Samoa', 'District of Columbia', 'Guam', 'Puerto Rico', 'Unknown State', 'Virgin Islands'), ]
 arrival_df2$State <- as.factor(arrival_df2$State)
@@ -966,7 +966,7 @@ muslim_df_messy_final <- merge(muslim_df_messy, muslim_percent_df, by = c("Year"
 
 The first bar chart shows that the number of Hindu refugees decreased steadily in the past 10 years, mostly driven by Bhutan. We can observe that refugees from Bhutan account for more than 99% of Hindu refugees, and they decreased from nearly 12,000 to 200, which explains the overall decrease in the past decade.  
 
-```{r}
+```{r, fig.align='center'}
 p_hindu_dropdown <- plot_ly(hindu_df_messy_final, x = ~Year) %>%
   add_bars(y = ~Bhutan, name = 'Bhutan', marker= list(color=BUHTAN_COLOR)) %>%
   add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
@@ -1009,7 +1009,7 @@ p_hindu_dropdown
 
 In the second bar chart, we show the same breakdown among Muslim refugees. In the “All Individuals” chart, we can see that Muslim refugees have dropped drastically since 2017, mainly driven by Iraq and Somalia. This observation is more evident in the individual bar charts for those countries. For example, between 2016 and 2017, Muslim refugees from Iraq decreased by more than 6,000 individuals from 8724 individuals, which is nearly a 75% reduction. 
 
-```{r}
+```{r, fig.align='center'}
 
 p_muslim_dropdown <- plot_ly(muslim_df_messy_final, x = ~Year) %>%
   add_bars(y = ~Burma, name = 'Burma', marker= list(color=BURMA_COLOR)) %>%
