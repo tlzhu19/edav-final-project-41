@@ -871,6 +871,7 @@ ggplot(melted_data3)+
   labs(x="Gender", y="Education Level", title="Refugee Resettlements in the U.S. by Education Level and Gender") +
   theme(legend.position="none")
 ```
+
 (note: NONE = no education attained)
 
 As we can see, the mosaic plot shows us little to no correlation between the two variables. The distribution of gender within each education level is almost consistent across each education level. Although there are slightly more females who had obtained an education level of higher than professional school (professional, technical and graduate school) than males.
