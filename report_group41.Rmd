@@ -53,12 +53,12 @@ Under the Refugee Act of 1980, the president sets an annual ceiling for refugee 
 
 ## Questions
 
-There are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. In order to better visualize the trend of refugee resettlement to the U.S., this report will be specifically focusing on the top 5 countries (Burma, Iraq, Somalia, Bhutan, Democratic Republic of the Congo) with the highest refugee resettlement population in the U.S., which accounted for 60.9% of the total refugee arrivals in the U.S. (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
+There are currently 25.9 million refugees in the world, indicating the dramatic growth in refugees over the past decade. This led us to question what the refugee resettlement trend has been for the past decade, and delve deeper than just the changes in the numbers of refugees. In order to better visualize the trend of refugee resettlement to the U.S., this report will be specifically focusing on the top 5 countries with the highest refugee resettlement population in the U.S. (Burma, Iraq, Somalia, Bhutan, Democratic Republic of the Congo), which accounted for 60.9% of the total refugee arrivals in the U.S. (https://data.newamericaneconomy.org/en/refugee-resettlement-us/).
 
 We are interested in answering the following questions to gain a better understanding of the refugee resettlements in the United States:
   
-  1. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the U.S.?
-      * Has there been increases/decreases in refugee resettlements population from 2009 - 2018?
+  1. What insights can we gain from temporal exploratory data analysis of refugee settlement patterns in the U.S. from 2009 to 2018?
+      * Has there been increases/decreases in refugee resettlements population in the 10 years?
       * Is there a correlation between change in refugee resettlement population and major political events that have happened over the 10 years?
 
   2. What insights can we gain from geographical visualization of refugee settlement patterns in the U.S. over the 10 years? Why might some states have larger refugee settlements than others?
@@ -71,19 +71,33 @@ We are interested in answering the following questions to gain a better understa
 
 ## Refugee Processing Center Data
 
-We first collected data from RPC (Refugee Processing Center), that provides refugee arrival information 1) by state and nationality, 2) by demographic profile, 3) by destination and nationality, and 4) by nationality and religion. We focused on 1) and 2). Note that the data in 3) was included in 2). 
+We first collected data from the RPC (Refugee Processing Center), which is operated by the U.S. Department of State, Bureau of Population, Refugees, and Migration (PRM). It coordinates the processing and tracking of the movement of refugees from various countries around the world to the U.S. for resettlement under the U.S. Refugee Admissions Program.
+It provides refugee arrival information:
+
+  1. by state and nationality
+  
+  2. by demographic profile
+  
+  3. by destination and nationality
+  
+  4. by nationality and religion. 
+  
+We focused on 1) and 2). Note that the data in 3) was included in 2). 
+
 
 ### Total Refugee Resettlements by State
 
-We initially wanted to download the number of refugee resettlements in each state in the U.S. per year. Since the RPC website does not allow for faceting by year, we had an excel sheet for each year. The original total arrivals file for each year showed the table containing information on the State, Cases, and the number of individuals that arrived in each state. For this data, there were 50-56 records per year (from 2009 to 2018). Each record represented a state or U.S. territory, the extra six records were American Samoa, District of Columbia, Guam, Puerto Rico, Unknown State, and Virgin Islands. For the purposes of our analysis, we wanted to focus on the States rather than the U.S. territories. Since we wanted a single dataframe for all of these data while excluding the non-state U.S. territories in the State column, we had to combine and clean the original data where more detailed steps are provided Section 3: Data Transformation. 
+We initially wanted to download the number of refugee resettlements in each state in the U.S. per year. Since the RPC website does not allow faceting by year, we had an excel sheet for each year. The original total arrivals file for each year showed the table containing information on the State, Cases, and the number of individuals that arrived in each state. For this data, there were 50-56 records per year (from 2009 to 2018). Each record represented a state or U.S. territory, the extra six records were from American Samoa, District of Columbia, Guam, Puerto Rico, Unknown State, and Virgin Islands. For the purposes of our analysis, we wanted to focus on the States rather than other U.S. territories. Since we wanted a single dataframe for all of these data while excluding the non-state U.S. territories in the State column, we had to combine and clean the original data where more detailed steps are provided in Section 3: Data Transformation. 
+
 
 ### Demographic Information of Resettled Refugees
 
-For the same reasons stated above, we had an excel sheet detailing the refugee demographics information for the top-5 countries (Bhutan, Burma, DRC, Iraq, and Somalia) for each year. These countries had the most number of refugees resettling in the U.S.  The individual original demographics file for each year contained five sheets: Age Group, Religion, Ethnicity, Education, and Native Language. The Age Group sheet contained the age groups, gender, cumulative total, and percentage of individuals belonging to that specific group. The Religion sheet contains records of the number and percentage of individuals belonging to a certain religion. Similarly, Ethnicity, Education, and Native Language sheets all contained information regarding the total number of individuals. Other than Age Group and Education, the other three sheets (Ethnicity, Native Language, and Religion) all varied among countries and years, thus we also had to further clean and combine the original dataset. 
+For the same reasons stated above, we had an excel sheet detailing the refugee demographics information for the top-5 countries (Bhutan, Burma, DRC, Iraq, and Somalia) for each year. These countries had the most number of refugees resettling in the U.S.  The individual original demographics file for each year contained five sheets: Age Group, Religion, Ethnicity, Education, and Native Language. The Age Group sheet contained the age groups, gender, cumulative total, and percentage of individuals belonging to that specific group. The Religion sheet contains records of the number and percentage of individuals belonging to a certain religion. Similarly, Ethnicity, Education, and Native Language sheets all contained information regarding the total number of individuals. Other than Age Group and Education, the other three sheets (Ethnicity, Native Language, and Religion) all varied among countries and years, thus we also had to further clean and combine the original dataset.
+
 
 ## Refugee Ceiling Data
 
-We obtained 10 data points, representing the annual ceilings in the past decade, which were set since the resettlement program was enacted with the Refugee Act of 1980. We sourced the data from the State Department Bureau of Population Refugees website.
+We obtained 10 data points, representing the annual ceilings in the past decade, which were set by the U.S. president since the resettlement program was enacted with the Refugee Act of 1980. We sourced the data from the State Department Bureau of Population Refugees website.
 
 
 # Data Transformation
@@ -91,23 +105,23 @@ We obtained 10 data points, representing the annual ceilings in the past decade,
 
 1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
     * As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into 1 and add in the year from which the data was obtained from.
-    * We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.)
+    * We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.).
 
 2. Wrote two functions to clean Excel sheet for a given year so that they are in a format that is easily readable by r. 
     * `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
         * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
     * `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
-        * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
-        * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
+        * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one.
         
 3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
       * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
-      * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year
-      * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*)
+      * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year.
+      * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*).
 
 4. Saved these as csv files and uploaded to GitHub to easily access.
-      * We now have only 1 file for the overall refugee resettlement population data that consisted of the total refugee resettlement population by state
-      * In terms of demographics information, or refugee resettlement information by country of origin, we have 1 file for each demographics category (thus 5 in total)
+      * We now have only 1 file for the overall refugee resettlement population data that consisted of the total refugee resettlement population by state.
+      * In terms of demographics information, or refugee resettlement information by country of origin, we have 1 file for each demographics category (thus 5 in total).
+
 
 ```{r}
 # Used to clean the Arrivals data
@@ -140,8 +154,6 @@ clean_arrival <- function(file, sheet_name) {
   
   return (combined)
 }
-
-
 ```
 
 ```{r}
@@ -163,9 +175,6 @@ clean_demographics <- function(file, sheet_name) {
   df3 <- df2[complete.cases(df2), ]
   df4 = df3[-nrow(df3), ]
   
-  #print(file)
-  #file_replaced <- gsub(pattern="demographics/", replacement=".", file, fixed = TRUE)
-  
   # file_unpacked <- unlist(strsplit(file_replaced, split='.', fixed=TRUE))
   file_unpacked <- unlist(strsplit(file, 'demographics/'))
   file_unpacked2 <- unlist(strsplit(file_unpacked[2], '_Demographics'))
@@ -177,7 +186,6 @@ clean_demographics <- function(file, sheet_name) {
   
   return(df4)
 }
-
 ```
 
 ```{r}
@@ -208,8 +216,6 @@ combine_files <- function(path, data_cleaner, sheet_name, title) {
 # title = 'Arrivals_'
 # sheet_name = 'Detailed'
 # data_cleaner = clean_arrival
-
-# df_test3 <- combine_files(path, clean_demographics, sheet_name, title)
 ```
 
 ```{r}
@@ -241,6 +247,7 @@ save_cleaned_all_demographics <- function(path) {
 }
 ```
 
+
 ## Cleaned Data Format
 ```{r}
 # Read cleaned data from github
@@ -254,55 +261,56 @@ native_language_df = read.csv('https://raw.githubusercontent.com/tlzhu19/edav-fi
 
 After cleaning the data, we have six '.csv' files that can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/clean). The following tables are a preview of the first few rows of these csv files.
 
-1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the U.S. from 2009-2018. All raw files to make this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
+1. `all_arrivals.csv`: The total number of refugee resettlements to each of the 50 states in the U.S. from 2009-2018. All raw files for this file can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/all_arrivals).
 ```{r}
 kable(head(arrival_df))
 ```
 
-2. `age_group.csv`: The composition of refugee population based on age groups from under 14 years old to age 65 and over. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
+2. `age_group.csv`: The composition of refugee population based on age groups from under 14 years old to age 65 and over. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files for this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(age_df))
 ```
 
-3. `education.csv`: The composition of refugee population based on the education levels of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
+3. `education.csv`: The composition of refugee population based on the education levels of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files for this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(education_df))
 ```
 
-4. `ethnicity.csv`: The composition of refugee population based on the ethnicity of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
+4. `ethnicity.csv`: The composition of refugee population based on the ethnicity of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files for this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(ethnicity_df))
 ```
 
-5. `native_language.csv`: The composition of refugee population based on the native languages used by the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
+5. `native_language.csv`: The composition of refugee population based on the native languages used by the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files for this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(native_language_df))
 ```
 
-6. `religion.csv`: The composition of refugee population based on the religion of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files to make this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
+6. `religion.csv`: The composition of refugee population based on the religion of the refugees. Provides additional information on which gender, country, and year these individuals in age groups belong. All raw files for this can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw/demographics).
 
 ```{r}
 kable(head(religion_df))
 ```
 
-Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to answer our questions regarding refugee resettlement trends in the U.S.. More specifically, Ethnicity and Native Language are directly related to country of origin and thus are redundant information. 
+
+Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to help us answer our questions regarding refugee resettlement trends in the U.S.. More specifically, Ethnicity and Native Language ware excluded in our data visualization as they are directly related to country of origin and thus are considered as redundant information. 
 
 Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
 
 
 ## Transforming the Data
 
-In order to visualize and compare the refugee resettlement trends among countries or between years, we had to group the data by country or year. 
+In order to visualize and compare the refugee resettlement trends among countries or between years, we had to group the data by country, year, or both. 
 
 For the same reason, in addition to using the raw values given in the data (number of people belonging to that group), we transformed the data into proportion to see a clear comparison among the countries, religions, education level, and age. 
 
 
 # Missing Values
-The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this would not be plotted in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
+The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this could not be visualized in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
 
 * American Samoa
 * District of Columbia
@@ -311,7 +319,7 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 * Unknown State
 * Virgin Islands
 
-We removed these rows since we are just curious about the fifty states.
+We removed these rows since our main goal is to focus on the fifty states.
 
 
 ```{r}
@@ -353,7 +361,7 @@ ggplot(combine_df, aes(x=country, y=proportion, fill=country))+
   scale_fill_manual(values=our_palette)
 ```
 
-In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the U.S.. By summing up the total amount of these two rows and dividing it by the total amount of available data, we observed the proportion of missing data compared to the total data. 
+In Education data, there were two rows called “Bio Data not Complete” and “Unkown”. We decided to consider these two values as missing data since they do not provide information regarding the education level of the refugees that re-settled in the U.S.. By summing up the total amount of these two rows and dividing it by the total population of that specific country, we observed the proportion of missing data in each country. 
 
 In the Missing Education Data by Country, Somalia has the largest proportion of data missing among the top-5 countries, with approximately 0.39 of the data missing. Burma has the lowest proportion of data missing, with approximately 0.15 of the data missing.
 
@@ -383,7 +391,7 @@ ggplot(combine_df1, aes(x=country, y=proportion, fill=country))+
   scale_fill_manual(values=our_palette)
 ```
 
-Similarly, for the Religion data, we also considered the row “NONE” to be missing data, and calculated the proportion of missing data compared to the total data. Unlike the Education data, the proportion of missing data were much smaller. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
+Similarly, for the Religion data, we also considered the row “Unknown” to be missing data, and calculated the proportion of missing data within each religion. Unlike the data on Education Level, the proportion of missing data was much smaller for religion. This suggests that information on religion was much more accessible compared to information on Education Level. DRC has the most amount of Religion data missing, with approximately 1.19e-03 of the total data missing.
  
 Lastly, Age data did not contain any missing data, so no further analysis was needed to analyze missing patterns for this dataset. 
 
@@ -394,7 +402,8 @@ Lastly, Age data did not contain any missing data, so no further analysis was ne
 
 Given our datasets, it is apparent that the temporal patterns of our data are of great importance to our analysis. As a result, to provide a general view of the overall change in resettlement population from 2009 to 2018, we chose to use a time series graph. 
 
-In this graph, we have years on the x-axis, and population count on the y-axis. The green line indicates the ceiling set by the U.S. government for maximum of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+In this graph, we have years as the independent variable, and population count as the dependent variable. The green line indicates the ceiling set by the U.S. government for the maximum number of refugees that can be admitted. The red line indicates the actual number of individuals admitted. 
+
 We hypothesize that the change in the refugee admission ceiling, and the actual refugee resettlement population are correlated with:
 
   1. The government administration at the time
@@ -609,6 +618,7 @@ countries_plot <- ggplot(change_in_pop, aes(Year, sum, color=country, shape=chan
 ggplotly(countries_plot, tooltip = c('y', 'label')) %>%
   layout(annotations = list(x = -0.1, y = -0.1, text = "Hover over points to read about major events", showarrow = F, xref = 'paper', yref = 'paper', xanchor = 'left', yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 11, color = "grey")))
 ```
+
 Overall, the amount of refugees that resettled to the U.S. decreased drastically from 2009 to 2018.
 
 **Bhutan:**
