@@ -105,11 +105,13 @@ We obtained 10 data points, representing the annual ceilings in the past decade,
 # Data Transformation
 ## Cleaning the Data in R
 
-1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
-    * As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into 1 and add in the year from which the data was obtained from.
-    * We also had separate files for the demographics, each excel sheet correlates with one country, in one year. Within each file, each sheet correlates to one specific demographics information (e.g. Religion, Education, Native Language etc.).
+We took the following steps to clean our raw data:
 
-2. Wrote two functions to clean Excel sheet for a given year so that they are in a format that is easily readable by r. 
+1. From the website, we were able to download '.xlsx' files. Raw files can be found [here](https://github.com/tlzhu19/edav-final-project-41/tree/master/data/raw).
+    * As we had separate files for the overall refugee resettlement data for each year from 2009 to 2018, we had to combine these files into one and add in the year from which the data was obtained from.
+    * We also had separate files for the demographics, each excel sheet corresponds with one country, in one year. Within each file, each sheet corresponds to one specific demographics information (e.g. Religion, Education, Native Language etc.).
+
+2. Wrote two functions to clean Excel sheet for a given year so that they are in a format that is easily readable by R. 
     * `clean_arrival` to clean the Excel files for all refugee resettlements for each state.
         * removed extra rows and moved columns such that there are no repeated columns and those columns that share a name are combined into one
     * `clean_demographics` to clean the Excel files for demographic information for refugees from specific countries (namely Bhutan, Burma, DRC, Iraq, and Somalia).
@@ -182,7 +184,7 @@ clean_demographics <- function(file, sheet_name) {
         
 3. Wrote another function, `combine_files`, to combine each year's Excel file into one.
       * For those files that contained overall refugee resettlement data, we generated a function that combined these files as they had common column names.
-      * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. As the way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year.
+      * For those files that contained demographics data, we generated a function that combined the sheets within each file that belonged to the same kind of demographics information. The way these sheets are named is consistant within each file, we simply referred to the sheet name when combining those within the same country and year.
       * We also added in an extra column - `Year`, and parsed the information about which year the data is from from the file name (in the format: Arrivals_*year*).
 ```{r}
 # Cleans and combines all the files in the directory given by path
@@ -299,7 +301,7 @@ kable(head(religion_df))
 
 Based on some initial analysis, we decided to exclude Ethnicity and Native language as they did not provide sufficient information to help us answer our questions regarding refugee resettlement trends in the U.S.. More specifically, Ethnicity and Native Language ware excluded in our data visualization as they are directly related to country of origin and thus are considered as redundant information. 
 
-Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus our analysis on these religions.
+Furthermore, we excluded many minority religions, as it made it difficult to observe the overall trend due to only a small number of people belonging to each religion. Hence, we concluded that since the majority of the refugees belong to the top-4 religions (Christian, Muslim, Hindu, Buddhist), we decided to focus on these religions.
 
 
 ## Transforming the Data
@@ -310,7 +312,7 @@ For the same reason, in addition to using the raw values given in the data (numb
 
 
 # Missing Values
-The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this could not be visualized in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra 6 states are:
+The datasets from RPC (Refugee Processing Center) did not contain any missing values. However, we also noticed that our data contained a single row called “Unknown State”. Since this could not be visualized in our maps, we decided that it would be better to remove the data. Additionally, when we converted the `State` column to factors, there were 56. The extra six "states" are:
 
 * American Samoa
 * District of Columbia
@@ -319,7 +321,7 @@ The datasets from RPC (Refugee Processing Center) did not contain any missing va
 * Unknown State
 * Virgin Islands
 
-We removed these rows since our main goal is to focus on the fifty states.
+Notice that these are territories of the U.S. as well as the capital of the U.S. We removed these rows since our main goal is to just focus on the fifty states.
 
 
 ```{r}
@@ -490,7 +492,7 @@ p <-ggplot(total_arrival_df, aes(x=Year, y=Individuals, colour=key, label=Events
       ylab("Number of Individuals") +
       ggtitle('Ceilings Vs Actual Refugee Resettlements') +
       scale_y_continuous(labels = comma) +
-      theme(plot.title=element_text(hjust=0.5))
+      theme(plot.title=element_text(hjust=0.5), legend.title = element_blank())
 
 ggplotly(p, tooltip = c('y', 'label')) %>%
   layout(annotations = list(x=-0.1, y = -0.10, text = "Hover over points to read about major events", showarrow = F, xref = 'paper', yref = 'paper', xanchor = 'left', yanchor = 'auto', xshift = 0, yshift = 0, font = list(size = 11, color = "grey")))
@@ -643,11 +645,11 @@ The refugee resettlement trend from the DRC to the U.S. is the reverse of the ov
 **Iraq:**
 
 As a victim to decades of conflict and widespread violence, Iraq has more than 3.3 million Iriqis displaced across the country since 2014. Although armed violence has declined in some parts of the country, armed groups and small scale military operations continued to carry out unpredictable attacks throughout the country, resulting in new displacements (https://www.unrefugees.org/emergencies/iraq/).
-Iraq’s overall refugee resettlement trend in the U.S. is probably the most related one to the U.S. policy. As we can see from the graph, the refugee resettlement population from Iraq first dropped in 2011, when the war between the U.S. combat operations in Iraq officially ended, to a record low of 6,339. However, the refugee resettlement population peaked again in 2014 at 20,337 when the Iraqi Civil War began and ISIS militants controlled Iraqi cities. This number, however, fell from 20,337 in 2014 to a low of 91 in 2017.
+Iraq’s overall refugee resettlement trend in the U.S. is probably the one most related to U.S. policy. As we can see from the graph, the refugee resettlement population from Iraq first dropped in 2011, when the war between the U.S. combat operations in Iraq officially ended, to a record low of 6,339. However, the refugee resettlement population peaked again in 2014 at 20,337 when the Iraqi Civil War began and ISIS militants controlled Iraqi cities. This number, however, fell from 20,337 in 2014 to a low of 91 in 2017.
 
 **Somalia:**
 
-The impact of nearly two-and-a-half decades of armed conflict in Somalia, compounded by drought and other natural hazards, drove over 870,000 Somalis to flee their homes(https://www.unhcr.org/en-us/somalia.html).
+The impact of nearly two-and-a-half decades of armed conflict in Somalia, compounded by drought and other natural hazards, drove over 870,000 Somalis to flee their homes (https://www.unhcr.org/en-us/somalia.html).
 We can see from our graph that the population of Somalian refugees in the U.S. first increased from 4,620 in 2009 to 10,786 in 2016. Unsurprisingly, however, this population dropped to 139 in 2017.
 
 
@@ -683,6 +685,7 @@ map_basic <- ggplot(df_map, aes(map_id = State)) +
   facet_wrap(~Year) +
   scale_fill_gradient(low="#D6EAF8", high="#154360") +
   ggtitle('Refugee Resettlement in the U.S. by State') +
+  labs(fill = "Number of\nIndividuals") +
   theme(plot.title=element_text(hjust=0.5))
 
 map_basic
@@ -702,8 +705,7 @@ In order to further examine the refugee resettlement pattern within the U.S. sta
 The U.S. has admitted far more Christian refugees than Muslim refugees in recent years. Christians accounted for nearly 80% of refugees who came to the U.S. by the end of 2018. This pattern marks a sharp reversal from several years ago. In fiscal 2016, the number of Muslim refugees admitted reached 38,900, a historic high that outpaced Christian refugee admissions, accounting for 46% of the total number of refugees that resettled to the U.S. that year (https://www.pewresearch.org/fact-tank/2019/10/07/key-facts-about-refugees-to-the-u-s/).
 
 We hypothesize that under President Trump’s administration, the population of Muslim refugees that resettled to the U.S. will experience the most decrease in comparison to other religions.
-We decided to visualize this trend using a bar chart, faceted by the year.
-As mentioned previously, we will be looking at the top 4 religions.
+We decided to visualize this trend using a bar chart, faceted by the year. We focused on the proportions of each religion for each year instead of the actual number of individuals to better compare each relgion across the years. As one may notice, for a given year, the proportions may not add up to 1 because as mentioned previously, we will be looking at the top 4 religions (see the end of section 3.2 Cleaned Data Format).
 
 ```{r, fig.height=7, fig.align='center'}
 muslim_names = c('Moslem', 'Moslem Suni', 'Moslem Shiite')
@@ -755,7 +757,7 @@ p2 <- ggplot(subset_religion_df4, aes(x= reorder(Religion, -Proportion), y=Propo
 p2
 ```
 
-We can see that whereas the proportion of Christian refugees stayed pretty consistant over the 10 years, the proportion of Muslim refugees first increased from 2009 to 2015, and then decreased from 2016 to 2018. Similarly, the Hindu refugee population also decreased from 2013 on, whereas the amount of Buddhist refugees stayed rather consistent throughout the 10 years.
+We can see that whereas the proportion of Christian refugees stayed pretty consistant over the 10 years, the proportion of Muslim refugees first increased from 2009 to 2015, and then decreased from 2016 to 2018. Similarly, the proportion of the Hindu refugee population also decreased from 2013 on, whereas the proportion of Buddhist refugees stayed rather consistent throughout the 10 years.
 
 In order to further examine the resettlement pattern of individuals within each religion, we will be providing an interactive visualization in a later part of this report.
  
@@ -763,7 +765,7 @@ In order to further examine the resettlement pattern of individuals within each 
 
 Refugee children are found to be five times more likely to be out of school than their non-refugee peers. According to the UNHCR, 76% of refugee adolescents were not in secondary school, only 61% of refugee children attend primary school, and only 3% of refugees enroll in a college or university (https://www.unrefugees.org/refugee-facts/statistics/).
 
-We decided to visualize the education level attained by refugees resettled in the U.S. from 2009 to 2018 with a bar chart faceted by country. 
+We decided to visualize the education level attained by refugees resettled in the U.S. from 2009 to 2018 with a bar chart faceted by country. We focused on the proportions of each education level for each country instead of the actual number of individuals to better compare each education level across the countries.
 
 ```{r, fig.align='center'}
 edu_df<- select(filter(education_df, Education != "Bio Data not Complete" & Education != "Unknown"),c(Education,Total, country, Year))
@@ -787,7 +789,7 @@ We can see that for all of the 5 countries, most of the refugee population have 
 
 ### Age Group
 
-In order to visualize the distribution of age groups within the refugee resettlement population from each of the 5 countries, we used a bar chart faceted by country. 
+In order to visualize the distribution of age groups within the refugee resettlement population from each of the 5 countries, we used a bar chart faceted by country. We focused on the proportions of each age group for each country instead of the actual number of individuals to better compare each age group across the countries.
 
 ```{r, fig.align='center'}
 age_df2 <- age_df %>% 
